@@ -5,7 +5,7 @@
 #
 # Copyright 2017 The Tor Project.  See LICENSE for licensing information.
 
-complain_dialog_title="Tor Browser"
+complain_dialog_title="JonDoBrowser"
 
 # First, make sure DISPLAY is set.  If it isn't, we're hosed; scream
 # at stderr and die.
@@ -92,17 +92,17 @@ complain () {
 }
 
 if [ "`id -u`" -eq 0 ]; then
-	complain "The Tor Browser Bundle should not be run as root.  Exiting."
+	complain "The JonDoBrowser Bundle should not be run as root.  Exiting."
 	exit 1
 fi
 
 tbb_usage () {
-    printf "\nTor Browser Script Options\n"
+    printf "\nJonDoBrowser Script Options\n"
     printf "  --verbose         Display Tor and Firefox output in the terminal\n"
     printf "  --log [file]      Record Tor and Firefox output in file (default: tor-browser.log)\n"
-    printf "  --detach          Detach from terminal and run Tor Browser in the background.\n"
-    printf "  --register-app    Register Tor Browser as a desktop app for this user\n"
-    printf "  --unregister-app  Unregister Tor Browser as a desktop app for this user\n"
+    printf "  --detach          Detach from terminal and run JonDoBrowser in the background.\n"
+    printf "  --register-app    Register JonDoBrowser as a desktop app for this user\n"
+    printf "  --unregister-app  Unregister JonDoBrowser as a desktop app for this user\n"
 }
 log_output=0
 show_output=0
@@ -129,14 +129,14 @@ do
           ;;
       -l | --log)
           if [ -z "$2" -o "${2:0:1}" == "-" ]; then
-             printf "Logging Tor Browser debug information to tor-browser.log\n"
+             printf "Logging JonDoBrowser debug information to tor-browser.log\n"
              logfile="../tor-browser.log"
           elif [ "${2:0:1}" == "/" -o "${2:0:1}" == "~" ]; then
-             printf "Logging Tor Browser debug information to %s\n" "$2"
+             printf "Logging JonDoBrowser debug information to %s\n" "$2"
              logfile="$2"
              shift
           else
-             printf "Logging Tor Browser debug information to %s\n" "$2"
+             printf "Logging JonDoBrowser debug information to %s\n" "$2"
              logfile="../$2"
              shift
           fi
@@ -234,7 +234,7 @@ fi
 # Fix up .desktop Icon and Exec Paths, and update the .desktop file from the
 # canonical version if it was changed by the updater.
 cp start-tor-browser.desktop ../
-sed -i -e "s,^Name=.*,Name=Tor Browser,g" ../start-tor-browser.desktop
+sed -i -e "s,^Name=.*,Name=JonDoBrowser,g" ../start-tor-browser.desktop
 sed -i -e "s,^Icon=.*,Icon=$PWD/browser/icons/mozicon128.png,g" ../start-tor-browser.desktop
 sed -i -e "s,^Exec=.*,Exec=sh -c '\"$PWD/start-tor-browser\" --detach || ([ !  -x \"$PWD/start-tor-browser\" ] \&\& \"\$(dirname \"\$*\")\"/Browser/start-tor-browser --detach)' dummy %k,g" ../start-tor-browser.desktop
 
@@ -242,7 +242,7 @@ if [ "$register_desktop_app" -eq 1 ]; then
 	mkdir -p "$HOME/.local/share/applications/"
 	cp ../start-tor-browser.desktop "$HOME/.local/share/applications/"
 	update-desktop-database "$HOME/.local/share/applications/"
-	printf "Tor Browser has been registered as a desktop app for this user in ~/.local/share/applications/\n"
+	printf "JonDoBrowser has been registered as a desktop app for this user in ~/.local/share/applications/\n"
 	exit 0
 fi
 
@@ -250,9 +250,9 @@ if [ "$register_desktop_app" -eq -1 ]; then
 	if [ -e "$HOME/.local/share/applications/start-tor-browser.desktop" ]; then
 		rm -f "$HOME/.local/share/applications/start-tor-browser.desktop"
 		update-desktop-database "$HOME/.local/share/applications/"
-		printf "Tor Browser has been removed as a user desktop app (from ~/.local/share/applications/)\n"
+		printf "JonDoBrowser has been removed as a user desktop app (from ~/.local/share/applications/)\n"
 	else
-		printf "Tor Browser does not appear to be a desktop app (not present in ~/.local/share/applications/)\n"
+		printf "JonDoBrowser does not appear to be a desktop app (not present in ~/.local/share/applications/)\n"
 	fi
 	exit 0
 fi
@@ -261,14 +261,14 @@ HOME="${PWD}"
 export HOME
 
 SYSARCHITECTURE=$(getconf LONG_BIT)
-TORARCHITECTURE=$(expr "$(file TorBrowser/Tor/tor)" : '.*ELF \([[:digit:]]*\)')
+TORARCHITECTURE=$(expr "$(file JonDoBrowser/Tor/tor)" : '.*ELF \([[:digit:]]*\)')
 
 if [ $SYSARCHITECTURE -ne $TORARCHITECTURE ]; then
    complain "Wrong architecture? 32-bit vs. 64-bit."
    exit 1
 fi
 
-LD_LIBRARY_PATH="${HOME}/TorBrowser/Tor/"
+LD_LIBRARY_PATH="${HOME}/JonDoBrowser/Tor/"
 export LD_LIBRARY_PATH
 export SELFRANDO_write_layout_file=
 
@@ -299,7 +299,7 @@ EOF
     fi
 }
 
-# Using a system-installed Tor process with Tor Browser:
+# Using a system-installed Tor process with JonDoBrowser:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # The Tor ControlPort password should be given inside double quotes, inside
 # single quotes, i.e. if the ControlPort password is “secret” (without
@@ -338,7 +338,7 @@ EOF
 setControlPortPasswd ${TOR_CONTROL_PASSWD:='"secret"'}
 
 # Set up custom bundled fonts. See fonts-conf(5).
-export FONTCONFIG_PATH="${HOME}/TorBrowser/Data/fontconfig"
+export FONTCONFIG_PATH="${HOME}/JonDoBrowser/Data/fontconfig"
 export FONTCONFIG_FILE="fonts.conf"
 
 cd "${HOME}"
@@ -349,23 +349,23 @@ cd "${HOME}"
 
 if [ "$show_usage" -eq 1 ]; then
     # Display Firefox help, then our help
-    TOR_CONTROL_PASSWD=${TOR_CONTROL_PASSWD} ./firefox --class "Tor Browser" \
-        -profile TorBrowser/Data/Browser/profile.default --help 2>/dev/null
+    TOR_CONTROL_PASSWD=${TOR_CONTROL_PASSWD} ./firefox --class "JonDoBrowser" \
+        -profile JonDoBrowser/Data/Browser/profile.default --help 2>/dev/null
     tbb_usage
 elif [ "$detach" -eq 1 ] ; then
-    TOR_CONTROL_PASSWD=${TOR_CONTROL_PASSWD} ./firefox --class "Tor Browser" \
-       -profile TorBrowser/Data/Browser/profile.default "${@}" > "$logfile" 2>&1 </dev/null &
+    TOR_CONTROL_PASSWD=${TOR_CONTROL_PASSWD} ./firefox --class "JonDoBrowser" \
+       -profile JonDoBrowser/Data/Browser/profile.default "${@}" > "$logfile" 2>&1 </dev/null &
     disown "$!"
 elif [ "$log_output" -eq 1 -a "$show_output" -eq 1 ]; then
-    TOR_CONTROL_PASSWD=${TOR_CONTROL_PASSWD} ./firefox --class "Tor Browser" \
-        -profile TorBrowser/Data/Browser/profile.default "${@}" 2>&1 </dev/null | \
+    TOR_CONTROL_PASSWD=${TOR_CONTROL_PASSWD} ./firefox --class "JonDoBrowser" \
+        -profile JonDoBrowser/Data/Browser/profile.default "${@}" 2>&1 </dev/null | \
         tee "$logfile"
 elif [ "$show_output" -eq 1 ]; then
-    TOR_CONTROL_PASSWD=${TOR_CONTROL_PASSWD} ./firefox --class "Tor Browser" \
-        -profile TorBrowser/Data/Browser/profile.default "${@}" < /dev/null
+    TOR_CONTROL_PASSWD=${TOR_CONTROL_PASSWD} ./firefox --class "JonDoBrowser" \
+        -profile JonDoBrowser/Data/Browser/profile.default "${@}" < /dev/null
 else
-    TOR_CONTROL_PASSWD=${TOR_CONTROL_PASSWD} ./firefox --class "Tor Browser" \
-        -profile TorBrowser/Data/Browser/profile.default "${@}" > "$logfile" 2>&1 </dev/null
+    TOR_CONTROL_PASSWD=${TOR_CONTROL_PASSWD} ./firefox --class "JonDoBrowser" \
+        -profile JonDoBrowser/Data/Browser/profile.default "${@}" > "$logfile" 2>&1 </dev/null
 fi
 
 exit $?

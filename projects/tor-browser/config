@@ -38,6 +38,8 @@ input_files:
     name: tor
   - project: firefox-langpacks
     name: firefox-langpacks
+  - project: jondobutton
+    name: jondobutton
   - project: tor-launcher
     name: tor-launcher
   - project: torbutton
@@ -54,6 +56,7 @@ input_files:
     name: snowflake
     enable: '[% c("var/snowflake") %]'
   - filename: Bundle-Data
+  - filename: JonDo
   - URL: https://addons.cdn.mozilla.net/user-media/addons/722/noscript_security_suite-5.0.5-fx+sm.xpi
     name: noscript
     sha256sum: bf1dee39f6e5936df2b03b794c1efc9236b440536a05fafcff667e33903e6aed

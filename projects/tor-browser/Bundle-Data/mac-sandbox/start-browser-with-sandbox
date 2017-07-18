@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # TODO: assumes not in /Applications
-# TODO: assumes app is in TorBrowser.app
+# TODO: assumes app is in JonDoBrowser.app
 
 BASEDIR="`dirname \"$0\"`"
 BASEDIR="`(cd \"$BASEDIR\" && pwd)`"
-TORBROWSER_APP_DIR="$BASEDIR/TorBrowser.app"
-TORBROWSER_DATA_DIR="$BASEDIR/TorBrowser-Data"
+TORBROWSER_APP_DIR="$BASEDIR/JonDoBrowser.app"
+TORBROWSER_DATA_DIR="$BASEDIR/JonDoBrowser-Data"
 TOR_DATA_DIR="$TORBROWSER_DATA_DIR/Tor"
 SOCKETDIR="/tmp/Tor"
 

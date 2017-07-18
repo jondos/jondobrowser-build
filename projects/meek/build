@@ -4,10 +4,10 @@
 distdir=/var/tmp/dist/[% project %]
 [% IF c("var/osx") %]
   PTDIR="$distdir/Contents/MacOS/Tor/PluggableTransports"
-  DOCSDIR="$distdir/Contents/Resources/TorBrowser/Docs/meek"
+  DOCSDIR="$distdir/Contents/Resources/JonDoBrowser/Docs/meek"
 [% ELSE %]
-  PTDIR="$distdir/TorBrowser/Tor/PluggableTransports"
-  DOCSDIR="$distdir/TorBrowser/Docs/meek"
+  PTDIR="$distdir/JonDoBrowser/Tor/PluggableTransports"
+  DOCSDIR="$distdir/JonDoBrowser/Docs/meek"
 [% END %]
 mkdir -p $PTDIR $DOCSDIR
 

@@ -21,11 +21,11 @@ if len(args) != 2:
 TORBROWSER_VERSION = args[0]
 YEAR = args[1]
 
-COPYRIGHT = "Tor Browser %s Copyright %s The Tor Project" % (TORBROWSER_VERSION, YEAR)
+COPYRIGHT = "JonDoBrowser %s Copyright %s The Tor Project" % (TORBROWSER_VERSION, YEAR)
 
 plist = plistlib.readPlist(sys.stdin)
 
-plist["CFBundleGetInfoString"] = "Tor Browser %s" % TORBROWSER_VERSION
+plist["CFBundleGetInfoString"] = "JonDoBrowser %s" % TORBROWSER_VERSION
 plist["CFBundleShortVersionString"] = TORBROWSER_VERSION
 plist["NSHumanReadableCopyright"] = COPYRIGHT
 

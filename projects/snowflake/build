@@ -9,10 +9,10 @@
 distdir=/var/tmp/dist/[% project %]
 [% IF c("var/osx") %]
   PTDIR="$distdir/Contents/MacOS/Tor/PluggableTransports"
-  DOCSDIR="$distdir/Contents/Resources/TorBrowser/Docs/snowflake"
+  DOCSDIR="$distdir/Contents/Resources/JonDoBrowser/Docs/snowflake"
 [% ELSE %]
-  PTDIR="$distdir/TorBrowser/Tor/PluggableTransports"
-  DOCSDIR="$distdir/TorBrowser/Docs/snowflake"
+  PTDIR="$distdir/JonDoBrowser/Tor/PluggableTransports"
+  DOCSDIR="$distdir/JonDoBrowser/Docs/snowflake"
 [% END %]
 mkdir -p $PTDIR $DOCSDIR
 

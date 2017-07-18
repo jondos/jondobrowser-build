@@ -5,7 +5,7 @@ distdir=/var/tmp/dist/[% project %]
 [% IF c("var/osx") %]
   PTDIR="$distdir/Contents/MacOS/Tor/PluggableTransports"
 [% ELSE %]
-  PTDIR="$distdir/TorBrowser/Tor/PluggableTransports"
+  PTDIR="$distdir/JonDoBrowser/Tor/PluggableTransports"
 [% END %]
 mkdir -p $PTDIR
 

@@ -1,4 +1,4 @@
-Experimental Sandboxed Tor Browser for OS X
+Experimental Sandboxed JonDoBrowser for OS X
 
 Requirements:
   Mac OS 10.9 or newer.
@@ -6,9 +6,9 @@ Requirements:
 
 Follow these steps to use the sandbox profiles:
 
-1. Copy this folder ("Sandboxed Tor Browser") to a local drive, but do not
+1. Copy this folder ("Sandboxed JonDoBrowser") to a local drive, but do not
    put it in /Applications.
-2. Copy the TorBrowser app into your "Sandboxed Tor Browser" folder.
+2. Copy the JonDoBrowser app into your "Sandboxed JonDoBrowser" folder.
 3. Open Terminal.
 4. Run start-tor-with-sandbox and wait for Tor bootstrapping to finish.
 5. Run start-browser-with-sandbox.

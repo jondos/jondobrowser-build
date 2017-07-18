@@ -31,7 +31,7 @@ mkdir -p /var/tmp/build
   # XXX: 64bits only for now :(, see #20683.
   tar -C /var/tmp/dist -xf $rootdir/[% c('input_files_by_name/selfrando') %]
   # Selfrando wrapper
-  export PATH="/var/tmp/dist/selfrando/Tools/TorBrowser/tc-wrapper/:$PATH"
+  export PATH="/var/tmp/dist/selfrando/Tools/JonDoBrowser/tc-wrapper/:$PATH"
   # We need to avoid the shuffling while building as this breaks compilation
   export SELFRANDO_skip_shuffle=
 [% END -%]
@@ -39,7 +39,7 @@ mkdir -p /var/tmp/build
 tar -C /var/tmp/build -xf [% project %]-[% c('version') %].tar.gz
 
 [% IF c("var/osx") %]
-  mkdir -p $distdir/TorBrowser.app/Contents/MacOS
+  mkdir -p $distdir/JonDoBrowser.app/Contents/MacOS
 [% ELSE %]
   mkdir -p $distdir/Browser
 [% END %]
@@ -97,10 +97,10 @@ make -C obj-* package INNER_MAKE_PACKAGE=true
 [% IF c("var/osx") %]
   cp -a obj-macos/dist/firefox/* $distdir
   # Remove firefox-bin (we don't use it, see ticket #10126)
-  rm -f $distdir/TorBrowser.app/Contents/MacOS/firefox-bin
+  rm -f $distdir/JonDoBrowser.app/Contents/MacOS/firefox-bin
 
   # Adjust the Info.plist file
-  INFO_PLIST=$distdir/TorBrowser.app/Contents/Info.plist
+  INFO_PLIST=$distdir/JonDoBrowser.app/Contents/Info.plist
   mv $INFO_PLIST tmp.plist
   python $rootdir/fix-info-plist.py '[% c("var/torbrowser_version") %]' '[% c("var/copyright_year") %]' < tmp.plist > $INFO_PLIST
   rm -f tmp.plist
@@ -164,8 +164,8 @@ cd $distdir
   [% c("var/rezip", { rezip_file => 'Browser/omni.ja' }) %]
   [% c("var/rezip", { rezip_file => 'Browser/browser/omni.ja' }) %]
 [% ELSIF c("var/osx") %]
-  [% c("var/rezip", { rezip_file => 'TorBrowser.app/Contents/Resources/omni.ja' }) %]
-  [% c("var/rezip", { rezip_file => 'TorBrowser.app/Contents/Resources/browser/omni.ja' }) %]
+  [% c("var/rezip", { rezip_file => 'JonDoBrowser.app/Contents/Resources/omni.ja' }) %]
+  [% c("var/rezip", { rezip_file => 'JonDoBrowser.app/Contents/Resources/browser/omni.ja' }) %]
 [% END %]
 
 [% IF c("var/windows") %]
@@ -177,7 +177,7 @@ mkdir -p [% dest_dir _ '/' _ c('filename') %]
 
 [%
 IF c("var/osx");
-  SET browserdir='TorBrowser.app/Contents';
+  SET browserdir='JonDoBrowser.app/Contents';
 ELSE;
   SET browserdir='Browser';
 END;

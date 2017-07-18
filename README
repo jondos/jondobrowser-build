@@ -1,10 +1,10 @@
-Tor Browser Build
+JonDoBrowser Build
 =================
 
 Installing build dependencies
 -----------------------------
 
-To build Tor Browser, you need a Linux distribution that has support
+To build JonDoBrowser, you need a Linux distribution that has support
 for runC (such as Debian jessie, Ubuntu 14.04, Fedora 20, etc ...).
 On Debian jessie, the runc package is available in backports.
 
@@ -83,7 +83,7 @@ Updating git sources
 --------------------
 
 You can run "make fetch" to fetch the latest sources from git for all
-components included in Tor Browser. You should run this if you want to
+components included in JonDoBrowser. You should run this if you want to
 make a nightly build with the latest commits.
 
 
@@ -102,7 +102,7 @@ Or set the debug option to 0 in the rbm.local.conf file.
 If you want to select the output directory, you can use rbm's --output-dir
 option. You can look at the Makefile to find the rbm command for what
 you want to build, and add the --output-dir option. For example if you
-want to build Tor Browser nightly for linux-x86_64:
+want to build JonDoBrowser nightly for linux-x86_64:
 
    ./rbm/rbm build release --output-dir=/var/builds/nightly/2017-01-23 \
                         --target nightly --target torbrowser-linux-x86_64
@@ -119,7 +119,7 @@ To remove this version subdirectory, add the noversiondir target:
 Automated builds using tbb-testsuite
 ------------------------------------
 
-The Tor Browser testsuite scripts can also be used to do nightly builds
+The JonDoBrowser testsuite scripts can also be used to do nightly builds
 and publish the build logs.
 
 If you want to do that, start by cloning the git repository:

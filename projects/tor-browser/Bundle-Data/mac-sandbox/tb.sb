@@ -3,8 +3,8 @@
 ;; Parameters:
 ;;   HOME_DIR             the user's home directory
 ;;   CURRENT_DIR          the current working directory
-;;   TORBROWSER_APP_DIR   the TorBrowser.app directory
-;;   TORBROWSER_DATA_DIR  the TorBrowser-Data directory
+;;   TORBROWSER_APP_DIR   the JonDoBrowser.app directory
+;;   TORBROWSER_DATA_DIR  the JonDoBrowser-Data directory
 
 ;; TODO: can see all dirs but can download/save only in Downloads (no error reported though!)
 ;; TODO: printing does not work (Save to PDF does).
