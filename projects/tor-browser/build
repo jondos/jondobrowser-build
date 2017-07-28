@@ -68,10 +68,10 @@ unzip -d $rootdir $rootdir/[% c('input_files_by_name/firefox') %]/mar-tools-*.zi
 MARTOOLS=$rootdir/mar-tools
 
 mv [% c('input_files_by_name/tor-launcher') %] $TBDIR/$EXTSPATH/tor-launcher@torproject.org.xpi
-mv $rootdir/JonDo/jondo-launcher@jondos.de.xpi $TBDIR/$EXTSPATH/jondo-launcher@jondos.de.xpi
-mv $rootdir/JonDo/jondoswitcher@jondos.de.xpi $TBDIR/$EXTSPATH/jondoswitcher@jondos.de.xpi
 mv [% c('input_files_by_name/torbutton') %] $TBDIR/$EXTSPATH/torbutton@torproject.org.xpi
 mv [% c('input_files_by_name/jondobutton') %] $TBDIR/$EXTSPATH/info@jondos.de.xpi
+mv [% c('input_files_by_name/jondolauncher') %] $TBDIR/$EXTSPATH/jondo-launcher@jondos.de.xpi
+mv [% c('input_files_by_name/jondoswitcher') %] $TBDIR/$EXTSPATH/jondoswitcher@jondos.de.xpi
 mv [% c('input_files_by_name/https-everywhere') %] $TBDIR/$EXTSPATH/https-everywhere-eff@eff.org.xpi
 mv [% c('input_files_by_name/noscript') %] $TBDIR/$EXTSPATH/{73a6fe31-595d-460b-a920-fcc0f8843232}.xpi
 

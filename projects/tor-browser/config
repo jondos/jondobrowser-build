@@ -40,6 +40,10 @@ input_files:
     name: firefox-langpacks
   - project: jondobutton
     name: jondobutton
+  - project: jondolauncher
+    name: jondolauncher
+  - project: jondoswitcher
+    name: jondoswitcher
   - project: tor-launcher
     name: tor-launcher
   - project: torbutton
