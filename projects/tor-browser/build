@@ -239,8 +239,8 @@ MYDIR2=$TBDIR/$EXTSPATH
 [% ELSE %]
   cp -r $TBDIR/JonDoBrowser $TBDIR/TorBrowser
 [% END %]
-cp $MYDIR2/jondo-launcher@jondos.de.xpi $MYDIR1/jondo-launcher@jondos.de.xpi
-cp $MYDIR2/info@jondos.de.xpi $MYDIR1/info@jondos.de.xpi
+mv $MYDIR2/jondo-launcher@jondos.de.xpi $MYDIR1/jondo-launcher@jondos.de.xpi
+mv $MYDIR2/info@jondos.de.xpi $MYDIR1/info@jondos.de.xpi
 mv $MYDIR2/torbutton@torproject.org.xpi $MYDIR1/torbutton@torproject.org.xpi
 mv $MYDIR2/tor-launcher@torproject.org.xpi $MYDIR1/tor-launcher@torproject.org.xpi
 [% IF c("var/windows") %]
