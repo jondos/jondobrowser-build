@@ -10,6 +10,7 @@ JonDoBrowser 7.5a1.1 -- July 31 2017
    * Bug 1635 : In "direct connection", make the proxy configurable by the user
    * Bug 1637 : Ubtuntu 32 bit: JonDo does not start with the browser
    * Bug 1647 : OSX 10.12.5: JonDo does not start automatically, and update has to be applied twice
+   * Bug 1654 : tor, jondo extensions update issue
 
 JonDoBrowser 7.5a1 -- June 14 2017
  * All Platforms
