@@ -1,7 +1,8 @@
 JonDoBrowser 7.5a1.1 -- July 31 2017
  * All Platforms
    * Add JonDo 00.20.001 (IP Changer)
-   * Add JonDoButton 1.9.7.4a
+   * Add JonDoButton 1.9.7.4.1
+   * Update Torbutton 1.9.7.4.1
    * Add JonDo-Launcher 0.2.10.4
    * Add JonDo-Switcher 0.1.2
    * Bug 1547 : Ability to switch the proxy to "None" and to "Tor"
