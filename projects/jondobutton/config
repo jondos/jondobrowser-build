@@ -1,7 +1,7 @@
 # vim: filetype=yaml sw=2
 version: 1.9.7.4jondo2
 git_url: https://github.com/jondos/jondobrowser-jondobutton.git
-git_hash: '[% c("version") %]-jondo'
+git_hash: '[% c("version") %]'
 gpg_keyring: kaitian.gpg
 tag_gpg_id: 1
 filename: "[% project %]-[% c('version') %]-[% c('var/build_id') %].xpi"
