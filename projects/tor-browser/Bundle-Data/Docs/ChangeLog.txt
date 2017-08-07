@@ -1,10 +1,11 @@
 JonDoBrowser 7.5a1.2 -- August 3 2017
  * All Platforms
-   * Update JonDoButton to 1.9.7.4.2
-     * Enabled Version Check : Check version from JonDoBrowser update server
-   * Update TorButton to 1.9.7.4.2
-     * Enabled Version Check : Check version from JonDoBrowser update server
-   * Bug 1664 : Browser sometimes tells an update is needed, but there is not new version available
+   * Update JonDoButton to 1.9.7.4jondo2
+     * Bug 1664 : Enabled Version Check : Check version from JonDoBrowser update server
+   * Update JonDoSwitcher to 0.1.4
+     * Bug 1635 : In "direct connection", make the proxy configurable by the user
+   * Update TorButton to 1.9.7.4jondo2
+     * Bug 1664 : Enabled Version Check : Check version from JonDoBrowser update server
 
 JonDoBrowser 7.5a1.1 -- July 31 2017
  * All Platforms
@@ -15,7 +16,6 @@ JonDoBrowser 7.5a1.1 -- July 31 2017
    * Bug 1547 : Ability to switch the proxy to "None" and to "Tor"
    * Bug 1633 : Alter changelog
    * Bug 1636 : Internationalize proxy switching texts
-   * Bug 1635 : In "direct connection", make the proxy configurable by the user
    * Bug 1637 : Ubtuntu 32 bit: JonDo does not start with the browser
    * Bug 1647 : OSX 10.12.5: JonDo does not start automatically, and update has to be applied twice
    * Bug 1654 : tor, jondo extensions update issue
