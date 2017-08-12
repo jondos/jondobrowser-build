@@ -1,3 +1,10 @@
+JonDoBrowser 7.5a1.3 -- August 13 2017
+ * All Platforms
+   * Update JonDoButton to 1.9.7.4jondo3
+     * Bug 1569 : Implement "New Identity"
+   * Update JonDoSwitcher to 0.1.5
+     * Bug 1569 : Implement "New Identity"
+
 JonDoBrowser 7.5a1.2 -- August 3 2017
  * All Platforms
    * Update JonDoButton to 1.9.7.4jondo2
