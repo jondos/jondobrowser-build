@@ -62,7 +62,7 @@ mkdir -p $TBDIR/$MEEKPROFILEPATH/extensions
 [% IF c("var/osx") %]
   mkdir -p $TBDIR/Contents/MacOS/JonDo
   mv $rootdir/JonDo/JonDo_OSX/JonDoLauncher $TBDIR/Contents/MacOS/JonDo/
-  tar -xvf $rootdir/JonDo/JonDo_OSX/JAP.app.tar.gz -C $TBDIR/
+  tar -xvf $rootdir/JonDo/JonDo_OSX/JAP.app.tar.gz -C $TBDIR/Contents/
 [% END %]
 
 # Extract the MAR tools.
