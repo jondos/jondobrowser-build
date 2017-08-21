@@ -1,3 +1,8 @@
+JonDoBrowser 7.5a1.4 -- August 21 2017
+ * All Platforms
+  * Bug 1569 : Implement "New Identity"
+    * Stable change of mix cascade implemented
+
 JonDoBrowser 7.5a1.3 -- August 13 2017
  * All Platforms
    * Update JonDoButton to 1.9.7.4jondo3
