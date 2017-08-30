@@ -9,7 +9,7 @@ gpg_keyring: kaitian.gpg
 var:
   firefox_version: 52.2.0esr
   torbrowser_branch: 7.5
-  torbrowser_update_channel: alpha
+  torbrowser_update_channel: product
   copyright_year: '[% exec("git show -s --format=%ci").remove("-.*") %]'
   deps:
     - build-essential
