@@ -12,7 +12,7 @@ JonDoBrowser 7.5.1.5 -- August 30 2017
     * Localized texts update
   * Bug 1569 : Implement "New Identity"
     * Stable change of mix cascade implemented
-    
+
 JonDoBrowser 7.5a1.5 -- August 26 2017
  * All Platforms
   * Update JonDoSwitcher to 0.1.6
