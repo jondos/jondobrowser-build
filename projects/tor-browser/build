@@ -361,6 +361,8 @@ rm -rf $distdir/${PKG_DIR}
       [% ELSIF c("var/windows") %]
         find "[% tbdir %]" -exec [% c("var/touch") %] {} \;
         pushd "[% tbdir %]"
+        browser_version_string=[% c("var/torbrowser_version_windows_installer") %]
+        sed -i "s/Version_To_Be_Replaced/$browser_version_string/g" torbrowser.nsi
         makensis torbrowser.nsi
         # Working around NSIS braindamage
         mv torbrowser-install.exe torbrowser-install-tmp.exe
