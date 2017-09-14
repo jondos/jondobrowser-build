@@ -291,6 +291,8 @@ cd $distdir
 [% ELSIF c("var/windows") %]
   find "${TB_STAGE_DIR}" -exec [% c("var/touch") %] {} \;
   pushd "${TB_STAGE_DIR}"
+  browser_version_string=[% c("var/torbrowser_version_windows_installer") %]
+  sed -i "s/Version_To_Be_Replaced/$browser_version_string/g" torbrowser.nsi
   makensis torbrowser.nsi
   # Working around NSIS braindamage
   mv torbrowser-install.exe torbrowser-install-tmp.exe
