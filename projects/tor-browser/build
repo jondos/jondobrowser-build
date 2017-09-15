@@ -363,7 +363,21 @@ rm -rf $distdir/${PKG_DIR}
         pushd "[% tbdir %]"
         browser_version_string=[% c("var/torbrowser_version_windows_installer") %]
         sed -i "s/Version_To_Be_Replaced/$browser_version_string/g" torbrowser.nsi
+        [% IF lang eq "de" %]
+          sed -i "s/Lang_To_Be_Replaced/LANG_GERMAN/g" torbrowser.nsi
+          sed -i "s/Legal_Notice_To_Be_Replaced/JonDoBrowser und die JonDoBrowser Logos sind Marken der JonDos GmbH, Deutschland./g" torbrowser.nsi
+        [% ELSE %]
+          sed -i "s/Lang_To_Be_Replaced/LANG_ENGLISH/g" torbrowser.nsi
+          sed -i "s/Legal_Notice_To_Be_Replaced/JonDoBrowser and the JonDoBrowser logos are trademarks of JonDos GmbH, Germany./g" torbrowser.nsi
+        [% END %]
         makensis torbrowser.nsi
+        [% IF lang eq "de" %]
+          sed -i "s/LANG_GERMAN/Lang_To_Be_Replaced/g" torbrowser.nsi
+          sed -i "s/JonDoBrowser und die JonDoBrowser Logos sind Marken der JonDos GmbH, Deutschland./Legal_Notice_To_Be_Replaced/g" torbrowser.nsi
+        [% ELSE %]
+          sed -i "s/LANG_ENGLISH/Lang_To_Be_Replaced/g" torbrowser.nsi
+          sed -i "s/JonDoBrowser and the JonDoBrowser logos are trademarks of JonDos GmbH, Germany./Legal_Notice_To_Be_Replaced/g" torbrowser.nsi
+        [% END %]
         # Working around NSIS braindamage
         mv torbrowser-install.exe torbrowser-install-tmp.exe
         python $rootdir/pe_checksum_fix.py
