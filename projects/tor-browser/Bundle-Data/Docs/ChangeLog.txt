@@ -1,3 +1,10 @@
+JonDoBrowser 7.5a1.7 -- September 22 2017
+ * All Platforms
+  * Update JAP to 00.20.002
+  * Update JonDoSwitcher to 0.1.7
+  * Feature 1729 - Bundle Windows executable should contain product name and product version
+  * Feature 1701 - Change JonDo browser path search
+
 JonDoBrowser 7.5a1.6 -- September 13 2017
  * All Platforms
   * Feature 1720 : mar file signatures (update verification)

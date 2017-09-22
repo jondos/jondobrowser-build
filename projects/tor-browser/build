@@ -44,13 +44,11 @@ mkdir -p $TBDIR/$MEEKPROFILEPATH/extensions
   mkdir -p $TBDIR/JonDo
   mv $rootdir/JonDo/JonDo_Windows/* $TBDIR/JonDo/
   cp $rootdir/JonDo/JAP.jar $TBDIR/JonDo/JAP.jar
-  cp $rootdir/JonDo/JAP-Original.jar $TBDIR/JonDo/JAP-Original.jar
 [% END %]
 
 [% IF c("var/linux") %]
   mkdir -p $TBDIR/JonDo
   cp $rootdir/JonDo/JAP.jar $TBDIR/JonDo/JAP.jar
-  cp $rootdir/JonDo/JAP-Original.jar $TBDIR/JonDo/JAP-Original.jar
   [% IF c("var/linux-x86_64") %]
     mv $rootdir/JonDo/JonDo_Linux/JonDoLauncher64 $TBDIR/JonDo/JonDoLauncher
   [% END %]
