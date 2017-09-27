@@ -1,10 +1,10 @@
 # vim: filetype=yaml sw=2
 version: '[% c("abbrev") %]'
 filename: 'firefox-[% c("version") %]-[% c("var/osname") %]-[% c("var/build_id") %]'
-git_hash: 'tor-browser-[% c("var/firefox_version") %]-[% c("var/torbrowser_branch") %]-1-build2'
+git_hash: 'jondobrowser-[% c("var/firefox_version") %]-[% c("var/torbrowser_branch") %]-1-build2'
 tag_gpg_id: 1
-git_url: https://git.torproject.org/tor-browser.git
-gpg_keyring: torbutton.gpg
+git_url: https://github.com/jondos/jondobrowser-torbrowser.git
+gpg_keyring: kaitian.gpg
 
 var:
   firefox_platform_version: 52.4.0

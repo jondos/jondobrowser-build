@@ -54,6 +54,16 @@ targets:
     output_dir: alpha
     var:
       build_target: alpha
+      
+  product:
+    output_dir: 'product/unsigned'
+    var:
+      build_target: release
+
+  beta:
+    output_dir: 'beta/unsigned'
+    var:
+      build_target: release
 
   testbuild:
     output_dir: 'testbuild'

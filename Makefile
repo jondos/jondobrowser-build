@@ -32,6 +32,36 @@ alpha-windows-i686: submodule-update
 alpha-osx-x86_64: submodule-update
 	$(rbm) build release --target alpha --target torbrowser-osx-x86_64
 
+product: submodule-update
+	$(rbm) build release --target product --target torbrowser-all
+
+product-linux-x86_64: submodule-update
+	$(rbm) build release --target product --target torbrowser-linux-x86_64
+
+product-linux-i686: submodule-update
+	$(rbm) build release --target product --target torbrowser-linux-i686
+
+product-windows-i686: submodule-update
+	$(rbm) build release --target product --target torbrowser-windows-i686
+
+product-osx-x86_64: submodule-update
+	$(rbm) build release --target product --target torbrowser-osx-x86_64
+
+beta: submodule-update
+	$(rbm) build release --target beta --target torbrowser-all
+
+beta-linux-x86_64: submodule-update
+	$(rbm) build release --target beta --target torbrowser-linux-x86_64
+
+beta-linux-i686: submodule-update
+	$(rbm) build release --target beta --target torbrowser-linux-i686
+
+beta-windows-i686: submodule-update
+	$(rbm) build release --target beta --target torbrowser-windows-i686
+
+beta-osx-x86_64: submodule-update
+	$(rbm) build release --target beta --target torbrowser-osx-x86_64
+
 nightly: submodule-update
 	$(rbm) build release --target nightly --target torbrowser-all
 
