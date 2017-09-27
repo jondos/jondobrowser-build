@@ -5,12 +5,13 @@ Installing build dependencies
 -----------------------------
 
 To build JonDoBrowser, you need a Linux distribution that has support
-for runC (such as Debian jessie, Ubuntu 14.04, Fedora 20, etc ...).
-On Debian jessie, the runc package is available in backports.
+for runc (such as Debian jessie, Ubuntu 16.04, Fedora 20, etc ...).
+On Debian jessie, the runc package is available in backports. On Debian
+stretch, the runc package is available in the main repository.
 
-Your user account should have access sudo access, which is required to
-be able to extract container file systems, start containers and copy
-files to and from containers.
+Your user account should have sudo access, which is required to be able
+to extract container file systems, start containers and copy files to and
+from containers.
 
 The sources of most components are downloaded using git, which needs to
 be installed. The sources of webrtc are downloaded using gclient, which
@@ -41,6 +42,10 @@ If you are running Debian or Ubuntu, you can install them with:
                   libstring-shellquote-perl libsort-versions-perl \
                   libdigest-sha-perl libdata-uuid-perl libdata-dump-perl \
                   libfile-copy-recursive-perl git libgtk2.0-dev curl runc
+
+The build system is based on rbm, which is included as a git submodule
+in the rbm/ directory. You can fetch the rbm git submodule by running
+'make submodule-update'.
 
 
 Starting a build
@@ -87,6 +92,18 @@ components included in JonDoBrowser. You should run this if you want to
 make a nightly build with the latest commits.
 
 
+Number of make processes
+------------------------
+
+By default the builds are run with 4 processes simultaneously (with
+make -j4). If you want to change the number of processes used, you can
+set the RBM_NUM_PROCS environment variable:
+
+  $ export RBM_NUM_PROCS=8
+
+You can also set the buildconf/num_procs option in rbm.local.conf.
+
+
 Automated builds
 ----------------
 
@@ -101,7 +118,7 @@ Or set the debug option to 0 in the rbm.local.conf file.
 
 If you want to select the output directory, you can use rbm's --output-dir
 option. You can look at the Makefile to find the rbm command for what
-you want to build, and add the --output-dir option. For example if you
+you want to build, and add the --output-dir option. For example, if you
 want to build JonDoBrowser nightly for linux-x86_64:
 
    ./rbm/rbm build release --output-dir=/var/builds/nightly/2017-01-23 \
@@ -152,7 +169,7 @@ Copy the tools/tor-browser-builds-boklm file and edit it to change the
    $ vim tools/tor-browser-builds-$user
 
 You can now run ./tools/tor-browser-builds-$user to start the build, and
-add it to you crontab.
+add it to your crontab.
 
 The html build reports will be available in the reports/ directory, and
 the build files in the tor-browser-builds/ directory (unless you changed
@@ -176,7 +193,7 @@ Cleaning obsolete files and containers images
 You can run 'make clean' to clean old build files and containers that
 are no longer used in current builds. Before doing that, you need to
 configure the branches and build targets you are using in the
-rbm.local.conf file. The cleaning script will checkout all the configured
+rbm.local.conf file. The cleaning script will check out all the configured
 branches to create a list of used build files, and delete the files
 from the 'out' directory that are not used. If you want to see the list
 of files and containers that would be removed without doing it, you can
@@ -188,4 +205,17 @@ Common Build Errors
 
 You can look at the README.BUILD_ERRORS file for a list of common build
 errors and their solutions.
+
+
+Hacking on the JonDoBrowser build
+--------------------------------
+
+The file README.HACKING tries to list the main things to know when
+making changes to the JonDoBrowser build.
+
+Description of makefile rules
+-----------------------------
+
+You can find a description of the makefile rules in the README.MAKEFILE
+file.
 
