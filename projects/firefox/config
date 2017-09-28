@@ -10,7 +10,7 @@ var:
   firefox_platform_version: 52.4.0
   firefox_version: '[% c("var/firefox_platform_version") %]esr'
   torbrowser_branch: 7.5
-  torbrowser_update_channel: alpha
+  torbrowser_update_channel: product
   copyright_year: '[% exec("git show -s --format=%ci").remove("-.*") %]'
   deps:
     - build-essential
