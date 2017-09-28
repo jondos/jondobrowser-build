@@ -19,7 +19,7 @@ tar -C $distdir -xf $rootdir/[% c('input_files_by_name/obfsproxy') %]
   export PYTHONPATH="$(winepath -w $pydir)\\Lib\\site-packages"
   # FTE only needs libgmp-10.dll and no libgmpxx anymore.
   cp -a /var/tmp/dist/gmp/bin/libgmp-10.dll .
-  cp -a /var/tmp/dist/gmp/bin/libgmp-10.dll $distdir/TorBrowser/Tor/
+  cp -a /var/tmp/dist/gmp/bin/libgmp-10.dll $distdir/JonDoBrowser/Tor/
   WINDOWS_BUILD=1 CROSS_COMPILE=1 make
   $PYTHON setup.py install --prefix=$(winepath -w "$pydir")
   $PYTHON setup.py install
@@ -27,8 +27,8 @@ tar -C $distdir -xf $rootdir/[% c('input_files_by_name/obfsproxy') %]
   export PYTHON=python2
   make
   cp -ra fte $PTDIR/
-  mkdir -p $distdir/TorBrowser/Tor
-  cp /var/tmp/dist/gmp/lib/libgmp.so.10 $distdir/TorBrowser/Tor/
+  mkdir -p $distdir/JonDoBrowser/Tor
+  cp /var/tmp/dist/gmp/lib/libgmp.so.10 $distdir/JonDoBrowser/Tor/
 [% END -%]
 cp -a {LICENSE,README.md} $DOCSDIR/
 cp -a thirdparty/re2/LICENSE $DOCSDIR/LICENSE.re2
