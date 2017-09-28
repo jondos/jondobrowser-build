@@ -1,5 +1,7 @@
-JonDoBrowser 7.5a5 -- September 27 2017
+JonDoBrowser 7.5a5.5.1 -- September 28 2017
  * All Platforms
+   * Update JonDoButton to 1.9.8.1jondo1
+   * Update TorButton to 1.9.8.1jondo1
    * Update Firefox to 52.4.0esr
    * Update Tor to 0.3.2.1-alpha
    * Update Torbutton to 1.9.8.1
