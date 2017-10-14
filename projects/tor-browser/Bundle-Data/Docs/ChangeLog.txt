@@ -1,3 +1,8 @@
+JonDoBrowser 7.5a5.5.3 -- October 13 2017
+ * All Platforms
+   * Update JonDoSwitcher to 0.2.2
+     * Feature #1793 - Survey info box
+
 JonDoBrowser 7.5a5.5.2 -- September 30 2017
  * All Platforms
    * Update JonDoButton to 1.9.8.1jondo2
