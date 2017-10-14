@@ -1,6 +1,10 @@
 JonDoBrowser Build
 =================
 
+For detailed information on JonDoBrowser's building frameworks, please refer to the following wiki.
+https://github.com/jondos/jondobrowser-build/wiki
+
+
 Installing build dependencies
 -----------------------------
 
@@ -48,40 +52,39 @@ in the rbm/ directory. You can fetch the rbm git submodule by running
 'make submodule-update'.
 
 
+Please keep in mind that this project depends on latest runc.
+-------------------------------------------------------------
+sudo apt-get install runc currently installs runc 1.0.0-rc2-dev.(As of October 2017)
+You need runc 1.0.0-rc4-dev or later version to build jondobrowser.
+
+How to install latest runc from source.
+---------------------------------------
+Install go1.9.
+Download latest runc from here.
+Follow the instructions to build and install runc.
+
+
+
 Starting a build
 ----------------
 
 To start a build, run one of the following commands, depending on the
 channel you want to build:
 
-  $ make release
+  $ make product
   $ make alpha
-  $ make nightly
-  $ make alpha_nightly
-
-You can find the build result in the directory release/unsigned/$version
-or alpha/unsigned/$version for release or alpha builds. The result of
-nightly or alpha_nightly can be found in the nightly/$date or
-alpha_nightly/$date directory.
-
-The alpha and alpha_nightly make target will build the same thing. The
-only difference is the output directory. The alpha_nightly target can be
-useful if you want to do a test build without polluting your alpha
-directory.
+  $ make beta
+  
+You can find the build result in the directory product/unsigned/$version
+or alpha/unsigned/$version for product or alpha builds.
 
 If you want to build for a specific platform only, append the platform
 name to the makefile target:
 
-  $ make nightly-linux-x86_64
-  $ make nightly-linux-i686
-  $ make nightly-windows-i686
-  $ make nightly-osx-x86_64
-
-When you want to quickly do a build to test a change, you can use the
-testbuild makefile target, and find the build in the testbuild directory.
-The build will be the same as regular alpha builds, except that in order
-to make the build faster, only the en-US locale will be built, and no
-mar file will be created.
+  $ make alpha-linux-x86_64
+  $ make alpha-linux-i686
+  $ make alpha-windows-i686
+  $ make alpha-osx-x86_64
 
 
 Updating git sources
@@ -89,7 +92,7 @@ Updating git sources
 
 You can run "make fetch" to fetch the latest sources from git for all
 components included in JonDoBrowser. You should run this if you want to
-make a nightly build with the latest commits.
+make a build with the latest commits.
 
 
 Number of make processes
@@ -102,78 +105,6 @@ set the RBM_NUM_PROCS environment variable:
   $ export RBM_NUM_PROCS=8
 
 You can also set the buildconf/num_procs option in rbm.local.conf.
-
-
-Automated builds
-----------------
-
-If the build fails, a shell will automatically open in the build
-container to help you debug the problem. You probably want to disable
-this if you want to do automated builds. To disable this, set
-the RBM_NO_DEBUG environment variable to 1:
-
-   export RBM_NO_DEBUG=1
-
-Or set the debug option to 0 in the rbm.local.conf file.
-
-If you want to select the output directory, you can use rbm's --output-dir
-option. You can look at the Makefile to find the rbm command for what
-you want to build, and add the --output-dir option. For example, if you
-want to build JonDoBrowser nightly for linux-x86_64:
-
-   ./rbm/rbm build release --output-dir=/var/builds/nightly/2017-01-23 \
-                        --target nightly --target torbrowser-linux-x86_64
-
-The files will be put in the directory selected by --output-dir in a
-subdirectory named as the version number (or current date for nightly).
-To remove this version subdirectory, add the noversiondir target:
-
-   ./rbm/rbm build release --output-dir=/var/builds/nightly/2017-01-23 \
-                        --target nightly --target torbrowser-linux-x86_64 \
-                        --target noversiondir
-
-
-Automated builds using tbb-testsuite
-------------------------------------
-
-The JonDoBrowser testsuite scripts can also be used to do nightly builds
-and publish the build logs.
-
-If you want to do that, start by cloning the git repository:
-
-   $ git clone https://git.torproject.org/boklm/tor-browser-bundle-testsuite.git
-
-Install some dependencies:
-
-   # apt-get install -y libdata-dump-perl libfile-slurp-perl \
-               libio-captureoutput-perl perlmagick libjson-perl \
-               libwww-perl liblwp-protocol-https-perl libtemplate-perl \
-               libyaml-syck-perl libdatetime-perl \
-               libemail-sender-perl libemail-simple-perl libfile-type-perl \
-               libipc-run-perl libxml-libxml-perl
-
-Copy the config/tor-browser_build-boklm file and edit it:
-
-   $ cd tor-browser-bundle-testsuite
-   $ cp config/tor-browser_build-boklm config/tor-browser_build-$user
-   $ vim config/tor-browser_build-$user
-
-Change the publish_dir and publish_url options. The publish_dir option is
-the local directory where the builds will be stored. The publish_url
-option is the public URL where the builds will be available.
-
-Copy the tools/tor-browser-builds-boklm file and edit it to change the
---config= option:
-
-   $ cp tools/tor-browser-builds-boklm tools/tor-browser-builds-$user
-   $ vim tools/tor-browser-builds-$user
-
-You can now run ./tools/tor-browser-builds-$user to start the build, and
-add it to your crontab.
-
-The html build reports will be available in the reports/ directory, and
-the build files in the tor-browser-builds/ directory (unless you changed
-the publish_dir option).
 
 
 Signing builds
