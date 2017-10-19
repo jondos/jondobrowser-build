@@ -1,3 +1,10 @@
+JonDoBrowser 7.5a5.5.4 -- October 20 2017
+ * All Platforms
+   * Update JonDoSwitcher to 0.2.3
+     * Feature 1793 - Survey notification box
+     * Feature 1798 - Recognize the reason for not connecting to JonDo - clearer error message
+   * Feature 1794 - Update build documentation
+
 JonDoBrowser 7.5a5.5.3 -- October 13 2017
  * All Platforms
    * Update JonDoSwitcher to 0.2.2
