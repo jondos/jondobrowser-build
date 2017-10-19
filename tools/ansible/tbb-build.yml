@@ -1,0 +1,7 @@
+---
+
+- hosts: tbb-build
+  roles:
+      - role: tbb-builder
+      - role: useful-packages
+      - role: tbb-team

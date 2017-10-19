@@ -6,8 +6,10 @@
 ### options you want to modify.
 
 
-### The tmp_dir option defines where temporary files are stored.
-### You should modify this if your /tmp partition is small.
+### The tmp_dir option defines where temporary files are stored. The
+### builds are made from this directory, so using a directory on a fast
+### disk can improve build time. By default we are using a tmp directory
+### under the tor-browser-build directory.
 #tmp_dir: /tmp
 
 ### The debug option defines whether a debugging shell should be opened
@@ -20,6 +22,24 @@
 ### component are stored. If you set it to '-' the logs are output on
 ### stdout and stderr.
 #build_log: '-'
+
+### By default, the logs from previous builds are kept in the log files.
+### If you set build_log_append to 0, then previous logs are cleaned
+### when starting a new build.
+#build_log_append: 0
+
+buildconf:
+  buildconf: 1
+
+  ### The buildconf/num_procs option can be used to select the number of
+  ### build processes to run simultaneously. You can also use the
+  ### RBM_NUM_PROCS environment variable. The default is 4.
+  #num_procs: 8
+
+  ### The buildconf/git_signtag_opt option is useful when you tag a release.
+  ### It is used to set the 'git tag' argument to select the keyid for
+  ### signing the tag.
+  #git_signtag_opt: '-u keyid'
 
 var:
   local_conf: 1

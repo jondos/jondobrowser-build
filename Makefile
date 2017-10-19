@@ -107,8 +107,43 @@ testbuild-windows-i686: submodule-update
 testbuild-osx-x86_64: submodule-update
 	$(rbm) build release --target testbuild --target torbrowser-osx-x86_64
 
-hardened-linux-x86_64: submodule-update
-	$(rbm) build release --target hardened --target torbrowser-linux-x86_64
+signtag-release: submodule-update
+	$(rbm) build release --step signtag --target release
+
+signtag-alpha: submodule-update
+	$(rbm) build release --step signtag --target alpha
+
+incrementals-release: submodule-update
+	$(rbm) build release --step update_responses_config --target release
+	tools/update-responses/download_missing_versions release
+	tools/update-responses/gen_incrementals release
+	$(rbm) build release --step hash_incrementals --target release
+
+incrementals-alpha: submodule-update
+	$(rbm) build release --step update_responses_config --target alpha
+	tools/update-responses/download_missing_versions alpha
+	tools/update-responses/gen_incrementals alpha
+	$(rbm) build release --step hash_incrementals --target alpha
+
+update_responses-release: submodule-update
+	$(rbm) build release --step update_responses_config --target release --target signed
+	$(rbm) build release --step create_update_responses_tar --target release --target signed
+
+update_responses-alpha: submodule-update
+	$(rbm) build release --step update_responses_config --target alpha --target signed
+	$(rbm) build release --step create_update_responses_tar --target alpha --target signed
+
+dmg2mar-release: submodule-update
+	$(rbm) build release --step update_responses_config --target release --target signed
+	$(rbm) build release --step dmg2mar --target release --target signed
+	tools/update-responses/download_missing_versions release
+	CHECK_CODESIGNATURE_EXISTS=1 MAR_SKIP_EXISTING=1 tools/update-responses/gen_incrementals release
+
+dmg2mar-alpha: submodule-update
+	$(rbm) build release --step update_responses_config --target alpha --target signed
+	$(rbm) build release --step dmg2mar --target alpha --target signed
+	tools/update-responses/download_missing_versions alpha
+	CHECK_CODESIGNATURE_EXISTS=1 MAR_SKIP_EXISTING=1 tools/update-responses/gen_incrementals alpha
 
 submodule-update:
 	git submodule update --init

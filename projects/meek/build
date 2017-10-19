@@ -2,13 +2,7 @@
 [% c("var/set_default_env") -%]
 [% pc('go', 'var/setup', { go_tarfile => c('input_files_by_name/go') }) %]
 distdir=/var/tmp/dist/[% project %]
-[% IF c("var/osx") %]
-  PTDIR="$distdir/Contents/MacOS/Tor/PluggableTransports"
-  DOCSDIR="$distdir/Contents/Resources/JonDoBrowser/Docs/meek"
-[% ELSE %]
-  PTDIR="$distdir/JonDoBrowser/Tor/PluggableTransports"
-  DOCSDIR="$distdir/JonDoBrowser/Docs/meek"
-[% END %]
+[% c("var/set_PTDIR_DOCSDIR") -%]
 mkdir -p $PTDIR $DOCSDIR
 
 tar -C /var/tmp/dist -xf [% c('input_files_by_name/goptlib') %]
@@ -33,7 +27,7 @@ cp -a meek-client-torbrowser[% IF c("var/windows") %].exe[% END %] $PTDIR
 [% END %]
 
 cd ..
-cp -a README doc/*.1 $DOCSDIR
+cp -a README doc/*.1[% IF c("var/windows") %].txt[% END %] $DOCSDIR
 
 cd firefox
 [% c('zip', {

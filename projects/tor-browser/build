@@ -44,13 +44,11 @@ mkdir -p $TBDIR/$MEEKPROFILEPATH/extensions
   mkdir -p $TBDIR/JonDo
   mv $rootdir/JonDo/JonDo_Windows/* $TBDIR/JonDo/
   cp $rootdir/JonDo/JAP.jar $TBDIR/JonDo/JAP.jar
-  cp $rootdir/JonDo/JAP-Original.jar $TBDIR/JonDo/JAP-Original.jar
 [% END %]
 
 [% IF c("var/linux") %]
   mkdir -p $TBDIR/JonDo
   cp $rootdir/JonDo/JAP.jar $TBDIR/JonDo/JAP.jar
-  cp $rootdir/JonDo/JAP-Original.jar $TBDIR/JonDo/JAP-Original.jar
   [% IF c("var/linux-x86_64") %]
     mv $rootdir/JonDo/JonDo_Linux/JonDoLauncher64 $TBDIR/JonDo/JonDoLauncher
   [% END %]
@@ -82,6 +80,10 @@ tar -C $TBDIR -xf [% c('input_files_by_name/meek') %]
 mv $TBDIR/meek-http-helper@bamsoftware.com.xpi $TBDIR/$MEEKPROFILEPATH/extensions/
 [% IF c("var/snowflake") %]
   tar -C $TBDIR -xf [% c('input_files_by_name/snowflake') -%]
+[% END -%]
+
+[% IF c("var/fteproxy") -%]
+  tar -C $TBDIR -xf [% c('input_files_by_name/fteproxy') %]
 [% END -%]
 
 tar -C $TBDIR[% IF c("var/osx") %]/Contents/Resources[% END %] -xf [% c('input_files_by_name/fonts') %]
@@ -137,7 +139,17 @@ cp -a Bundle-Data/Docs/* $TBDIR/$DOCSPATH
 tar -C Bundle-Data/[% bundledata_osname %] -c . | tar -C $TBDIR[% IF ! c("var/osx") %]/JonDoBrowser[% END %] -x
 
 cat Bundle-Data/PTConfigs/[% bundledata_osname %]/torrc-defaults-appendix >> $TBDIR/$TORCONFIGPATH/torrc-defaults
-cat Bundle-Data/PTConfigs/bridge_prefs.js >> $TBDIR/$EXTOVERRIDESPATH
+[% IF c("var/linux") -%]
+  cat Bundle-Data/PTConfigs/bridge_prefs.js >> $TBDIR/$EXTOVERRIDESPATH
+[% END -%]
+[% IF c("var/windows") -%]
+  # We don't have snowflake available on Windows yet
+  grep -v 'default_bridge\.snowflake' Bundle-Data/PTConfigs/bridge_prefs.js >> $TBDIR/$EXTOVERRIDESPATH
+[% END -%]
+[% IF c("var/osx") -%]
+  # FTE is temporarily removed due to bug 18495.
+  grep -Ev 'default_bridge\.fte' Bundle-Data/PTConfigs/bridge_prefs.js >> $TBDIR/$EXTOVERRIDESPATH
+[% END -%]
 cat Bundle-Data/PTConfigs/meek-http-helper-user.js >> $TBDIR/$MEEKPROFILEPATH/user.js
 
 [% IF c("var/osx") %]
@@ -291,7 +303,13 @@ cd $distdir
 [% ELSIF c("var/windows") %]
   find "${TB_STAGE_DIR}" -exec [% c("var/touch") %] {} \;
   pushd "${TB_STAGE_DIR}"
+  browser_version_string=[% c("var/torbrowser_version_windows_installer") %]
+  sed -i "s/Version_To_Be_Replaced/$browser_version_string/g" torbrowser.nsi
+  sed -i "s/Lang_To_Be_Replaced/LANG_ENGLISH/g" torbrowser.nsi
+  sed -i "s/Legal_Notice_To_Be_Replaced/JonDoBrowser and the JonDoBrowser logos are trademarks of JonDos GmbH, Germany./g" torbrowser.nsi
   makensis torbrowser.nsi
+  sed -i "s/LANG_ENGLISH/Lang_To_Be_Replaced/g" torbrowser.nsi
+  sed -i "s/JonDoBrowser and the JonDoBrowser logos are trademarks of JonDos GmbH, Germany./Legal_Notice_To_Be_Replaced/g" torbrowser.nsi
   # Working around NSIS braindamage
   mv torbrowser-install.exe torbrowser-install-tmp.exe
   python $rootdir/pe_checksum_fix.py
@@ -301,6 +319,8 @@ cd $distdir
   popd
 [% END %]
 rm -rf $distdir/${PKG_DIR}
+
+cp $rootdir/[% c('input_files_by_name/firefox') %]/mar-tools-*.zip "$OUTDIR"/
 
 # If we did not create a multi-lingual package above, create a package for
 # each locale.
@@ -352,6 +372,10 @@ rm -rf $distdir/${PKG_DIR}
                 tar_args => '-cJf $OUTDIR/jondobrowser-' _ c("var/mar_osname") _ '-' _ c("var/torbrowser_version") _ '_' _ lang _ '.tar.xz',
             }) %]
       [% ELSIF c("var/osx") %]
+        [% # Rename the Japanese bundle to not confuse users
+           IF lang == 'ja-JP-mac';
+             SET lang = 'ja';
+           END; -%]
         [% c('var/ddmg', {
           dmg_src => tbdir,
           dmg_out => '$OUTDIR/JonDoBrowser-' _ c("var/torbrowser_version") _ '-osx64_' _ lang _ '.dmg',
@@ -359,7 +383,17 @@ rm -rf $distdir/${PKG_DIR}
       [% ELSIF c("var/windows") %]
         find "[% tbdir %]" -exec [% c("var/touch") %] {} \;
         pushd "[% tbdir %]"
+        browser_version_string=[% c("var/torbrowser_version_windows_installer") %]
+        sed -i "s/Version_To_Be_Replaced/$browser_version_string/g" torbrowser.nsi
+        [% IF lang == "de" %]
+          sed -i "s/Lang_To_Be_Replaced/LANG_GERMAN/g" torbrowser.nsi
+          sed -i "s/Legal_Notice_To_Be_Replaced/JonDoBrowser und die JonDoBrowser Logos sind Marken der JonDos GmbH, Deutschland./g" torbrowser.nsi
+        [% END %]
         makensis torbrowser.nsi
+        [% IF lang == "de" %]
+          sed -i "s/LANG_GERMAN/Lang_To_Be_Replaced/g" torbrowser.nsi
+          sed -i "s/JonDoBrowser und die JonDoBrowser Logos sind Marken der JonDos GmbH, Deutschland./Legal_Notice_To_Be_Replaced/g" torbrowser.nsi
+        [% END %]
         # Working around NSIS braindamage
         mv torbrowser-install.exe torbrowser-install-tmp.exe
         python $rootdir/pe_checksum_fix.py
