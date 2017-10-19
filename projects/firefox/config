@@ -25,7 +25,10 @@ var:
 targets:
   release:
     var:
-      torbrowser_update_channel: release
+      torbrowser_update_channel: product
+  beta:
+    var:
+      torbrowser_update_channel: beta
 
   nightly:
     git_hash: 'tor-browser-[% c("var/firefox_version") %]-[% c("var/torbrowser_branch") %]-1'
