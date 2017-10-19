@@ -4,7 +4,7 @@
 // to stdout.
 user_pref("browser.dom.window.dump.enabled", true);
 
-// Enable TLS session tickets (disabled by default in Tor Browser). Otherwise
+// Enable TLS session tickets (disabled by default in JonDoBrowser). Otherwise
 // there is a missing TLS extension.
 // https://trac.torproject.org/projects/tor/ticket/13442#comment:1
 user_pref("security.ssl.disable_session_identifiers", false);

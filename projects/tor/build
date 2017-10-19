@@ -12,7 +12,7 @@ mkdir -p /var/tmp/build
 
 [% IF c("var/osx") %]
   TORBINDIR="$distdir/Contents/MacOS/Tor"
-  TORCONFIGDIR="$distdir/Contents/Resources/TorBrowser/Tor"
+  TORCONFIGDIR="$distdir/Contents/Resources/JonDoBrowser/Tor"
   mkdir -p $distdir/bin
   mkdir -p $TORBINDIR
   mkdir -p $TORCONFIGDIR
@@ -37,10 +37,10 @@ openssldir=/var/tmp/dist/openssl
   cp $openssldir/lib/libssl.so.1.0.0 "$distdir/Tor/"
   cp $openssldir/lib/libcrypto.so.1.0.0 "$distdir/Tor/"
   cp $libeventdir/lib/libevent-2.0.so.5 "$distdir/Tor/"
-  # We need to copy the libstdc++.so.6 for Tor Browser on older Linux distros.
+  # We need to copy the libstdc++.so.6 for JonDoBrowser on older Linux distros.
   # Copying it into /Browser, which feels more natural, and amending
-  # LD_LIBRARY_PATH breaks updates from a Tor Browser with the old
-  # LD_LIBRARY_PATH value to the Tor Browser with the newer one. Thus, we copy
+  # LD_LIBRARY_PATH breaks updates from a JonDoBrowser with the old
+  # LD_LIBRARY_PATH value to the JonDoBrowser with the newer one. Thus, we copy
   # the libstdc++ into the directory with the libs tor depends on, too. See bug
   # 13359 for further details.
   cp /var/tmp/dist/gcc/[% c("var/libdir") %]/libstdc++.so.6 "$distdir/Tor/"
@@ -64,7 +64,7 @@ find -type f -print0 | xargs -0 [% c("var/touch") %]
   export LD_PRELOAD=[% c("var/faketime_path") %]
   export FAKETIME="[% USE date; GET date.format(c('timestamp'), format = '%Y-%m-%d %H:%M:%S') %]"
 [% END -%]
-make -j4
+make -j[% c("buildconf/num_procs") %]
 make install
 [% IF c("var/osx") -%]
   unset LD_PRELOAD

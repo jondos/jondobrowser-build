@@ -1,11 +1,152 @@
-JonDo Browser Build
+JonDoBrowser Build
 =================
 
-Master branch of this repository is for building Tor Browser.  
-If you want to build JonDoBrowser, `jondobrowser-7.5a5-branch` is the current alpha branch.  
-You can switch to that branch by the following command after you clone this repository to your local storage.  
-```
-git checkout jondobrowser-7.5a5-branch
-```
-For more information on building jondobrowser, please refer to the current alpha branch's [README](https://github.com/jondos/jondobrowser-build/tree/jondobrowser-7.5a5-branch).  
-For more information on jondobrowser, please refer to the [wiki](https://github.com/jondos/jondobrowser-build/wiki).  
+For detailed information on JonDoBrowser's building frameworks, please refer to the following wiki.
+https://github.com/jondos/jondobrowser-build/wiki
+
+
+Installing build dependencies
+-----------------------------
+
+To build JonDoBrowser, you need a Linux distribution that has support
+for runc (such as Debian jessie, Ubuntu 16.04, Fedora 20, etc ...).
+On Debian jessie, the runc package is available in backports. On Debian
+stretch, the runc package is available in the main repository.
+
+Your user account should have sudo access, which is required to be able
+to extract container file systems, start containers and copy files to and
+from containers.
+
+The sources of most components are downloaded using git, which needs to
+be installed. The sources of webrtc are downloaded using gclient, which
+requires GTK+ 2.0 development files and curl to be installed.
+
+You also need a few perl modules installed:
+- YAML::XS
+- File::Basename
+- Getopt::Long
+- Template
+- IO::Handle
+- IO::CaptureOutput
+- File::Temp
+- File::Slurp
+- File::Path
+- File::Copy::Recursive
+- String::ShellQuote
+- Sort::Versions
+- Digest::SHA
+- Data::UUID
+- Data::Dump
+
+If you are running Debian or Ubuntu, you can install them with:
+
+# apt-get install libyaml-libyaml-perl libtemplate-perl \
+                  libio-handle-util-perl libio-all-perl \
+                  libio-captureoutput-perl libfile-slurp-perl \
+                  libstring-shellquote-perl libsort-versions-perl \
+                  libdigest-sha-perl libdata-uuid-perl libdata-dump-perl \
+                  libfile-copy-recursive-perl git libgtk2.0-dev curl runc
+
+The build system is based on rbm, which is included as a git submodule
+in the rbm/ directory. You can fetch the rbm git submodule by running
+'make submodule-update'.
+
+
+Please keep in mind that this project depends on latest runc.
+-------------------------------------------------------------
+sudo apt-get install runc currently installs runc 1.0.0-rc2-dev.(As of October 2017)
+You need runc 1.0.0-rc4-dev or later version to build jondobrowser.
+
+How to install latest runc from source.
+---------------------------------------
+Install go1.9.
+Download latest runc from here.
+Follow the instructions to build and install runc.
+
+
+
+Starting a build
+----------------
+
+To start a build, run one of the following commands, depending on the
+channel you want to build:
+
+  $ make product
+  $ make alpha
+  $ make beta
+  
+You can find the build result in the directory product/unsigned/$version
+or alpha/unsigned/$version for product or alpha builds.
+
+If you want to build for a specific platform only, append the platform
+name to the makefile target:
+
+  $ make alpha-linux-x86_64
+  $ make alpha-linux-i686
+  $ make alpha-windows-i686
+  $ make alpha-osx-x86_64
+
+
+Updating git sources
+--------------------
+
+You can run "make fetch" to fetch the latest sources from git for all
+components included in JonDoBrowser. You should run this if you want to
+make a build with the latest commits.
+
+
+Number of make processes
+------------------------
+
+By default the builds are run with 4 processes simultaneously (with
+make -j4). If you want to change the number of processes used, you can
+set the RBM_NUM_PROCS environment variable:
+
+  $ export RBM_NUM_PROCS=8
+
+You can also set the buildconf/num_procs option in rbm.local.conf.
+
+
+Signing builds
+--------------
+
+If the environment variable RBM_SIGN_BUILD is set to 1, the
+sha256sums-unsigned-build.txt file will be signed with gpg.
+You can use the RBM_GPG_OPTS environment variable to add some options
+to the gpg command used to sign the file. You can also set the
+var/sign_build and var/sign_build_gpg_opts options in the rbm.local.conf
+file.
+
+
+Cleaning obsolete files and containers images
+---------------------------------------------
+
+You can run 'make clean' to clean old build files and containers that
+are no longer used in current builds. Before doing that, you need to
+configure the branches and build targets you are using in the
+rbm.local.conf file. The cleaning script will check out all the configured
+branches to create a list of used build files, and delete the files
+from the 'out' directory that are not used. If you want to see the list
+of files and containers that would be removed without doing it, you can
+use 'make clean-dry-run'.
+
+
+Common Build Errors
+-------------------
+
+You can look at the README.BUILD_ERRORS file for a list of common build
+errors and their solutions.
+
+
+Hacking on the JonDoBrowser build
+--------------------------------
+
+The file README.HACKING tries to list the main things to know when
+making changes to the JonDoBrowser build.
+
+Description of makefile rules
+-----------------------------
+
+You can find a description of the makefile rules in the README.MAKEFILE
+file.
+

@@ -1,10 +1,11 @@
 # vim: filetype=yaml sw=2
 version: '[% c("var/torbrowser_version") %]'
-output_dir: 'release/unsigned'
+output_dir: release
 
 var:
+  signed_status: unsigned
   today: '[% USE date; date.format(format = "%Y-%m-%d") %]'
-  publish_dir: '[% c("version") %]'
+  publish_dir: '[% c("var/signed_status") %]/[% c("version") %]-[% c("var/torbrowser_build") %]'
 
 targets:
   torbrowser-all:
@@ -39,37 +40,40 @@ targets:
 
   nightly:
     output_dir: 'nightly'
-    version: '[% c("var/today") %]'
     var:
       build_target: nightly
+      publish_dir: '[% c("var/today") %]'
 
   alpha_nightly:
     output_dir: 'alpha_nightly'
-    version: '[% c("var/today") %]'
     var:
       build_target: alpha
+      publish_dir: '[% c("var/today") %]'
 
   alpha:
-    output_dir: 'alpha/unsigned'
+    output_dir: alpha
     var:
       build_target: alpha
+      
+  product:
+    output_dir: 'product/unsigned'
+    var:
+      build_target: release
+
+  beta:
+    output_dir: 'beta/unsigned'
+    var:
+      build_target: release
 
   testbuild:
     output_dir: 'testbuild'
-    version: '.'
     var:
       build_target: torbrowser-testbuild
+      publish_dir: ''
 
-  hardened_nightly:
-    output_dir: 'hardened_nightly'
-    version: '[% c("var/today") %]'
+  signed:
     var:
-      build_target: hardened
-
-  hardened:
-    output_dir: 'hardened'
-    var:
-      build_target: hardened
+      signed_status: signed
 
 input_files:
 
@@ -117,30 +121,29 @@ input_files:
      - torbrowser-windows-i686
      - expert-bundle
 
-build: |
-  #!/bin/sh
-  [% c("var/set_default_env") -%]
-  # reset HOME which was changed by var/set_default_env, for gpg
-  [% IF ENV.HOME %]export HOME="[% ENV.HOME %]"[% END %]
-  destdir="[% dest_dir _ '/' _ c("var/publish_dir") %]"
-  mkdir -p "$destdir"
-  [% IF c("var/torbrowser-windows-i686") -%]
-    mv [% c('input_files_by_name/windows-i686') %]/* "$destdir"/
-    mv [% c('input_files_by_name/windows-expert-bundle') %]/* "$destdir"/
-  [% END -%]
-  [% IF c("var/torbrowser-osx-x86_64") -%]
-    mv [% c('input_files_by_name/osx-x86_64') %]/* "$destdir"/
-  [% END -%]
-  [% IF c("var/torbrowser-linux-i686") -%]
-    mv [% c('input_files_by_name/linux-i686') %]/* "$destdir"/
-  [% END -%]
-  [% IF c("var/torbrowser-linux-x86_64") -%]
-    mv [% c('input_files_by_name/linux-x86_64') %]/* "$destdir"/
-    mv [% c('input_files_by_name/sandbox-linux-x86_64') %] "$destdir"/sandbox-[% pc('sandbox', 'version') %]-linux64.zip
-  [% END -%]
-  cd "$destdir"
-  sha256sum $(ls -1 *.exe *.tar.xz *.dmg *.mar *.zip | grep -v '\.incremental\.mar$' | sort) > sha256sums-unsigned-build.txt
-  [% IF c("var/sign_build") -%]
-    gpg -abs [% c("var/sign_build_gpg_opts") %] sha256sums-unsigned-build.txt
-  [% END -%]
-  cat sha256sums-unsigned-build.txt
+steps:
+  signtag:
+    build_log: '-'
+    debug: 0
+    input_files: []
+    signtag: '[% INCLUDE signtag %]'
+  update_responses_config:
+    build_log: '-'
+    debug: 0
+    input_files: []
+    update_responses_config: '[% INCLUDE update_responses_config %]'
+  create_update_responses_tar:
+    build_log: '-'
+    debug: 0
+    input_files: []
+    create_update_responses_tar: '[% INCLUDE create_update_responses_tar %]'
+  hash_incrementals:
+    build_log: '-'
+    debug: 0
+    input_files: []
+    hash_incrementals: '[% INCLUDE hash_incrementals %]'
+  dmg2mar:
+    build_log: '-'
+    debug: 0
+    input_files: []
+    dmg2mar: '[% INCLUDE dmg2mar %]'

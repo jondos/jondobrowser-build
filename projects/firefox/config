@@ -1,13 +1,14 @@
 # vim: filetype=yaml sw=2
 version: '[% c("abbrev") %]'
 filename: 'firefox-[% c("version") %]-[% c("var/osname") %]-[% c("var/build_id") %]'
-git_hash: 'tor-browser-[% c("var/firefox_version") %]-[% c("var/torbrowser_branch") %]-1-build2'
+git_hash: 'jondobrowser-[% c("var/firefox_version") %]-[% c("var/torbrowser_branch") %]-1-build2'
 tag_gpg_id: 1
-git_url: https://git.torproject.org/tor-browser.git
-gpg_keyring: torbutton.gpg
+git_url: https://github.com/jondos/jondobrowser-torbrowser.git
+gpg_keyring: kaitian.gpg
 
 var:
-  firefox_version: 52.2.0esr
+  firefox_platform_version: 52.4.0
+  firefox_version: '[% c("var/firefox_platform_version") %]esr'
   torbrowser_branch: 7.5
   torbrowser_update_channel: alpha
   copyright_year: '[% exec("git show -s --format=%ci").remove("-.*") %]'
@@ -22,6 +23,10 @@ var:
     use_container: 1
 
 targets:
+  release:
+    var:
+      torbrowser_update_channel: release
+
   nightly:
     git_hash: 'tor-browser-[% c("var/firefox_version") %]-[% c("var/torbrowser_branch") %]-1'
     tag_gpg_id: 0
@@ -73,12 +78,11 @@ input_files:
     enable: '[% c("var/linux") %]'
   - project: selfrando
     name: selfrando
-    # XXX: 64bits only for now :(, see #20683.
-    enable: '[% c("var/linux-x86_64") %]'
+    enable: '[% c("var/linux") %]'
   - filename: fix-info-plist.py
     enable: '[% c("var/osx") %]'
-  - URL: https://people.torproject.org/~mikeperry/mirrors/sources/msvcr100.dll
-    sha256sum: 1221a09484964a6f38af5e34ee292b9afefccb3dc6e55435fd3aaf7c235d9067
+  - URL: https://people.torproject.org/~gk/mirrors/sources/msvcr100.dll
+    sha256sum: 8793353461826fbd48f25ea8b835be204b758ce7510db2af631b28850355bd18
     enable: '[% c("var/windows") %]'
   - project: gcc
     name: gcc

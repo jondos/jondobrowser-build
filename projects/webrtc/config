@@ -20,6 +20,8 @@ input_files:
     enable: '[% c("var/linux") %]'
   - filename: webrtc-linux.patch
     enable: '[% c("var/linux") %]'
+  - filename: webrtc-mac.patch
+    enable: '[% c("var/osx") %]'
 
 targets:
   linux:
@@ -39,15 +41,20 @@ targets:
   linux-i686:
     var:
       webrtc:
-        arch: ia32
-        lib_arch: 386
         lib_path: lib/libwebrtc-linux-386-magic.a
   linux-x86_64:
     var:
       webrtc:
-        arch: x64
-        lib_arch: amd64
         lib_path: lib/libwebrtc-linux-amd64-magic.a
+  osx-x86_64:
+    var:
+      webrtc:
+        lib_path: lib/libwebrtc-darwin-amd64-magic.a
+      arch_deps:
+        - libglib2.0-dev
+        - libgtk2.0-dev
+        - pkg-config
+        - python-biplist
 
 steps:
   fetch_sources:

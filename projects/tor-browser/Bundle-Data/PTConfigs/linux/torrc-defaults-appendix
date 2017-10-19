@@ -1,11 +1,11 @@
 ## fteproxy configuration
-ClientTransportPlugin fte exec ./TorBrowser/Tor/PluggableTransports/fteproxy.bin --managed
+ClientTransportPlugin fte exec ./JonDoBrowser/Tor/PluggableTransports/fteproxy.bin --managed
 
 ## obfs4proxy configuration
-ClientTransportPlugin obfs2,obfs3,obfs4,scramblesuit exec ./TorBrowser/Tor/PluggableTransports/obfs4proxy
+ClientTransportPlugin obfs2,obfs3,obfs4,scramblesuit exec ./JonDoBrowser/Tor/PluggableTransports/obfs4proxy
 
 ## meek configuration
-ClientTransportPlugin meek exec ./TorBrowser/Tor/PluggableTransports/meek-client-torbrowser -- ./TorBrowser/Tor/PluggableTransports/meek-client
+ClientTransportPlugin meek exec ./JonDoBrowser/Tor/PluggableTransports/meek-client-torbrowser -- ./JonDoBrowser/Tor/PluggableTransports/meek-client
 
 ## snowflake configuration
-ClientTransportPlugin snowflake exec ./TorBrowser/Tor/PluggableTransports/snowflake-client -url https://snowflake-reg.appspot.com/ -front www.google.com -ice stun:stun.l.google.com:19302
+ClientTransportPlugin snowflake exec ./JonDoBrowser/Tor/PluggableTransports/snowflake-client -url https://snowflake-reg.appspot.com/ -front www.google.com -ice stun:stun.l.google.com:19302

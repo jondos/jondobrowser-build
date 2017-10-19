@@ -1,4 +1,273 @@
-Tor Browser 7.5a1 -- June 14 2017
+JonDoBrowser 7.5a5.5.3 -- October 13 2017
+ * All Platforms
+   * Update JonDoSwitcher to 0.2.2
+     * Feature #1793 - Survey info box
+
+JonDoBrowser 7.5a5.5.2 -- September 30 2017
+ * All Platforms
+   * Update JonDoButton to 1.9.8.1jondo2
+   * Update JonDoSwitcher to 0.2.1
+     * Bug 1670 - HTTP session stateless
+     * Multiple instances of jondoswitcher.js replaced with singletons
+
+JonDoBrowser 7.5.5.51 -- September 29 2017
+ * All Platforms
+   * Update JonDoButton to 1.9.8.1jondo1
+   * Update TorButton to 1.9.8.1jondo1
+   * Update Firefox to 52.4.0esr
+   * Update Tor to 0.3.2.1-alpha
+   * Update Torbutton to 1.9.8.1
+     * Bug 20375: Warn users after entering fullscreen mode
+     * Bug 22989: Fix dimensions of new windows on macOS
+     * Bug 23526: Add 2017 Donation banner text
+     * Bug 23483: Donation banner on about:tor for 2017 (testing mode)
+     * Translations update
+   * Update Tor Launcher to 0.2.13
+     * Bug 23240: Retrieve current bootstrap progress before showing progress bar
+     * Bug 22232: Add README on use of bootstrap status messages
+     * Translations update
+   * Update HTTPS-Everywhere to 2017.9.12
+   * Update NoScript to 5.0.10
+   * Update sandboxed-tor-browser to 0.0.13
+   * Bug 23393: Don't crash all tabs when closing one tab
+   * Bug 23166: Add new obfs4 bridge to the built-in ones
+   * Bug 23258: Fix broken HTTPS-Everywhere on higher security levels
+   * Bug 21270: NoScript settings break WebExtensions add-ons
+   * Bug 23104: CSS line-height reveals the platform JonDoBrowser is running on
+ * Windows
+   * Bug 16010: Enable content sandboxing on Windows
+   * Bug 23582: Enable the Windows DLL blocklist for mingw-w64 builds
+   * Bug 23396: Update the msvcr100.dll we ship
+   * Bug 23230: Fix build error on Windows 64
+ * OS X
+   * Bug 23404: Add missing Noto Sans Buginese font to the macOS whitelist
+ * Linux
+   * Bug 10089: Set middlemouse.contentLoadURL to false by default
+   * Bug 22692: Enable content sandboxing on Linux
+   * Bug 18101: Suppress upload file dialog proxy bypass (linux part)
+ * Build System
+   * All Platforms
+     * Switch from gitian/tor-browser-bundle to rbm/tor-browser-build
+
+JonDoBrowser 7.5a5.5.1 -- September 28 2017
+ * All Platforms
+   * Update JonDoButton to 1.9.8.1jondo1
+   * Update TorButton to 1.9.8.1jondo1
+   * Update Firefox to 52.4.0esr
+   * Update Tor to 0.3.2.1-alpha
+   * Update Torbutton to 1.9.8.1
+     * Bug 20375: Warn users after entering fullscreen mode
+     * Bug 22989: Fix dimensions of new windows on macOS
+     * Bug 23526: Add 2017 Donation banner text
+     * Bug 23483: Donation banner on about:tor for 2017 (testing mode)
+     * Translations update
+   * Update Tor Launcher to 0.2.13
+     * Bug 23240: Retrieve current bootstrap progress before showing progress bar
+     * Bug 22232: Add README on use of bootstrap status messages
+     * Translations update
+   * Update HTTPS-Everywhere to 2017.9.12
+   * Update NoScript to 5.0.10
+   * Update sandboxed-tor-browser to 0.0.13
+   * Bug 23393: Don't crash all tabs when closing one tab
+   * Bug 23166: Add new obfs4 bridge to the built-in ones
+   * Bug 23258: Fix broken HTTPS-Everywhere on higher security levels
+   * Bug 21270: NoScript settings break WebExtensions add-ons
+   * Bug 23104: CSS line-height reveals the platform JonDoBrowser is running on
+ * Windows
+   * Bug 16010: Enable content sandboxing on Windows
+   * Bug 23582: Enable the Windows DLL blocklist for mingw-w64 builds
+   * Bug 23396: Update the msvcr100.dll we ship
+   * Bug 23230: Fix build error on Windows 64
+ * OS X
+   * Bug 23404: Add missing Noto Sans Buginese font to the macOS whitelist
+ * Linux
+   * Bug 10089: Set middlemouse.contentLoadURL to false by default
+   * Bug 22692: Enable content sandboxing on Linux
+   * Bug 18101: Suppress upload file dialog proxy bypass (linux part)
+ * Build System
+   * All Platforms
+     * Switch from gitian/tor-browser-bundle to rbm/tor-browser-build
+
+JonDoBrowser 7.0.5 -- September 4 2017
+ * All Platforms
+   * Update Torbutton to 1.9.7.6
+     * Bug 22989: Fix dimensions of new windows on macOS
+     * Translations update
+   * Update HTTPS-Everywhere to 2017.8.31
+   * Update NoScript to 5.0.9
+   * Bug 23166: Add new obfs4 bridge to the built-in ones
+   * Bug 23258: Fix broken HTTPS-Everywhere on higher security levels
+   * Bug 21270: NoScript settings break WebExtensions add-ons
+
+JonDoBrowser 7.5.1.5 -- August 30 2017
+ * All Platforms
+  * Update JonDoSwitcher to 0.1.6
+    * Bug 1569 : Implement "New Identity"
+      * Stable change of mix cascade upon first launch
+  * Update JonDoButton to 1.9.7.4jondo4
+    * Feature 1716 : about:noproxy page update
+    * Bug 1569 : Implement "New Identity"
+    * Localized texts update
+  * Update JonDoButton to 1.9.7.4jondo4
+    * Feature 1718 :  In Tor mode, welcome page, german version: Change text "Willkommen im JonDo Browser" to "Willkommen im JonDoBrowser"
+    * Localized texts update
+  * Bug 1569 : Implement "New Identity"
+    * Stable change of mix cascade implemented
+
+JonDoBrowser 7.5a4 -- August 9 2017
+ * All Platforms
+   * Update Firefox to 52.3.0esr
+   * Update Tor to 0.3.1.5-alpha
+   * Update OpenSSL to 1.0.2l
+   * Update Torbutton to 1.9.8
+     * Bug 22610: Avoid crashes when canceling external helper app related downloads
+     * Bug 22472: Fix FTP downloads when external helper app dialog is shown
+     * Bug 22471: Downloading pdf files via the PDF viewer download button is broken
+     * Bug 22618: Downloading pdf file via file:/// is stalling
+     * Bug 22542: Resize slider window to work without scrollbars
+     * Bug 21999: Fix display of language prompt in non-en-US locales
+     * Bug 18913: Don't let about:tor have chrome privileges
+     * Bug 22535: Search on about:tor discards search query
+     * Bug 21948: Going back to about:tor page gives "Address isn't valid" error
+     * Code clean-up
+     * Translations update
+   * Update Tor Launcher to 0.2.12.3
+     * Bug 22592: Default bridge settings are not removed
+     * Translations update
+   * Update HTTPS-Everywhere to 5.2.21
+   * Update NoScript to 5.0.8.1
+     * Bug 22362: Remove workaround for XSS related browser freezing
+     * Bug 22067: NoScript Click-to-Play bypass with embedded videos and audio
+   * Update sandboxed-tor-browser to 0.0.12
+   * Bug 22610: Avoid crashes when canceling external helper app related downloads
+   * Bug 22472: Fix FTP downloads when external helper app dialog is shown
+   * Bug 22471: Downloading pdf files via the PDF viewer download button is broken
+   * Bug 22618: Downloading pdf file via file:/// is stalling
+   * Bug 21321: Exempt .onions from HTTP related security warnings
+   * Bug 21830: Copying large text from web console leaks to /tmp
+   * Bug 22073: Disable GetAddons option on addons page
+   * Bug 22884: Fix broken about:tor page on higher security levels
+   * Bug 22829: Remove default obfs4 bridge riemann.
+ * Windows
+   * Bug 21617: Fix single RWX page on Windows (included in 52.3.0esr)
+ * OS X
+   * Bug 22831: Enable Snowflake for mac
+ * Linux
+   * Bug 22832: Don't include monthly timestamp in libwebrtc build output
+   * Bug 20848: Deploy Selfrando in 32bit Linux builds
+ * Build system
+   * Windows
+     * Bug 22563: Update mingw-w64 to fix W^X violations
+     * Bug 20929: Bump GCC version to 5.4.0
+   * Linux
+     * Bug 20929: Bump GCC version to 5.4.0
+
+JonDoBrowser 7.0.4 -- August 8 2017
+ * All Platforms
+   * Update Firefox to 52.3.0esr
+   * Update Tor to 0.3.0.10
+   * Update Torbutton to 1.9.7.5
+     * Bug 21999: Fix display of language prompt in non-en-US locales
+     * Bug 18913: Don't let about:tor have chrome privileges
+     * Bug 22535: Search on about:tor discards search query
+     * Bug 21948: Going back to about:tor page gives "Address isn't valid" error
+     * Code clean-up
+     * Translations update
+   * Update Tor Launcher to 0.2.12.3
+     * Bug 22592: Default bridge settings are not removed
+     * Translations update
+   * Update HTTPS-Everywhere to 5.2.21
+   * Update NoScript to 5.0.8.1
+     * Bug 22362: Remove workaround for XSS related browser freezing
+     * Bug 22067: NoScript Click-to-Play bypass with embedded videos and audio
+   * Bug 21321: Exempt .onions from HTTP related security warnings
+   * Bug 22073: Disable GetAddons option on addons page
+   * Bug 22884: Fix broken about:tor page on higher security levels
+ * Windows
+   * Bug 22829: Remove default obfs4 bridge riemann.
+   * Bug 21617: Fix single RWX page on Windows (included in 52.3.0esr)
+ * OS X
+   * Bug 22829: Remove default obfs4 bridge riemann.
+
+JonDoBrowser 7.5a3 -- July 28 2017
+ * Linux
+   * Bug 23044: Don't allow GIO supported protocols by default
+
+JonDoBrowser 7.0.3 -- July 27 2017
+ * Linux
+   * Bug 23044: Don't allow GIO supported protocols by default
+   * Bug 22829: Remove default obfs4 bridge riemann.
+
+JonDoBrowser 7.5a2 -- July 6 2017
+ * All Platforms
+   * Update Tor to 0.3.1.4-alpha
+   * Update HTTPS-Everywhere to 5.2.19
+ * Linux
+   * Update sandboxed-tor-browser to 0.0.9
+
+JonDoBrowser 7.0.2 -- July 3 2017
+ * All Platforms
+   * Update Tor to 0.3.0.9, fixing bug #22753
+   * Update HTTPS-Everywhere to 5.2.19
+
+JonDoBrowser 7.5a1.7 -- September 22 2017
+ * All Platforms
+  * Update JAP to 00.20.002
+  * Update JonDoSwitcher to 0.1.7
+  * Feature 1729 - Bundle Windows executable should contain product name and product version
+  * Feature 1701 - Change JonDo browser path search
+
+JonDoBrowser 7.5a1.6 -- September 13 2017
+ * All Platforms
+  * Feature 1720 : mar file signatures (update verification)
+
+JonDoBrowser 7.5a1.5 -- August 26 2017
+ * All Platforms
+  * Update JonDoSwitcher to 0.1.6
+    * Bug 1569 : Implement "New Identity"
+      * Stable change of mix cascade upon first launch
+  * Update JonDoButton to 1.9.7.4jondo4
+    * Feature 1716 : about:noproxy page update
+    * Localized texts update
+  * Update JonDoButton to 1.9.7.4jondo4
+    * Feature 1718 :  In Tor mode, welcome page, german version: Change text "Willkommen im JonDo Browser" to "Willkommen im JonDoBrowser"
+    * Localized texts update
+
+JonDoBrowser 7.5a1.4 -- August 21 2017
+ * All Platforms
+  * Bug 1569 : Implement "New Identity"
+    * Stable change of mix cascade implemented
+
+JonDoBrowser 7.5a1.3 -- August 13 2017
+ * All Platforms
+   * Update JonDoButton to 1.9.7.4jondo3
+     * Bug 1569 : Implement "New Identity"
+   * Update JonDoSwitcher to 0.1.5
+     * Bug 1569 : Implement "New Identity"
+
+JonDoBrowser 7.5a1.2 -- August 3 2017
+ * All Platforms
+   * Update JonDoButton to 1.9.7.4jondo2
+     * Bug 1664 : Enabled Version Check : Check version from JonDoBrowser update server
+   * Update JonDoSwitcher to 0.1.4
+     * Bug 1635 : In "direct connection", make the proxy configurable by the user
+   * Update TorButton to 1.9.7.4jondo2
+     * Bug 1664 : Enabled Version Check : Check version from JonDoBrowser update server
+
+JonDoBrowser 7.5a1.1 -- July 31 2017
+ * All Platforms
+   * Add JonDo 00.20.001 (IP Changer)
+   * Add JonDoButton 1.9.7.4a
+   * Add JonDo-Launcher 0.2.10.4
+   * Add JonDo-Switcher 0.1.2
+   * Bug 1547 : Ability to switch the proxy to "None" and to "Tor"
+   * Bug 1633 : Alter changelog
+   * Bug 1636 : Internationalize proxy switching texts
+   * Bug 1637 : Ubtuntu 32 bit: JonDo does not start with the browser
+   * Bug 1647 : OSX 10.12.5: JonDo does not start automatically, and update has to be applied twice
+   * Bug 1654 : tor, jondo extensions update issue
+
+JonDoBrowser 7.5a1 -- June 14 2017
  * All Platforms
    * Update Firefox to 52.2.0esr
    * Update Tor to 0.3.1.3-alpha
@@ -43,7 +312,7 @@ Tor Browser 7.5a1 -- June 14 2017
    * Bug 22419: Prevent access to file://
    * Bug 21617: Fix single RWX page on Windows
  * OS X
-   * Bug 22558: Don't update OS X 10.7.x and 10.8.x users to Tor Browser 7.0
+   * Bug 22558: Don't update OS X 10.7.x and 10.8.x users to JonDoBrowser 7.0
 
  * Linux
    * Bug 16285: Remove ClearKey related library stripping
@@ -51,7 +320,152 @@ Tor Browser 7.5a1 -- June 14 2017
  * Android
    * Bug 19078: Disable RtspMediaResource stuff in Orfox
 
-Tor Browser 7.0a4 -- May 15 2017
+JonDoBrowser 7.0.1 -- June 13 2017
+ * All Platforms
+   * Update Firefox to 52.2.0esr
+   * Update Tor to 0.3.0.8
+   * Update Torbutton to 1.9.7.4
+     * Bug 22542: Security Settings window too small on macOS 10.12
+   * Update HTTPS-Everywhere to 5.2.18
+   * Bug 22362: NoScript's XSS filter freezes the browser
+ * OS X
+   * Bug 22558: Don't update OS X 10.7.x and 10.8.x users to JonDoBrowser 7.0
+
+JonDoBrowser 7.0 -- June 7 2017
+ * All Platforms
+   * Update Firefox to 52.1.2esr
+   * Update Tor to 0.3.0.7
+   * Update Torbutton to 1.9.7.3
+     * Bug 22104: Adjust our content policy whitelist for ff52-esr
+     * Bug 22457: Allow resources loaded by view-source://
+     * Bug 21627: Ignore HTTP 304 responses when checking redirects
+     * Bug 22459: Adapt our use of the nsIContentPolicy to e10s mode
+     * Bug 21865: Update our JIT preferences in the security slider
+     * Bug 21747: Make 'New Tor Circuit for this Site' work in ESR52
+     * Bug 21745: Fix handling of catch-all circuit
+     * Bug 21547: Fix circuit display under e10s
+     * Bug 21268: e10s compatibility for New Identity
+     * Bug 21267: Remove window resize implementation for now
+     * Bug 21201: Make Torbutton multiprocess compatible
+     * Translations update
+   * Update Tor Launcher to 0.2.12.2
+     * Bug 22283: Linux 7.0a4 broken after update due to unix: lines in torrc
+     * Bug 20761: Don't ignore additional SocksPorts
+     * Bug 21920: Don't show locale selection dialog
+     * Bug 21546: Mark Tor Launcher as multiprocess compatible
+     * Bug 21264: Add a README file
+     * Translations update
+   * Update HTTPS-Everywhere to 5.2.17
+   * Update NoScript to 5.0.5
+   * Update Go to 1.8.3 (bug 22398)
+   * Bug 21962: Fix crash on about:addons page
+   * Bug 21766: Fix crash when the external application helper dialog is invoked
+   * Bug 21886: Download is stalled in non-e10s mode
+   * Bug 21778: Canvas prompt is not shown in JonDoBrowser based on ESR52
+   * Bug 21569: Add first-party domain to Permissions key
+   * Bug 22165: Don't allow collection of local IP addresses
+   * Bug 13017: Work around audio fingerprinting by disabling the Web Audio API
+   * Bug 10286: Disable Touch API and add fingerprinting resistance as fallback
+   * Bug 13612: Disable Social API
+   * Bug 10283: Disable SpeechSynthesis API
+   * Bug 22333: Disable WebGL2 API for now
+   * Bug 21861: Disable additional mDNS code to avoid proxy bypasses
+   * Bug 21684: Don't expose navigator.AddonManager to content
+   * Bug 21431: Clean-up system extensions shipped in Firefox 52
+   * Bug 22320: Use preference name 'referer.hideOnionSource' everywhere
+   * Bug 16285: Don't ship ClearKey EME system and update EME preferences
+   * Bug 21675: Spoof window.navigator.hardwareConcurrency
+   * Bug 21792: Suppress MediaError.message
+   * Bug 16337: Round times exposed by Animation API to nearest 100ms
+   * Bug 21972: about:support is partially broken
+   * Bug 21726: Keep Graphite support disabled
+   * Bug 21323: Enable Mixed Content Blocking
+   * Bug 21685: Disable remote new tab pages
+   * Bug 21790: Disable captive portal detection
+   * Bug 21686: Disable Microsoft Family Safety support
+   * Bug 22073: Make sure Mozilla's experiments are disabled
+   * Bug 21683: Disable newly added Safebrowsing capabilities
+   * Bug 22071: Disable Kinto-based blocklist update mechanism
+   * Bug 22415: Fix format error in our pipeline patch
+   * Bug 22072: Hide TLS error reporting checkbox
+   * Bug 20761: Don't ignore additional SocksPorts
+   * Bug 21862: Rip out potentially unsafe Rust code
+   * Bug 16485: Improve about:cache page
+   * Bug 22462: Backport of patch for bug 1329521 to fix assertion failure
+   * Bug 21340: Identify and backport new patches from Firefox
+   * Bug 22153: Fix broken feeds on higher security levels
+   * Bug 22025: Fix broken certificate error pages on higher security levels
+   * Bug 21887: Fix broken error pages on higher security levels
+   * Bug 22458: Fix broken `about:cache` page on higher security levels
+   * Bug 21876: Enable e10s by default on all supported platforms
+   * Bug 21876: Always use esr policies for e10s
+   * Bug 20905: Fix resizing issues after moving to a direct Firefox patch
+   * Bug 21875: Modal dialogs are maximized in ESR52 nightly builds
+   * Bug 21885: SVG is not disabled in JonDoBrowser based on ESR52
+   * Bug 17334: Hide Referer when leaving a .onion domain (improved patch)
+   * Bug 18531: Uncaught exception when opening ip-check.info
+   * Bug 18574: Uncaught exception when clicking items in Library
+   * Bug 22327: Isolate Page Info media previews to first party domain
+   * Bug 22452: Isolate tab list menuitem favicons to first party domain
+   * Bug 15555: View-source requests are not isolated by first party domain
+   * Bug 3246: Double-key cookies
+   * Bug 8842: Fix XML parsing error
+   * Bug 5293: Neuter fingerprinting with Battery API
+   * Bug 16886: 16886: "Add-on compatibility check dialog" contains Firefox logo
+   * Bug 19645: TBB zooms text when resizing browser window
+   * Bug 19192: Untrust Blue Coat CA
+   * Bug 19955: Avoid confusing warning that favicon load request got cancelled
+   * Bug 20005: Backport fixes for memory leaks investigation
+   * Bug 20755: ltn.com.tw is broken in JonDoBrowser
+   * Bug 21896: Commenting on website is broken due to CAPTCHA not being displayed
+   * Bug 20680: Rebase JonDoBrowser patches to 52 ESR
+   * Bug 22429: Add IPv6 address for Lisbeth:443 obfs4 bridge
+   * Bug 22468: Add default obfs4 bridges frosty and dragon
+ * Windows
+   * Bug 22419: Prevent access to file://
+   * Bug 12426: Make use of HeapEnableTerminationOnCorruption
+   * Bug 19316: Make sure our Windows updates can deal with the SSE2 requirement
+   * Bug 21868: Fix build bustage with FIREFOX_52_0_2esr_RELEASE for Windows
+ * OS X
+   * Bug 21940: Don't allow privilege escalation during update
+   * Bug 22044: Fix broken default search engine on macOS
+   * Bug 21879: Use our default bookmarks on OSX
+   * Bug 21779: Non-admin users can't access JonDoBrowser on macOS
+   * Bug 21723: Fix inconsistent generation of MOZ_MACBUNDLE_ID
+   * Bug 21724: Make Firefox and JonDoBrowser distinct macOS apps
+   * Bug 21931: Backport OSX SetupMacCommandLine updater fixes
+   * Bug 15910: Don't download GMPs via the local fallback
+ * Linux
+   * Bug 16285: Remove ClearKey related library stripping
+   * Bug 22041: Fix update error during update to 7.0a3
+   * Bug 22238: Fix use of hardened wrapper for Firefox build
+   * Bug 21907: Fix runtime error on CentOS 6
+   * Bug 15910: Don't download GMPs via the local fallback
+ * Android
+   * Bug 19078: Disable RtspMediaResource stuff in Orfox
+ * Build system
+   * Windows
+     * Bug 21837: Fix reproducibility of accessibility code for Windows
+     * Bug 21240: Create patches to fix mingw-w64 compilation of Firefox ESR 52
+     * Bug 21904: Bump mingw-w64 commit to help with sandbox compilation
+     * Bug 18831: Use own Yasm for Firefox cross-compilation
+   * OS X
+     * Bug 21328: Updating to clang 3.8.0
+     * Bug 21754: Remove old GCC toolchain and macOS SDK
+     * Bug 19783: Remove unused macOS helper scripts
+     * Bug 10369: Don't use old GCC toolchain anymore for utils
+     * Bug 21753: Replace our old GCC toolchain in PT descriptor
+     * Bug 18530: ESR52 based JonDoBrowser only runs on macOS 10.9+
+     * Bug 22328: Remove clang PIE wrappers
+   * Linux
+     * Bug 21930: NSS libraries are missing from mar-tools archive
+     * Bug 21239: Adapt Linux Firefox descriptor to ESR52 (use GTK2)
+     * Bug 21960: Linux bundles based on ESR 52 are not reproducible anymore
+     * Bug 21629: Fix broken ASan builds when switching to ESR 52
+     * Bug 22444: Use hardening-wrapper when building GCC
+     * Bug 22361: Fix hardening of libraries built in linux/gitian-utils.yml
+
+JonDoBrowser 7.0a4 -- May 15 2017
  * All Platforms
    * Update Firefox to 52.1.1esr
    * Update Tor to 0.3.0.6
@@ -61,7 +475,7 @@ Tor Browser 7.0a4 -- May 15 2017
    * Update HTTPS-Everywhere to 5.2.16
    * Update NoScript to 5.0.4
    * Bug 21962: Fix crash on about:addons page
-   * Bug 21778: Canvas prompt is not shown in Tor Browser based on ESR52
+   * Bug 21778: Canvas prompt is not shown in JonDoBrowser based on ESR52
    * Bug 21569: Add first-party domain to Permissions key
    * Bug 22165: Don't allow collection of local IP addresses
    * Bug 13017: Work around audio fingerprinting by disabling the Web Audio API
@@ -88,13 +502,13 @@ Tor Browser 7.0a4 -- May 15 2017
    * Bug 21940: Don't allow privilege escalation during update
    * Bug 22044: Fix broken default search engine on macOS
    * Bug 21879: Use our default bookmarks on OSX
-   * Bug 21779: Non-admin users can't access Tor Browser on macOS
+   * Bug 21779: Non-admin users can't access JonDoBrowser on macOS
  * Linux
    * Bug 22041: Fix update error during update to 7.0a3
    * Bug 22238: Fix use of hardened wrapper for Firefox build
    * Bug 20683: Selfrando support for 64-bit Linux systems
 
-Tor Browser 7.0a3 -- April 20 2017
+JonDoBrowser 7.0a3 -- April 20 2017
  * All Platforms
    * Update Firefox to 52.1.0esr
    * Tor to 0.3.0.5-rc
@@ -121,7 +535,7 @@ Tor Browser 7.0a3 -- April 20 2017
      * Bug 21929: Remove hardened/ASAN related code
      * Bug 21927: Remove the ability to install/update the hardened bundle
      * Bug 21244: Update the MAR signing key for 7.0
-     * Bug 21536: Remove asn's scramblesuit bridge from Tor Browser
+     * Bug 21536: Remove asn's scramblesuit bridge from JonDoBrowser
      * Add back the old release MAR signing key
      * Add `prlimit64` to the firefox system call whitelist
      * Fix compilation with Go 1.8
@@ -133,7 +547,7 @@ Tor Browser 7.0a3 -- April 20 2017
    * Bug 21876: Always use esr policies for e10s
    * Bug 20905: Fix resizing issues after moving to a direct Firefox patch
    * Bug 21875: Modal dialogs are maximized in ESR52 nightly builds
-   * Bug 21885: SVG is not disabled in Tor Browser based on ESR52
+   * Bug 21885: SVG is not disabled in JonDoBrowser based on ESR52
    * Bug 17334: Hide Referer when leaving a .onion domain (improved patch)
    * Bug 3246: Double-key cookies
    * Bug 8842: Fix XML parsing error
@@ -141,19 +555,19 @@ Tor Browser 7.0a3 -- April 20 2017
    * Bug 19192: Untrust Blue Coat CA
    * Bug 19955: Avoid confusing warning that favicon load request got cancelled
    * Bug 20005: Backport fixes for memory leaks investigation
-   * Bug 20755: ltn.com.tw is broken in Tor Browser
+   * Bug 20755: ltn.com.tw is broken in JonDoBrowser
    * Bug 21896: Commenting on website is broken due to CAPTCHA not being displayed
-   * Bug 20680: Rebase Tor Browser patches to 52 ESR
+   * Bug 20680: Rebase JonDoBrowser patches to 52 ESR
    * Bug 21917: Add new obfs4 bridges
    * Bug 21918: Move meek-amazon to d2cly7j4zqgua7.cloudfront.net backend
  * Windows
-   * Bug 21795: Fix Tor Browser crashing on github.com
+   * Bug 21795: Fix JonDoBrowser crashing on github.com
    * Bug 12426: Make use of HeapEnableTerminationOnCorruption
    * Bug 19316: Make sure our Windows updates can deal with the SSE2 requirement
    * Bug 21868: Fix build bustage with FIREFOX_52_0_2esr_RELEASE for Windows
  * OS X
    * Bug 21723: Fix inconsistent generation of MOZ_MACBUNDLE_ID
-   * Bug 21724: Make Firefox and Tor Browser distinct macOS apps
+   * Bug 21724: Make Firefox and JonDoBrowser distinct macOS apps
    * Bug 21931: Backport OSX SetupMacCommandLine updater fixes
    * Bug 15910: Don't download GMPs via the local fallback
  * Linux
@@ -173,14 +587,14 @@ Tor Browser 7.0a3 -- April 20 2017
      * Bug 19783: Remove unused macOS helper scripts
      * Bug 10369: Don't use old GCC toolchain anymore for utils
      * Bug 21753: Replace our old GCC toolchain in PT descriptor
-     * Bug 18530: ESR52 based Tor Browser only runs on macOS 10.9+
+     * Bug 18530: ESR52 based JonDoBrowser only runs on macOS 10.9+
    * Linux
      * Bug 21930: NSS libraries are missing from mar-tools archive
      * Bug 21239: Adapt Linux Firefox descriptor to ESR52 (use GTK2)
      * Bug 21960: Linux bundles based on ESR 52 are not reproducible anymore
      * Bug 21629: Fix broken ASan builds when switching to ESR 52
 
-Tor Browser 6.5.2 -- April 19 2017
+JonDoBrowser 6.5.2 -- April 19 2017
  * All Platforms
    * Update Firefox to 45.9.0esr
    * Update HTTPS-Everywhere to 5.2.14
@@ -190,9 +604,9 @@ Tor Browser 6.5.2 -- April 19 2017
    * Bug 21917: Add new obfs4 bridges
    * Bug 21918: Move meek-amazon to d2cly7j4zqgua7.cloudfront.net backend
  * Windows
-   * Bug 21795: Fix Tor Browser crashing on github.com
+   * Bug 21795: Fix JonDoBrowser crashing on github.com
 
-Tor Browser 7.0a2-hardened -- March 7 2017
+JonDoBrowser 7.0a2-hardened -- March 7 2017
  * All Platforms
    * Update Firefox to 45.8.0esr
    * Tor to 0.3.0.4-rc
@@ -212,7 +626,7 @@ Tor Browser 7.0a2-hardened -- March 7 2017
    * Bug 17034: Use our built binutils and GCC for building tor
    * Code clean-up
 
-Tor Browser 7.0a2 -- March 7 2017
+JonDoBrowser 7.0a2 -- March 7 2017
  * All Platforms
    * Update Firefox to 45.8.0esr
    * Tor to 0.3.0.4-rc
@@ -237,7 +651,7 @@ Tor Browser 7.0a2 -- March 7 2017
      * Bug 17034: Use our built binutils and GCC for building tor
      * Clean-up
 
-Tor Browser 6.5.1 -- March 7 2017
+JonDoBrowser 6.5.1 -- March 7 2017
  * All Platforms
    * Update Firefox to 45.8.0esr
    * Tor to 0.2.9.10
@@ -254,14 +668,14 @@ Tor Browser 6.5.1 -- March 7 2017
  * Linux
    * Bug 21326: Update the "Using a system-installed Tor" section in start script
 
-Tor Browser 7.0a1-hardened -- January 25 2017
+JonDoBrowser 7.0a1-hardened -- January 25 2017
  * All Platforms
    * Update Firefox to 45.7.0esr
    * Tor to 0.3.0.2-alpha
    * Update Torbutton to 1.9.7
      * Bug 19898: Use DuckDuckGo on about:tor
      * Bug 21091: Hide the update check menu entry when running under the sandbox
-     * Bug 21243: Add links to es, fr, and pt Tor Browser manual
+     * Bug 21243: Add links to es, fr, and pt JonDoBrowser manual
      * Bug 21194: Show snowflake in the circuit display
      * Bug 21131: Remove 2016 donation banner
      * Translation updates
@@ -275,14 +689,14 @@ Tor Browser 7.0a1-hardened -- January 25 2017
    * All platforms
      * Bug 20927: Upgrade Go to 1.7.4
 
-Tor Browser 7.0a1 -- January 25 2017
+JonDoBrowser 7.0a1 -- January 25 2017
  * All Platforms
    * Update Firefox to 45.7.0esr
    * Tor to 0.3.0.2-alpha
    * Update Torbutton to 1.9.7
      * Bug 19898: Use DuckDuckGo on about:tor
      * Bug 21091: Hide the update check menu entry when running under the sandbox
-     * Bug 21243: Add links to es, fr, and pt Tor Browser manual
+     * Bug 21243: Add links to es, fr, and pt JonDoBrowser manual
      * Bug 21194: Show snowflake in the circuit display
      * Bug 21131: Remove 2016 donation banner
      * Translation updates
@@ -304,7 +718,7 @@ Tor Browser 7.0a1 -- January 25 2017
    * Linux
      * Bug 21103: Update descriptors for sandboxed-tor-browser 0.0.3
 
-Tor Browser 6.5 -- January 24 2017
+JonDoBrowser 6.5 -- January 24 2017
  * All Platforms
    * Update Firefox to 45.7.0esr
    * Tor to 0.2.9.9
@@ -321,7 +735,7 @@ Tor Browser 6.5 -- January 24 2017
      * Bug 19733: GETINFO response parser doesn't handle AF_UNIX entries + IPv6
      * Bug 17767: Make "JavaScript disabled" more visible in Security Slider
      * Bug 20556: Use pt-BR strings from now on
-     * Bug 20614: Add links to Tor Browser User Manual
+     * Bug 20614: Add links to JonDoBrowser User Manual
      * Bug 20414: Fix non-rendering arrow on OS X
      * Bug 20728: Fix bad preferences.xul dimensions
      * Bug 19898: Use DuckDuckGo on about:tor
@@ -336,7 +750,7 @@ Tor Browser 6.5 -- January 24 2017
      * Bug 18093: Remove 'Restore Defaults' button
      * Bug 20373: Prevent redundant dialogs opening
      * Bug 20318: Remove helpdesk link from about:tor
-     * Bug 21243: Add links for pt, es, and fr Tor Browser manuals
+     * Bug 21243: Add links for pt, es, and fr JonDoBrowser manuals
      * Bug 20753: Remove obsolete StartPage locale strings
      * Bug 21131: Remove 2016 donation banner
      * Bug 18980: Remove obsolete toolbar button code
@@ -369,7 +783,7 @@ Tor Browser 6.5 -- January 24 2017
    * Bug 20442: Backport fix for local path disclosure after drag and drop
    * Bug 20160: Backport fix for broken MP3-playback
    * Bug 20043: Isolate SharedWorker script requests to first party
-   * Bug 18923: Add script to run all Tor Browser regression tests
+   * Bug 18923: Add script to run all JonDoBrowser regression tests
    * Bug 20651: DuckDuckGo does not work with JavaScript disabled
    * Bug 19336+19835: Enhance about:tbupdate page
    * Bug 20399+15852: Code clean-up
@@ -382,7 +796,7 @@ Tor Browser 6.5 -- January 24 2017
    * Bug 20439: Make the build PIE on OSX
  * Linux
    * Bug 20691: Updater breaks if unix domain sockets are used
-   * Bug 15953: Weird resizing dance on Tor Browser startup
+   * Bug 15953: Weird resizing dance on JonDoBrowser startup
  * Build system
    * All platforms
      * Bug 20927: Upgrade Go to 1.7.4
@@ -398,7 +812,7 @@ Tor Browser 6.5 -- January 24 2017
      * Bug 19410: Fix incremental updates by taking signatures into account
      * Bug 20210: In dmg2mar, extract old mar file to copy permissions to the new one
 
-Tor Browser 6.5a6-hardened -- December 14 2016
+JonDoBrowser 6.5a6-hardened -- December 14 2016
  * All Platforms
    * Update Firefox to 45.6.0esr
    * Tor to 0.2.9.7-rc
@@ -406,7 +820,7 @@ Tor Browser 6.5a6-hardened -- December 14 2016
      * Bug 16622: Timezone spoofing moved to tor-browser.git
      * Bug 20701: Allow the directory listing stylesheet in the content policy
      * Bug 20556: Use pt-BR strings from now on
-     * Bug 20614: Add links to Tor Browser User Manual
+     * Bug 20614: Add links to JonDoBrowser User Manual
      * Bug 20414: Fix non-rendering arrow on OS X
      * Bug 20728: Fix bad preferences.xul dimensions
      * Bug 20318: Remove helpdesk link from about:tor
@@ -423,7 +837,7 @@ Tor Browser 6.5a6-hardened -- December 14 2016
    * Bug 20838: Uncomment NX01 default obfs4 bridge
    * Bug 20840: Rotate ports a third time for default obfs4 bridges
 
-Tor Browser 6.5a6 -- December 14 2016
+JonDoBrowser 6.5a6 -- December 14 2016
  * All Platforms
    * Update Firefox to 45.6.0esr
    * Tor to 0.2.9.6-rc
@@ -431,7 +845,7 @@ Tor Browser 6.5a6 -- December 14 2016
      * Bug 16622: Timezone spoofing moved to tor-browser.git
      * Bug 20701: Allow the directory listing stylesheet in the content policy
      * Bug 20556: Use pt-BR strings from now on
-     * Bug 20614: Add links to Tor Browser User Manual
+     * Bug 20614: Add links to JonDoBrowser User Manual
      * Bug 20414: Fix non-rendering arrow on OS X
      * Bug 20728: Fix bad preferences.xul dimensions
      * Bug 20318: Remove helpdesk link from about:tor
@@ -451,9 +865,9 @@ Tor Browser 6.5a6 -- December 14 2016
    * Bug 20758: Make Linux sandbox build deterministic
    * Bug 10281: Use jemalloc4 and abort on redzone corruption
  * OS X
-   * Bug 20121: Create Seatbelt profile(s) for Tor Browser
+   * Bug 20121: Create Seatbelt profile(s) for JonDoBrowser
 
-Tor Browser 6.0.8 -- December 13 2016
+JonDoBrowser 6.0.8 -- December 13 2016
  * All Platforms
    * Update Firefox to 45.6.0esr
    * Tor to 0.2.8.11
@@ -465,26 +879,26 @@ Tor Browser 6.0.8 -- December 13 2016
    * Bug 20838: Uncomment NX01 default obfs4 bridge
    * Bug 20840: Rotate ports a third time for default obfs4 bridges
 
-Tor Browser 6.5a5-hardened -- December 1 2016
+JonDoBrowser 6.5a5-hardened -- December 1 2016
  * All Platforms
    * Update Firefox to 45.5.1esr
    * Update NoScript to 2.9.5.2
  * Linux
    * Bug 20691: Updater breaks if unix domain sockets are used
 
-Tor Browser 6.5a5 -- December 1 2016
+JonDoBrowser 6.5a5 -- December 1 2016
  * All Platforms
    * Update Firefox to 45.5.1esr
    * Update NoScript to 2.9.5.2
  * Linux
    * Bug 20691: Updater breaks if unix domain sockets are used
 
-Tor Browser 6.0.7 -- November 30 2016
+JonDoBrowser 6.0.7 -- November 30 2016
  * All Platforms
    * Update Firefox to 45.5.1esr
    * Update NoScript to 2.9.5.2
 
-Tor Browser 6.5a4-hardened -- November 16 2016
+JonDoBrowser 6.5a4-hardened -- November 16 2016
  * All Platforms
    * Update Firefox to 45.5.0esr
    * Update Tor to 0.2.9.5-alpha
@@ -526,13 +940,13 @@ Tor Browser 6.5a4-hardened -- November 16 2016
    * Bug 20296: Rotate ports again for default obfs4 bridges
    * Bug 20651: DuckDuckGo does not work with JavaScript disabled
    * Bug 20399+15852: Code clean-up
-   * Bug 15953: Weird resizing dance on Tor Browser startup
+   * Bug 15953: Weird resizing dance on JonDoBrowser startup
  * Build system
    * All platforms
      * Bug 20023: Upgrade Go to 1.7.3
      * Bug 20583: Make the downloads.json file reproducible
 
-Tor Browser 6.5a4 -- November 16 2016
+JonDoBrowser 6.5a4 -- November 16 2016
  * All Platforms
    * Update Firefox to 45.5.0esr
    * Update Tor to 0.2.9.5-alpha
@@ -584,7 +998,7 @@ Tor Browser 6.5a4 -- November 16 2016
    * Bug 20590: Badly resized window due to security slider notification bar on OS X
    * Bug 20439: Make the build PIE on OSX
  * Linux
-   * Bug 15953: Weird resizing dance on Tor Browser startup
+   * Bug 15953: Weird resizing dance on JonDoBrowser startup
  * Build system
    * All platforms
      * Bug 20023: Upgrade Go to 1.7.3
@@ -594,7 +1008,7 @@ Tor Browser 6.5a4 -- November 16 2016
      * Bug 20184: Make OS X builds reproducible again
      * Bug 20210: In dmg2mar, extract old mar file to copy permissions to the new one
 
-Tor Browser 6.0.6 -- November 15
+JonDoBrowser 6.0.6 -- November 15
  * All Platforms
    * Update Firefox to 45.5.0esr
    * Update Tor to 0.2.8.9
@@ -622,7 +1036,7 @@ Tor Browser 6.0.6 -- November 15
    * All platforms
      * Bug 20023: Upgrade Go to 1.7.3
 
-Tor Browser 6.5a3-hardened -- September 20 2016
+JonDoBrowser 6.5a3-hardened -- September 20 2016
  * All Platforms
    * Update Firefox to 45.4.0esr
    * Update Tor to 0.2.9.2-alpha
@@ -631,7 +1045,7 @@ Tor Browser 6.5a3-hardened -- September 20 2016
      * Bug 17334: Move referrer spoofing for .onion domains into tor-browser.git
      * Bug 17767: Make "JavaScript disabled" more visible in Security Slider
      * Bug 19995: Clear site security settings during New Identity
-     * Bug 19906: "Maximizing Tor Browser" Notification can exist multiple times
+     * Bug 19906: "Maximizing JonDoBrowser" Notification can exist multiple times
      * Bug 19837: Whitelist internal URLs that Firefox requires for media
      * Bug 15852: Remove/synchronize Torbutton SOCKS pref logic
      * Bug 19733: GETINFO response parser doesn't handle AF_UNIX entries + IPv6
@@ -658,7 +1072,7 @@ Tor Browser 6.5a3-hardened -- September 20 2016
      * Bug 20133: Don't apply OpenSSL patch anymore
      * Bug 19528: Set MOZ_BUILD_DATE based on Firefox version
 
-Tor Browser 6.5a3 -- September 20 2016
+JonDoBrowser 6.5a3 -- September 20 2016
  * All Platforms
    * Update Firefox to 45.4.0esr
    * Update Tor to 0.2.9.2-alpha
@@ -667,7 +1081,7 @@ Tor Browser 6.5a3 -- September 20 2016
      * Bug 17334: Move referrer spoofing for .onion domains into tor-browser.git
      * Bug 17767: Make "JavaScript disabled" more visible in Security Slider
      * Bug 19995: Clear site security settings during New Identity
-     * Bug 19906: "Maximizing Tor Browser" Notification can exist multiple times
+     * Bug 19906: "Maximizing JonDoBrowser" Notification can exist multiple times
      * Bug 19837: Whitelist internal URLs that Firefox requires for media
      * Bug 15852: Remove/synchronize Torbutton SOCKS pref logic
      * Bug 19733: GETINFO response parser doesn't handle AF_UNIX entries + IPv6
@@ -697,13 +1111,13 @@ Tor Browser 6.5a3 -- September 20 2016
      * Bug 19856: Make OS X builds reproducible again
      * Bug 19410: Fix incremental updates by taking signatures into account
 
-Tor Browser 6.0.5 -- September 16
+JonDoBrowser 6.0.5 -- September 16
  * All Platforms
    * Update Firefox to 45.4.0esr
    * Update Tor to 0.2.8.7
    * Update Torbutton to 1.9.5.7
      * Bug 19995: Clear site security settings during New Identity
-     * Bug 19906: "Maximizing Tor Browser" Notification can exist multiple times
+     * Bug 19906: "Maximizing JonDoBrowser" Notification can exist multiple times
    * Update HTTPS-Everywhere to 5.2.4
    * Bug 20092: Rotate ports for default obfs4 bridges
    * Bug 20040: Add update support for unpacked HTTPS Everywhere
@@ -717,13 +1131,13 @@ Tor Browser 6.0.5 -- September 16
    * All platforms
      * Upgrade Go to 1.4.3
 
-Tor Browser 6.0.4 -- August 16 2016
+JonDoBrowser 6.0.4 -- August 16 2016
  * All Platforms
    * Update Tor to 0.2.8.6
    * Update NoScript to 2.9.0.14
    * Bug 19890: Disable installation of system addons
 
-Tor Browser 6.5a2-hardened -- August 3 2016
+JonDoBrowser 6.5a2-hardened -- August 3 2016
  * All Platforms
    * Update Firefox to 45.3.0esr
    * Update Tor to tor-0.2.8.5-rc
@@ -740,11 +1154,11 @@ Tor Browser 6.5a2-hardened -- August 3 2016
    * Bug 19715: Disable the meek-google pluggable transport option
    * Bug 19714: Remove mercurius4 obfs4 bridge
    * Bug 19585: Fix regression test for keyboard layout fingerprinting
-   * Bug 19515: Tor Browser is crashing in graphics code
+   * Bug 19515: JonDoBrowser is crashing in graphics code
    * Bug 18513: Favicon requests can bypass New Identity
    * Bug 19273: Write C++ patch for external app launch handling
    * Bug 16998: Isolate preconnect requests to URL bar domain
-   * Bug 18923: Add script to run all Tor Browser regression tests
+   * Bug 18923: Add script to run all JonDoBrowser regression tests
    * Bug 19478: Prevent millisecond resolution leaks in File API
    * Bug 19401: Fix broken PDF download button
    * Bug 19411: Don't show update icon if a partial update failed
@@ -756,7 +1170,7 @@ Tor Browser 6.5a2-hardened -- August 3 2016
    * All Platforms
      * Bug 19703: Upgrade Go to 1.6.3
 
-Tor Browser 6.5a2 -- August 3 2016
+JonDoBrowser 6.5a2 -- August 3 2016
  * All Platforms
    * Update Firefox to 45.3.0esr
    * Update Tor to tor-0.2.8.5-rc
@@ -772,11 +1186,11 @@ Tor Browser 6.5a2 -- August 3 2016
    * Bug 19715: Disable the meek-google pluggable transport option
    * Bug 19714: Remove mercurius4 obfs4 bridge
    * Bug 19585: Fix regression test for keyboard layout fingerprinting
-   * Bug 19515: Tor Browser is crashing in graphics code
+   * Bug 19515: JonDoBrowser is crashing in graphics code
    * Bug 18513: Favicon requests can bypass New Identity
    * Bug 19273: Write C++ patch for external app launch handling
    * Bug 16998: Isolate preconnect requests to URL bar domain
-   * Bug 18923: Add script to run all Tor Browser regression tests
+   * Bug 18923: Add script to run all JonDoBrowser regression tests
    * Bug 19478: Prevent millisecond resolution leaks in File API
    * Bug 19401: Fix broken PDF download button
    * Bug 19411: Don't show update icon if a partial update failed
@@ -796,7 +1210,7 @@ Tor Browser 6.5a2 -- August 3 2016
    * All Platforms
      * Bug 19703: Upgrade Go to 1.6.3
 
-Tor Browser 6.0.3 -- August 2 2016
+JonDoBrowser 6.0.3 -- August 2 2016
  * All Platforms
    * Update Firefox to 45.3.0esr
    * Update Torbutton to 1.9.5.6
@@ -808,14 +1222,14 @@ Tor Browser 6.0.3 -- August 2 2016
    * Bug 19715: Disable the meek-google pluggable transport option
    * Bug 19714: Remove mercurius4 obfs4 bridge
    * Bug 19585: Fix regression test for keyboard layout fingerprinting
-   * Bug 19515: Tor Browser is crashing in graphics code
+   * Bug 19515: JonDoBrowser is crashing in graphics code
    * Bug 18513: Favicon requests can bypass New Identity
  * OS X
    * Bug 19269: Icon doesn't appear in Applications folder or Dock
  * Android
    * Bug 19484: Avoid compilation error when MOZ_UPDATER is not defined
 
-Tor Browser 6.0.2 -- June 21 2016
+JonDoBrowser 6.0.2 -- June 21 2016
  * All Platforms
    * Update Torbutton to 1.9.5.5
      * Bug 19417: Clear asmjscache
@@ -827,7 +1241,7 @@ Tor Browser 6.0.2 -- June 21 2016
  * Linux
    * Bug 19276: Disable Xrender due to possible performance regressions
 
-Tor Browser 6.5a1-hardened -- June 8 2016
+JonDoBrowser 6.5a1-hardened -- June 8 2016
  * All Platforms
    * Update Firefox to 45.2.0esr
    * Update Tor to 0.2.8.3-alpha
@@ -840,7 +1254,7 @@ Tor Browser 6.5a1-hardened -- June 8 2016
      * Translation updates
      * Code clean-up
    * Update Tor Launcher to 0.2.8.5
-     * Bug 18947: Tor Browser is not starting on OS X if put into /Applications
+     * Bug 18947: JonDoBrowser is not starting on OS X if put into /Applications
    * Update HTTPS-Everywhere to 5.1.9
    * Update meek to 0.22 (tag 0.22-18371-3)
    * Bug 19121: The update.xml hash should get checked during update
@@ -852,21 +1266,21 @@ Tor Browser 6.5a1-hardened -- June 8 2016
    * Bug 19187: Backport fix for crash related to popup menus
    * Bug 19212: Fix crash related to network panel in developer tools
    * Bug 18703: Fix circuit isolation issues on Page Info dialog
-   * bug 19115: Tor Browser should not fall back to Bing as its search engine
+   * bug 19115: JonDoBrowser should not fall back to Bing as its search engine
    * Bug 18915+19065: Use our search plugins in localized builds
    * Bug 19176: Zip our language packs deterministically
    * Bug 18811: Fix first-party isolation for blobs URLs in Workers
    * Bug 18950:	Disable or audit Reader View
    * Bug 18886: Remove Pocket
-   * Bug 18619: Tor Browser reports "InvalidStateError" in browser console
-   * Bug 18945: Disable monitoring the connected state of Tor Browser users
+   * Bug 18619: JonDoBrowser reports "InvalidStateError" in browser console
+   * Bug 18945: Disable monitoring the connected state of JonDoBrowser users
    * Bug 18855: Don't show error after add-on directory clean-up
    * Bug 18885: Disable the option of logging TLS/SSL key material
    * Bug 18770: SVGs should not show up on Page Info dialog when disabled
    * Bug 18958: Spoof screen.orientation values
    * Bug 19047: Disable Heartbeat prompts
    * Bug 18914: Use English-only label in <isindex/> tags
-   * Bug 18996: Investigate server logging in esr45-based Tor Browser
+   * Bug 18996: Investigate server logging in esr45-based JonDoBrowser
    * Bug 17790: Add unit tests for keyboard fingerprinting defenses
    * Bug 18995: Regression test to ensure CacheStorage is disabled
    * Bug 18912: Add automated tests for updater cert pinning
@@ -881,7 +1295,7 @@ Tor Browser 6.5a1-hardened -- June 8 2016
      * Bug 18291: Remove some uses of libfaketime
      * Bug 18845: Make zip and tar helpers generate reproducible archives
 
-Tor Browser 6.5a1 -- June 8 2016
+JonDoBrowser 6.5a1 -- June 8 2016
  * All Platforms
    * Update Firefox to 45.2.0esr
    * Update Tor to 0.2.8.3-alpha
@@ -894,7 +1308,7 @@ Tor Browser 6.5a1 -- June 8 2016
      * Translation updates
      * Code clean-up
    * Update Tor Launcher to 0.2.9.3
-     * Bug 18947: Tor Browser is not starting on OS X if put into /Applications
+     * Bug 18947: JonDoBrowser is not starting on OS X if put into /Applications
    * Update HTTPS-Everywhere to 5.1.9
    * Update meek to 0.22 (tag 0.22-18371-3)
      * Bug 18904: Mac OS: meek-http-helper profile not updated
@@ -907,21 +1321,21 @@ Tor Browser 6.5a1 -- June 8 2016
    * Bug 19187: Backport fix for crash related to popup menus
    * Bug 19212: Fix crash related to network panel in developer tools
    * Bug 18703: Fix circuit isolation issues on Page Info dialog
-   * bug 19115: Tor Browser should not fall back to Bing as its search engine
+   * bug 19115: JonDoBrowser should not fall back to Bing as its search engine
    * Bug 18915+19065: Use our search plugins in localized builds
    * Bug 19176: Zip our language packs deterministically
    * Bug 18811: Fix first-party isolation for blobs URLs in Workers
    * Bug 18950:	Disable or audit Reader View
    * Bug 18886: Remove Pocket
-   * Bug 18619: Tor Browser reports "InvalidStateError" in browser console
-   * Bug 18945: Disable monitoring the connected state of Tor Browser users
+   * Bug 18619: JonDoBrowser reports "InvalidStateError" in browser console
+   * Bug 18945: Disable monitoring the connected state of JonDoBrowser users
    * Bug 18855: Don't show error after add-on directory clean-up
    * Bug 18885: Disable the option of logging TLS/SSL key material
    * Bug 18770: SVGs should not show up on Page Info dialog when disabled
    * Bug 18958: Spoof screen.orientation values
    * Bug 19047: Disable Heartbeat prompts
    * Bug 18914: Use English-only label in <isindex/> tags
-   * Bug 18996: Investigate server logging in esr45-based Tor Browser
+   * Bug 18996: Investigate server logging in esr45-based JonDoBrowser
    * Bug 17790: Add unit tests for keyboard fingerprinting defenses
    * Bug 18995: Regression test to ensure CacheStorage is disabled
    * Bug 18912: Add automated tests for updater cert pinning
@@ -940,7 +1354,7 @@ Tor Browser 6.5a1 -- June 8 2016
      * Bug 18291: Remove some uses of libfaketime
      * Bug 18845: Make zip and tar helpers generate reproducible archives
 
-Tor Browser 6.0.1 -- June 7 2016
+JonDoBrowser 6.0.1 -- June 7 2016
  * All Platforms
    * Update Firefox to 45.2.0esr
    * Bug 18884: Don't build the loop extension
@@ -949,7 +1363,7 @@ Tor Browser 6.0.1 -- June 7 2016
  * Linux
    * Bug 19189: Backport for working around a linker (gold) bug
 
-Tor Browser 6.0 -- May 30 2016
+JonDoBrowser 6.0 -- May 30 2016
  * All Platforms
    * Update Firefox to 45.1.1esr
    * Update OpenSSL to 1.0.1t
@@ -963,14 +1377,14 @@ Tor Browser 6.0 -- May 30 2016
      * Code clean-up
    * Update Tor Launcher to 0.2.9.3
      * Bug 13252: Do not store data in the application bundle
-     * Bug 18947: Tor Browser is not starting on OS X if put into /Applications
+     * Bug 18947: JonDoBrowser is not starting on OS X if put into /Applications
      * Bug 11773: Setup wizard UI flow improvements
      * Translation updates
    * Update HTTPS-Everywhere to 5.1.9
    * Update meek to 0.22 (tag 0.22-18371-3)
      * Bug 18371: Symlinks are incompatible with Gatekeeper signing
      * Bug 18904: Mac OS: meek-http-helper profile not updated
-   * Bug 15197 and child tickets: Rebase Tor Browser patches to ESR 45
+   * Bug 15197 and child tickets: Rebase JonDoBrowser patches to ESR 45
    * Bug 18900: Fix broken updater on Linux
    * Bug 19121: The update.xml hash should get checked during update
    * Bug 18042: Disable SHA1 certificate support
@@ -996,21 +1410,21 @@ Tor Browser 6.0 -- May 30 2016
    * Bug 18890: Test importScripts() for cache and network isolation
    * Bug 18886: Hide pocket menu items when Pocket is disabled
    * Bug 18703: Fix circuit isolation issues on Page Info dialog
-   * bug 19115: Tor Browser should not fall back to Bing as its search engine
+   * bug 19115: JonDoBrowser should not fall back to Bing as its search engine
    * Bug 18915+19065: Use our search plugins in localized builds
    * Bug 19176: Zip our language packs deterministically
    * Bug 18811: Fix first-party isolation for blobs URLs in Workers
    * Bug 18950:	Disable or audit Reader View
    * Bug 18886: Remove Pocket
-   * Bug 18619: Tor Browser reports "InvalidStateError" in browser console
-   * Bug 18945: Disable monitoring the connected state of Tor Browser users
+   * Bug 18619: JonDoBrowser reports "InvalidStateError" in browser console
+   * Bug 18945: Disable monitoring the connected state of JonDoBrowser users
    * Bug 18855: Don't show error after add-on directory clean-up
    * Bug 18885: Disable the option of logging TLS/SSL key material
    * Bug 18770: SVGs should not show up on Page Info dialog when disabled
    * Bug 18958: Spoof screen.orientation values
    * Bug 19047: Disable Heartbeat prompts
    * Bug 18914: Use English-only label in <isindex/> tags
-   * Bug 18996: Investigate server logging in esr45-based Tor Browser
+   * Bug 18996: Investigate server logging in esr45-based JonDoBrowser
    * Bug 17790: Add unit tests for keyboard fingerprinting defenses
    * Bug 18995: Regression test to ensure CacheStorage is disabled
    * Bug 18912: Add automated tests for updater cert pinning
@@ -1019,10 +1433,10 @@ Tor Browser 6.0 -- May 30 2016
  * Windows
    * Bug 13419: Support ICU in Windows builds
    * Bug 16874: Fix broken https://sports.yahoo.com/dailyfantasy page
-   * Bug 18767: Context menu is broken on Windows in ESR 45 based Tor Browser
+   * Bug 18767: Context menu is broken on Windows in ESR 45 based JonDoBrowser
  * OS X
    * Bug 6540: Support OS X Gatekeeper
-   * Bug 13252: Tor Browser should not store data in the application bundle
+   * Bug 13252: JonDoBrowser should not store data in the application bundle
    * Bug 18951: HTTPS-E is missing after update
    * Bug 18904: meek-http-helper profile not updated
    * Bug 18928: Upgrade is not smooth (requires another restart)
@@ -1042,7 +1456,7 @@ Tor Browser 6.0 -- May 30 2016
      * Bug 18698: Include libgconf2-dev for our Linux builds
      * Bug 15578: Switch to Debian Wheezy guest VMs (10.04 LTS is EOL)
 
-Tor Browser 6.0a5-hardened -- April 28 2016
+JonDoBrowser 6.0a5-hardened -- April 28 2016
  * All Platforms
    * Update Firefox to 45.1.0esr
    * Update Tor to 0.2.8.2-alpha
@@ -1057,7 +1471,7 @@ Tor Browser 6.0a5-hardened -- April 28 2016
    * Update NoScript to 2.9.0.11
    * Update meek to 0.22 (tag 0.22-18371-2)
      * Bug 18371: Symlinks are incompatible with Gatekeeper signing
-   * Bug 15197 and child tickets: Rebase Tor Browser patches to ESR 45
+   * Bug 15197 and child tickets: Rebase JonDoBrowser patches to ESR 45
    * Bug 18900: Fix broken updater on Linux
    * Bug 18042: Disable SHA1 certificate support
    * Bug 18821: Disable libmdns support for desktop and mobile
@@ -1077,7 +1491,7 @@ Tor Browser 6.0a5-hardened -- April 28 2016
    * Bug 16326: Verify cache isolation for Request and Fetch APIs
    * Bug 18741: Fix OCSP and favicon isolation for ESR 45
    * Bug 16998: Disable <link rel="preconnect"> for now
-   * Bug 17506: Reenable building hardened Tor Browser with startup cache
+   * Bug 17506: Reenable building hardened JonDoBrowser with startup cache
    * Bug 18898: Exempt the meek extension from the signing requirement as well
    * Bug 18899: Don't copy Torbutton, TorLauncher, etc. into meek profile
    * Bug 18890: Test importScripts() for cache and network isolation
@@ -1087,7 +1501,7 @@ Tor Browser 6.0a5-hardened -- April 28 2016
    * Bug 18699: Stripping fails due to obsolete Browser/components directory
    * Bug 18698: Include libgconf2-dev for our Linux builds
 
-Tor Browser 6.0a5 -- April 28 2016
+JonDoBrowser 6.0a5 -- April 28 2016
  * All Platforms
    * Update Firefox to 45.1.0esr
    * Update Tor to 0.2.8.2-alpha
@@ -1102,7 +1516,7 @@ Tor Browser 6.0a5 -- April 28 2016
    * Update NoScript to 2.9.0.11
    * Update meek to 0.22 (tag 0.22-18371-2)
      * Bug 18371: Symlinks are incompatible with Gatekeeper signing
-   * Bug 15197 and child tickets: Rebase Tor Browser patches to ESR 45
+   * Bug 15197 and child tickets: Rebase JonDoBrowser patches to ESR 45
    * Bug 18900: Fix broken updater on Linux
    * Bug 18042: Disable SHA1 certificate support
    * Bug 18821: Disable libmdns support for desktop and mobile
@@ -1129,10 +1543,10 @@ Tor Browser 6.0a5 -- April 28 2016
  * Windows
    * Bug 13419: Support ICU in Windows builds
    * Bug 16874: Fix broken https://sports.yahoo.com/dailyfantasy page
-   * Bug 18767: Context menu is broken on Windows in ESR 45 based Tor Browser
+   * Bug 18767: Context menu is broken on Windows in ESR 45 based JonDoBrowser
  * OS X
    * Bug 6540: Support OS X Gatekeeper
-   * Bug 13252: Tor Browser should not store data in the application bundle
+   * Bug 13252: JonDoBrowser should not store data in the application bundle
  * Build System
    * All Platforms
      * Bug 18127: Add LXC support for building with Debian guest VMs
@@ -1147,7 +1561,7 @@ Tor Browser 6.0a5 -- April 28 2016
      * Bug 18699: Stripping fails due to obsolete Browser/components directory
      * Bug 18698: Include libgconf2-dev for our Linux builds
 
-Tor Browser 5.5.5 -- April 26 2016
+JonDoBrowser 5.5.5 -- April 26 2016
  * All Platforms
    * Update Firefox to 38.8.0esr
    * Update Tor Launcher to 0.2.7.9
@@ -1157,28 +1571,28 @@ Tor Browser 5.5.5 -- April 26 2016
    * Update NoScript to 2.9.0.11
    * Bug 18726: Add new default obfs4 bridge (GreenBelt)
 
-Tor Browser 6.0a4-hardened -- March 17 2016
+JonDoBrowser 6.0a4-hardened -- March 17 2016
  * All Platforms
    * Update Firefox to 38.7.1esr
    * Update Torbutton to 1.9.5.2
      * Bug 18557: Exempt Graphite from the Security Slider
    * Bug 18536: Make Mosaddegh and MaBishomarim available on port 80 and 443
 
-Tor Browser 6.0a4 -- March 17 2016
+JonDoBrowser 6.0a4 -- March 17 2016
  * All Platforms
    * Update Firefox to 38.7.1esr
    * Update Torbutton to 1.9.5.2
      * Bug 18557: Exempt Graphite from the Security Slider
    * Bug 18536: Make Mosaddegh and MaBishomarim available on port 80 and 443
 
-Tor Browser 5.5.4 -- March 16 2016
+JonDoBrowser 5.5.4 -- March 16 2016
  * All Platforms
    * Update Firefox to 38.7.1esr
    * Update Torbutton to 1.9.4.5
      * Bug 18557: Exempt Graphite from the Security Slider
    * Bug 18536: Make Mosaddegh and MaBishomarim available on port 80 and 443
 
-Tor Browser 6.0a3-hardened -- March 8 2016
+JonDoBrowser 6.0a3-hardened -- March 8 2016
  * All Platforms
    * Update Firefox to 38.7.0esr
    * Update Tor to 0.2.8.1-alpha
@@ -1198,7 +1612,7 @@ Tor Browser 6.0a3-hardened -- March 8 2016
  * Windows
    * Bug 18292: Disable staged updates on Windows
 
-Tor Browser 6.0a3 -- March 8 2016
+JonDoBrowser 6.0a3 -- March 8 2016
  * All Platforms
    * Update Firefox to 38.7.0esr
    * Update Tor to 0.2.8.1-alpha
@@ -1218,7 +1632,7 @@ Tor Browser 6.0a3 -- March 8 2016
  * Windows
    * Bug 18292: Disable staged updates on Windows
 
-Tor Browser 5.5.3 -- March 8 2016
+JonDoBrowser 5.5.3 -- March 8 2016
  * All Platforms
    * Update Firefox to 38.7.0esr
    * Update OpenSSL to 1.0.1s
@@ -1235,7 +1649,7 @@ Tor Browser 5.5.3 -- March 8 2016
  * Windows
    * Bug 18292: Disable staged updates on Windows
 
-Tor Browser 6.0a2-hardened -- February 15 2016
+JonDoBrowser 6.0a2-hardened -- February 15 2016
  * All Platforms
    * Update Firefox to 38.6.1esr
    * Update NoScript to 2.9.0.3
@@ -1250,9 +1664,9 @@ Tor Browser 6.0a2-hardened -- February 15 2016
  * Build System
    * Linux
      * Bug 15578: Switch to Debian Wheezy guest VMs (10.04 LTS is EOL)
-     * Bug 18198: Building the hardened Tor Browser in a Debian Wheezy VM is broken
+     * Bug 18198: Building the hardened JonDoBrowser in a Debian Wheezy VM is broken
 
-Tor Browser 6.0a2 -- February 15 2016
+JonDoBrowser 6.0a2 -- February 15 2016
  * All Platforms
    * Update Firefox to 38.6.1esr
    * Update NoScript to 2.9.0.3
@@ -1265,12 +1679,12 @@ Tor Browser 6.0a2 -- February 15 2016
  * Linux
    * Bug 18172: Add Emoji support
 
-Tor Browser 5.5.2 -- February 12 2016
+JonDoBrowser 5.5.2 -- February 12 2016
  * All Platforms
    * Update Firefox to 38.6.1esr
    * Update NoScript to 2.9.0.3
 
-Tor Browser 5.5.1 -- February 4 2016
+JonDoBrowser 5.5.1 -- February 4 2016
  * All Platforms
    * Bug 18168: Don't clear an iframe's window.name (fix of #16620)
    * Bug 18137: Add two new obfs4 default bridges
@@ -1281,7 +1695,7 @@ Tor Browser 5.5.1 -- February 4 2016
  * Linux
    * Bug 18172: Add Emoji support
 
-Tor Browser 6.0a1-hardened -- January 27 2016
+JonDoBrowser 6.0a1-hardened -- January 27 2016
  * All Platforms
    * Update Firefox to 38.6.0esr
    * Update NoScript to 2.9.0.2
@@ -1298,12 +1712,12 @@ Tor Browser 6.0a1-hardened -- January 27 2016
    * Bug 17428: Remove Flashproxy
    * Bug 18115+18104+18071+18091: Update/add new obfs4 bridge
    * Bug 18072: Change recommended pluggable transport type to obfs4
-   * Bug 18008: Create a new MAR Signing key and bake it into Tor Browser
+   * Bug 18008: Create a new MAR Signing key and bake it into JonDoBrowser
    * Bug 16322: Use onion address for DuckDuckGo search engine
    * Bug 17917: Changelog after update is empty if JS is disabled
    * Bug 17790: Map the proper SHIFT characters to the digit keys (fix of #15646)
 
-Tor Browser 6.0a1 -- January 27 2016
+JonDoBrowser 6.0a1 -- January 27 2016
  * All Platforms
    * Update Firefox to 38.6.0esr
    * Update NoScript to 2.9.0.2
@@ -1320,7 +1734,7 @@ Tor Browser 6.0a1 -- January 27 2016
    * Bug 17428: Remove Flashproxy
    * Bug 18115+18104+18071+18091: Update/add new obfs4 bridge
    * Bug 18072: Change recommended pluggable transport type to obfs4
-   * Bug 18008: Create a new MAR Signing key and bake it into Tor Browser
+   * Bug 18008: Create a new MAR Signing key and bake it into JonDoBrowser
    * Bug 16322: Use onion address for DuckDuckGo search engine
    * Bug 17917: Changelog after update is empty if JS is disabled
    * Bug 17790: Map the proper SHIFT characters to the digit keys (fix of #15646)
@@ -1328,7 +1742,7 @@ Tor Browser 6.0a1 -- January 27 2016
    * Linux
      * Bug 15578: Switch to Debian Wheezy guest VMs (10.04 LTS is EOL)
 
-Tor Browser 5.5 -- January 26 2016
+JonDoBrowser 5.5 -- January 26 2016
  * All Platforms
    * Update Firefox to 38.6.0esr
    * Update libevent to 2.0.22-stable
@@ -1346,7 +1760,7 @@ Tor Browser 5.5 -- January 26 2016
    * Update Tor Launcher to 0.2.7.8
      * Bug 18113: Randomly permutate available default bridges of chosen type
    * Bug 13313: Bundle a fixed set of fonts to defend against fingerprinting
-   * Bug 10140: Add new Tor Browser locale (Japanese)
+   * Bug 10140: Add new JonDoBrowser locale (Japanese)
    * Bug 17428: Remove Flashproxy
    * Bug 13512: Load a static tab with change notes after an update
    * Bug 9659: Avoid loop due to optimistic data SOCKS code (fix of #3875)
@@ -1362,7 +1776,7 @@ Tor Browser 5.5 -- January 26 2016
    * Bug 10599+17305: Include updater and build patches needed for hardened builds
    * Bug 18115+18104+18071+18091: Update/add new obfs4 bridge
    * Bug 18072: Change recommended pluggable transport type to obfs4
-   * Bug 18008: Create a new MAR Signing key and bake it into Tor Browser
+   * Bug 18008: Create a new MAR Signing key and bake it into JonDoBrowser
    * Bug 16322: Use onion address for DuckDuckGo search engine
    * Bug 17917: Changelog after update is empty if JS is disabled
  * Windows
@@ -1378,29 +1792,29 @@ Tor Browser 5.5 -- January 26 2016
  * Linux
    * Bug 16672: Don't use font whitelisting for Linux users
 
-Tor Browser 5.5a6-hardened -- January 7 2016
+JonDoBrowser 5.5a6-hardened -- January 7 2016
  * All Platforms
    * Update NoScript to 2.9
    * Update HTTPS Everywhere to 5.1.2
-   * Bug 17931: Tor Browser crashes in LogMessageToConsole()
+   * Bug 17931: JonDoBrowser crashes in LogMessageToConsole()
    * Bug 17875: Discourage editing of torrc-defaults
 
-Tor Browser 5.5a6 -- January 7 2016
+JonDoBrowser 5.5a6 -- January 7 2016
  * All Platforms
    * Update NoScript to 2.9
    * Update HTTPS Everywhere to 5.1.2
-   * Bug 17931: Tor Browser crashes in LogMessageToConsole()
+   * Bug 17931: JonDoBrowser crashes in LogMessageToConsole()
    * Bug 17875: Discourage editing of torrc-defaults
    * Bug 17870: Add intermediate certificate for authenticode signing
 
-Tor Browser 5.0.7 -- January 7 2016
+JonDoBrowser 5.0.7 -- January 7 2016
  * All Platforms
    * Update NoScript to 2.9
    * Update HTTPS Everywhere to 5.1.2
-   * Bug 17931: Tor Browser crashes in LogMessageToConsole()
+   * Bug 17931: JonDoBrowser crashes in LogMessageToConsole()
    * Bug 17875: Discourage editing of torrc-defaults
 
-Tor Browser 5.5a5-hardened -- December 18 2015
+JonDoBrowser 5.5a5-hardened -- December 18 2015
  * All Platforms
    * Update Firefox to 38.5.0esr
    * Update Tor to 0.2.7.6
@@ -1411,7 +1825,7 @@ Tor Browser 5.5a5-hardened -- December 18 2015
      * Bug 16990: Avoid matching '250 ' to the end of node name
      * Bug 17565: Tor fundraising campaign donation banner
      * Bug 17770: Fix alignments on donation banner
-     * Bug 17792: Include donation banner in some non en-US Tor Browsers
+     * Bug 17792: Include donation banner in some non en-US JonDoBrowsers
      * Bug 17108: Polish about:tor appearance
      * Bug 17568: Clean up tor-control-port.js
      * Translation updates
@@ -1419,7 +1833,7 @@ Tor Browser 5.5a5-hardened -- December 18 2015
      * Bug 17344: Enumerate available language packs for language prompt
      * Code clean-up
      * Translation updates
-   * Bug 12516: Compile Tor Browser with -fwrapv
+   * Bug 12516: Compile JonDoBrowser with -fwrapv
    * Bug 9659: Avoid loop due to optimistic data SOCKS code (fix of #3875)
    * Bug 15564: Isolate SharedWorkers by first-party domain
    * Bug 16940: After update, load local change notes
@@ -1431,9 +1845,9 @@ Tor Browser 5.5a5-hardened -- December 18 2015
    * Bug 16863: Avoid confusing error when loop.enabled is false
    * Bug 17502: Add a preference for hiding "Open with" on download dialog
    * Bug 17446: Prevent canvas extraction by third parties (fixup of #6253)
-   * Bug 16441: Suppress "Reset Tor Browser" prompt
+   * Bug 16441: Suppress "Reset JonDoBrowser" prompt
 
-Tor Browser 5.5a5 -- December 18 2015
+JonDoBrowser 5.5a5 -- December 18 2015
  * All Platforms
    * Update Firefox to 38.5.0esr
    * Update Tor to 0.2.7.6
@@ -1444,7 +1858,7 @@ Tor Browser 5.5a5 -- December 18 2015
      * Bug 16990: Avoid matching '250 ' to the end of node name
      * Bug 17565: Tor fundraising campaign donation banner
      * Bug 17770: Fix alignments on donation banner
-     * Bug 17792: Include donation banner in some non en-US Tor Browsers
+     * Bug 17792: Include donation banner in some non en-US JonDoBrowsers
      * Bug 17108: Polish about:tor appearance
      * Bug 17568: Clean up tor-control-port.js
      * Translation updates
@@ -1459,18 +1873,18 @@ Tor Browser 5.5a5 -- December 18 2015
    * Bug 16863: Avoid confusing error when loop.enabled is false
    * Bug 17502: Add a preference for hiding "Open with" on download dialog
    * Bug 17446: Prevent canvas extraction by third parties (fixup of #6253)
-   * Bug 16441: Suppress "Reset Tor Browser" prompt
+   * Bug 16441: Suppress "Reset JonDoBrowser" prompt
  * Windows
    * Bug 13819: Ship expert bundles with console enabled
    * Bug 17250: Fix broken Japanese fonts
  * OS X
    * Bug 17661: Whitelist font .Helvetica Neue DeskInterface
 
-Tor Browser 5.0.6 -- December 18 2015
+JonDoBrowser 5.0.6 -- December 18 2015
   * All Platforms
-    * Bug 17877: Tor Browser 5.0.5 is using the wrong Mozilla build tag
+    * Bug 17877: JonDoBrowser 5.0.5 is using the wrong Mozilla build tag
 
-Tor Browser 5.0.5 -- December 15 2015
+JonDoBrowser 5.0.5 -- December 15 2015
  * All Platforms
    * Update Firefox to 38.5.0esr
    * Update Tor to 0.2.7.6
@@ -1481,17 +1895,17 @@ Tor Browser 5.0.5 -- December 15 2015
      * Bug 16990: Avoid matching '250 ' to the end of node name
      * Bug 17565: Tor fundraising campaign donation banner
      * Bug 17770: Fix alignments on donation banner
-     * Bug 17792: Include donation banner in some non en-US Tor Browsers
+     * Bug 17792: Include donation banner in some non en-US JonDoBrowsers
      * Translation updates
    * Bug 17207: Hide MIME types and plugins from websites
    * Bug 16909+17383: Adapt to HTTPS-Everywhere build changes
    * Bug 16863: Avoid confusing error when loop.enabled is false
    * Bug 17502: Add a preference for hiding "Open with" on download dialog
    * Bug 17446: Prevent canvas extraction by third parties (fixup of #6253)
-   * Bug 16441: Suppress "Reset Tor Browser" prompt
+   * Bug 16441: Suppress "Reset JonDoBrowser" prompt
    * Bug 17747: Add ndnop3 as new default obfs4 bridge
 
-Tor Browser 5.5a4 -- November 3 2015
+JonDoBrowser 5.5a4 -- November 3 2015
  * All Platforms
    * Update Firefox to 38.4.0esr
    * Update Tor to 0.2.7.4-rc
@@ -1518,7 +1932,7 @@ Tor Browser 5.5a4 -- November 3 2015
  * Linux
    * Bug 17329: Ensure that non-ASCII characters can be typed (fixup of #5926)
 
-Tor Browser 5.0.4 -- November 3 2015
+JonDoBrowser 5.0.4 -- November 3 2015
  * All Platforms
    * Update Firefox to 38.4.0esr
    * Update NoScript to 2.6.9.39
@@ -1529,17 +1943,17 @@ Tor Browser 5.0.4 -- November 3 2015
      * Bug 17164: Don't show text-select cursor on circuit display
      * Bug 17351: Remove unused code
      * Translation updates
-   * Bug 16937: Remove the en-US dictionary from non en-US Tor Browser bundles
+   * Bug 16937: Remove the en-US dictionary from non en-US JonDoBrowser bundles
    * Bug 17318: Remove dead ScrambleSuit bridge
    * Bug 17473: Update meek-amazon fingerprint
    * Bug 16983: Isolate favicon requests caused by the tab list dropdown
-   * Bug 17102: Don't crash while opening a second Tor Browser
+   * Bug 17102: Don't crash while opening a second JonDoBrowser
  * Windows:
    * Bug 16906: Don't depend on Windows crypto DLLs
  * Linux:
    * Bug 17329: Ensure that non-ASCII characters can be typed (fixup of #5926)
 
-Tor Browser 5.5a3 -- September 22 2015
+JonDoBrowser 5.5a3 -- September 22 2015
  * All Platforms
    * Update Firefox to 38.3.0esr
    * Update libevent to 2.0.22-stable
@@ -1550,12 +1964,12 @@ Tor Browser 5.5a3 -- September 22 2015
      * Bug 15493: Update circuit display on new circuit info
      * Bug 16797: brandShorterName is missing from brand.properties
      * Translation updates
-   * Bug 10140: Add new Tor Browser locale (Japanese)
-   * Bug 17102: Don't crash while opening a second Tor Browser
+   * Bug 10140: Add new JonDoBrowser locale (Japanese)
+   * Bug 17102: Don't crash while opening a second JonDoBrowser
    * Bug 16983: Isolate favicon requests caused by the tab list dropdown
    * Bug 13512: Load a static tab with change notes after an update
-   * Bug 16937: Remove the en-US dictionary from non en-US Tor Browser bundles
-   * Bug 7446: Tor Browser should not "fix up" .onion domains (or any domains)
+   * Bug 16937: Remove the en-US dictionary from non en-US JonDoBrowser bundles
+   * Bug 7446: JonDoBrowser should not "fix up" .onion domains (or any domains)
    * Bug 16837: Disable Firefox Hotfix updates
    * Bug 16855: Allow blobs to be downloaded on first-party pages (fixes mega.nz)
    * Bug 16781: Allow saving pdf files in built-in pdf viewer
@@ -1577,7 +1991,7 @@ Tor Browser 5.5a3 -- September 22 2015
  * Linux
   * Bug 16672: Don't use font whitelisting for Linux users
 
-Tor Browser 5.0.3 -- September 22 2015
+JonDoBrowser 5.0.3 -- September 22 2015
  * All Platforms
    * Update Firefox to 38.3.0esr
    * Update Torbutton to 1.9.3.4
@@ -1586,7 +2000,7 @@ Tor Browser 5.0.3 -- September 22 2015
      * Bug 16797: brandShorterName is missing from brand.properties
      * Bug 14429: Make sure the automatic resizing is disabled
      * Translation updates
-   * Bug 7446: Tor Browser should not "fix up" .onion domains (or any domains)
+   * Bug 7446: JonDoBrowser should not "fix up" .onion domains (or any domains)
    * Bug 16837: Disable Firefox Hotfix updates
    * Bug 16855: Allow blobs to be downloaded on first-party pages (fixes mega.nz)
    * Bug 16781: Allow saving pdf files in built-in pdf viewer
@@ -1604,7 +2018,7 @@ Tor Browser 5.0.3 -- September 22 2015
  * OS X
   * Bug 16910: Update copyright year in OS X bundles
 
-Tor Browser 5.5a2 -- August 28 2015
+JonDoBrowser 5.5a2 -- August 28 2015
  * All Platforms:
    * Update Firefox to 38.2.1esr
    * Update NoScript to 2.6.9.36
@@ -1612,18 +2026,18 @@ Tor Browser 5.5a2 -- August 28 2015
  * Linux
    * Bug 16860: Avoid duplicate desktop icons on Gnome and Unity
 
-Tor Browser 5.0.2 -- August 27 2015
+JonDoBrowser 5.0.2 -- August 27 2015
  * All Platforms
    * Update Firefox to 38.2.1esr
    * Update NoScript to 2.6.9.36
  * Linux
    * Bug 16860: Avoid duplicate icons on Unity and Gnome
 
-Tor Browser 5.0.1 -- August 18 2015
+JonDoBrowser 5.0.1 -- August 18 2015
  * All Platforms
    * Bug 16771: Fix crash on some websites due to blob URIs
 
-Tor Browser 5.5a1 -- August 11 2015
+JonDoBrowser 5.5a1 -- August 11 2015
  * All Platforms
    * Update Firefox to 38.2.0esr
    * Update NoScript to 2.6.9.34
@@ -1643,7 +2057,7 @@ Tor Browser 5.5a1 -- August 11 2015
    * Bug 15646: Prevent keyboard layout fingerprinting in KeyboardEvent (fixup)
    * Bug 16672: Change font whitelists and configs for rendering issues (partial)
 
-Tor Browser 5.0 -- August 11 2015
+JonDoBrowser 5.0 -- August 11 2015
  * All Platforms
    * Update Firefox to 38.2.0esr
    * Update OpenSSL to 1.0.1p
@@ -1659,7 +2073,7 @@ Tor Browser 5.0 -- August 11 2015
      * Bug 16730: Reset NoScript whitelist on upgrade
      * Bug 16722: Prevent "Tiles" feature from being enabled after upgrade
      * Bug 16488: Remove "Sign in to Sync" from the browser menu (fixup)
-     * Bug 16268: Show Tor Browser logo on About page
+     * Bug 16268: Show JonDoBrowser logo on About page
      * Bug 16639: Check for Updates menu item can cause update download failure
      * Bug 15781: Remove the sessionstore filter
      * Bug 15656: Sync privacy.resistFingerprinting with Torbutton pref
@@ -1697,7 +2111,7 @@ Tor Browser 5.0 -- August 11 2015
    * Bug 16448: Isolate favicon requests by first party
    * Bug 7561: Disable FTP request caching
    * Bug 6503: Fix single-word URL bar searching
-   * Bug 15526: ES6 page crashes Tor Browser
+   * Bug 15526: ES6 page crashes JonDoBrowser
    * Bug 16254: Disable GeoIP-based search results.
    * Bug 16222: Disable WebIDE to prevent remote debugging and addon downloads.
    * Bug 13024: Disable DOM Resource Timing API
@@ -1711,7 +2125,7 @@ Tor Browser 5.0 -- August 11 2015
    * Bug 16269: repeated add-on compatibility check after update (meek enabled)
  * Mac OS
    * Use OSX 10.7 SDK
-   * Bug 16253: Tor Browser menu on OS X is broken with ESR 38
+   * Bug 16253: JonDoBrowser menu on OS X is broken with ESR 38
    * Bug 15773: Enable ICU on OS X
  * Build System
    * Bug 16351: Upgrade our toolchain to use GCC 5.1
@@ -1719,7 +2133,7 @@ Tor Browser 5.0 -- August 11 2015
    * Bugs 15921+15922: Fix build errors during Mozilla Tryserver builds
    * Bug 15864: rename sha256sums.txt to sha256sums-unsigned-build.txt
 
-Tor Browser 5.0a4 -- August 3 2015
+JonDoBrowser 5.0a4 -- August 3 2015
  * All Platforms
    * Update Tor to 0.2.7.2-alpha with patches:
      * Bug 15482: Don't allow circuits to change while a site is in use
@@ -1727,7 +2141,7 @@ Tor Browser 5.0a4 -- August 3 2015
    * Update HTTPS-Everywhere to 5.0.7
    * Update NoScript to 2.6.9.31
    * Update Torbutton to 1.9.3.1
-     * Bug 16268: Show Tor Browser logo on About page
+     * Bug 16268: Show JonDoBrowser logo on About page
      * Bug 16639: Check for Updates menu item can cause update download failure
      * Bug 15781: Remove the sessionstore filter
      * Bug 15656: Sync privacy.resistFingerprinting with Torbutton pref
@@ -1749,7 +2163,7 @@ Tor Browser 5.0a4 -- August 3 2015
  * Build System
    * Bug 15864: rename sha256sums.txt to sha256sums-unsigned-build.txt
 
-Tor Browser 5.0a3 -- June 30 2015
+JonDoBrowser 5.0a3 -- June 30 2015
  * All Platforms
    * Update Firefox to 38.1.0esr
    * Update OpenSSL to 1.0.1o
@@ -1783,7 +2197,7 @@ Tor Browser 5.0a3 -- June 30 2015
    * Bug 16448: Isolate favicon requests by first party
    * Bug 7561: Disable FTP request caching
    * Bug 6503: Fix single-word URL bar searching
-   * Bug 15526: ES6 page crashes Tor Browser
+   * Bug 15526: ES6 page crashes JonDoBrowser
    * Bug 16254: Disable GeoIP-based search results.
    * Bug 16222: Disable WebIDE to prevent remote debugging and addon downloads.
    * Bug 13024: Disable DOM Resource Timing API
@@ -1791,12 +2205,12 @@ Tor Browser 5.0a3 -- June 30 2015
    * Bug 14952: Disable HTTP/2
  * Mac OS
    * Use OSX 10.7 SDK
-   * Bug 16253: Tor Browser menu on OS X is broken with ESR 38
+   * Bug 16253: JonDoBrowser menu on OS X is broken with ESR 38
  * Build System
    * Bug 16351: Upgrade our toolchain to use GCC 5.1
    * Bug 15772 and child tickets: Update build system for Firefox 38
 
-Tor Browser 4.5.3 -- June 30 2015
+JonDoBrowser 4.5.3 -- June 30 2015
  * All Platforms
    * Update Firefox to 31.8.0esr
    * Update OpenSSL to 1.0.1o
@@ -1811,7 +2225,7 @@ Tor Browser 4.5.3 -- June 30 2015
    * Tor patch backport
      * Bug 16430: Allow DNS names with _ characters in them (fixes nytimes.com)
 
-Tor Browser 5.0a2 -- June 15 2015
+JonDoBrowser 5.0a2 -- June 15 2015
  * All Platforms
    * Update Tor to 0.2.7.1-alpha
    * Update HTTPS-Everywhere to 5.0.5
@@ -1831,7 +2245,7 @@ Tor Browser 5.0a2 -- June 15 2015
    * Bug 16026: Fix crash in GStreamer
    * Bug 16083: Update comment in start-tor-browser
 
-Tor Browser 4.5.2 -- June 15 2015
+JonDoBrowser 4.5.2 -- June 15 2015
  * All Platforms
    * Update Tor to 0.2.6.9
    * Update HTTPS-Everywhere to 5.0.5
@@ -1847,7 +2261,7 @@ Tor Browser 4.5.2 -- June 15 2015
    * Bug 16026: Fix crash in GStreamer
    * Bug 16083: Update comment in start-tor-browser
 
-Tor Browser 5.0a1 -- May 14 2015
+JonDoBrowser 5.0a1 -- May 14 2015
  * All Platforms
    * Update Firefox to 31.7.0esr
    * Update meek to 0.18
@@ -1873,7 +2287,7 @@ Tor Browser 5.0a1 -- May 14 2015
    * Bug 15947: Support Ubuntu 14.04 LXC hosts via LXC_EXECUTE=lxc-execute env var
    * Bugs 15921+15922: Fix build errors during Mozilla Tryserver builds
 
-Tor Browser 4.5.1 -- May 12 2015
+JonDoBrowser 4.5.1 -- May 12 2015
  * All Platforms
    * Update Firefox to 31.7.0esr
    * Update meek to 0.18
@@ -1894,7 +2308,7 @@ Tor Browser 4.5.1 -- May 12 2015
    * Bug 15947: Support Ubuntu 14.04 LXC hosts via LXC_EXECUTE=lxc-execute env var
    * Bugs 15921+15922: Fix build errors during Mozilla Tryserver builds
 
-Tor Browser 4.5 -- Apr 28 2015
+JonDoBrowser 4.5 -- Apr 28 2015
  * All Platforms
    * Update Tor to 0.2.6.7 with additional patches:
      * Bug 15482: Reset timestamp_dirty each time a SOCKSAuth circuit is used
@@ -1932,7 +2346,7 @@ Tor Browser 4.5 -- Apr 28 2015
    * Bug 15539: Make installer exe signatures reproducibly removable
    * Bug 10761: Fix instances of shutdown crashes
 
-Tor Browser 4.5a5 -- Mar 31 2015
+JonDoBrowser 4.5a5 -- Mar 31 2015
  * All Platforms
    * Update Firefox to 31.6.0esr
    * Update OpenSSL to 1.0.1m
@@ -1978,23 +2392,23 @@ Tor Browser 4.5a5 -- Mar 31 2015
    * Bug 13375: Create a hybrid GUI/desktop/shell launcher wrapper
    * Bug 12468: Only print/write log messages if launched with --debug
  * Windows
-   * Bug 3861: Begin signing Tor Browser for Windows the Windows way
+   * Bug 3861: Begin signing JonDoBrowser for Windows the Windows way
    * Bug 15201: Disable 'runas Administrator' codepaths in updater
    * Bug 14688: Create shortcuts to desktop and start menu by default (optional)
 
-Tor Browser 4.0.6 -- Mar 31 2015
+JonDoBrowser 4.0.6 -- Mar 31 2015
  * All Platforms
    * Update Firefox to 31.6.0esr
    * Update meek to 0.16
    * Update OpenSSL to 1.0.1m
 
-Tor Browser 4.0.5 -- Mar 23 2015
+JonDoBrowser 4.0.5 -- Mar 23 2015
  * All Platforms
    * Update Firefox to 31.5.3esr
    * Update Tor to 0.2.5.11
    * Update NoScript to 2.6.9.19
 
-Tor Browser 4.5a4 -- Feb 24 2015
+JonDoBrowser 4.5a4 -- Feb 24 2015
  * All Platforms
    * Update Firefox to 31.5.0esr
    * Update Tor to 0.2.6.3-alpha
@@ -2004,7 +2418,7 @@ Tor Browser 4.5a4 -- Feb 24 2015
      * Use obfs4proxy for ScrambleSuit bridges
    * Update Torbutton to 1.9.0.0
      * Bug 13882: Fix display of bridges after bridge settings have been changed
-     * Bug 5698: Use "Tor Browser" branding in "About Tor Browser" dialog
+     * Bug 5698: Use "JonDoBrowser" branding in "About JonDoBrowser" dialog
      * Bug 10280: Strings and pref for preventing plugin initialization.
      * Bug 14866: Show correct circuit when more than one exists for a given domain
      * Bug 9442: Add New Circuit button to Torbutton menu
@@ -2042,7 +2456,7 @@ Tor Browser 4.5a4 -- Feb 24 2015
  * Linux:
    * Bug 13717: Make sure we use the bash shell on Linux
 
-Tor Browser 4.0.4 -- Feb 24 2015
+JonDoBrowser 4.0.4 -- Feb 24 2015
  * All Platforms
    * Update Firefox to 31.5.0esr
    * Update OpenSSL to 1.0.1l
@@ -2052,7 +2466,7 @@ Tor Browser 4.0.4 -- Feb 24 2015
    * Bug 14849: Remove new NoScript menu option to make permissions permanent
    * Bug 14851: Set NoScript pref to disable permanent permissions
 
-Tor Browser 4.5a3 -- Jan 19 2015
+JonDoBrowser 4.5a3 -- Jan 19 2015
  * All Platforms
    * Update Firefox to 31.4.0esr
    * Update Tor to 0.2.6.2-alpha
@@ -2063,7 +2477,7 @@ Tor Browser 4.5a3 -- Jan 19 2015
      * Bug 13998: Handle changes in NoScript 2.6.9.8+
      * Bug 14100: Option to hide NetworkSettings menuitem
      * Bug 13079: Option to skip control port verification
-     * Bug 13835: Option to change default Tor Browser homepage
+     * Bug 13835: Option to change default JonDoBrowser homepage
      * Bug 11449: Fix new identity error if NoScript is not enabled
      * Bug 13881: Localize strings for tor circuit display
      * Bug 9387: Incorporate user feedback
@@ -2076,7 +2490,7 @@ Tor Browser 4.5a3 -- Jan 19 2015
    * Bug 13788: Fix broken meek in 4.5-alpha series
    * Bug 13439: No canvas prompt for content callers
 
-Tor Browser 4.0.3 -- Jan 13 2015
+JonDoBrowser 4.0.3 -- Jan 13 2015
  * All Platforms
    * Update Firefox to 31.4.0esr
    * Update NoScript to 2.6.9.10
@@ -2084,7 +2498,7 @@ Tor Browser 4.0.3 -- Jan 13 2015
    * Update Tor Launcher to 0.2.7.0.2
      * Translation updates only
 
-Tor Browser 4.5-alpha-2 -- Dec 5 2014
+JonDoBrowser 4.5-alpha-2 -- Dec 5 2014
  * All Platforms
    * Update Firefox to 31.3.0esr
    * Update NoScript to 2.6.9.5
@@ -2096,7 +2510,7 @@ Tor Browser 4.5-alpha-2 -- Dec 5 2014
      * Bug 13784: Remove third party authentication tokens
    * Bug 13435: Remove our custom POODLE fix (fixed by Mozilla in ESR 31.3.0)
 
-Tor Browser 4.0.2 -- Dec 2 2014
+JonDoBrowser 4.0.2 -- Dec 2 2014
  * All Platforms
    * Update Firefox to 31.3.0esr
    * Update NoScript to 2.6.9.5
@@ -2113,7 +2527,7 @@ Tor Browser 4.0.2 -- Dec 2 2014
    * Bug 13558: Fix crash on Windows XP during download folder changing
    * Bug 13594: Fix update failure for Windows XP users
 
-Tor Browser 4.5-alpha-1 -- Nov 14 2014
+JonDoBrowser 4.5-alpha-1 -- Nov 14 2014
  * All Platforms
    * Bug 3455: Patch Firefox SOCKS and proxy filters to allow user+pass isolation
    * Bug 11955: Backport HTTPS Certificate Pinning patches from Firefox 32
@@ -2139,12 +2553,12 @@ Tor Browser 4.5-alpha-1 -- Nov 14 2014
  * Windows
    * Bug 13443: Re-enable DirectShow; fix crash with mingw patch.
    * Bug 13558: Fix crash on Windows XP during download folder changing
-   * Bug 13091: Make app name "Tor Browser" instead of "Tor"
+   * Bug 13091: Make app name "JonDoBrowser" instead of "Tor"
    * Bug 13594: Fix update failure for Windows XP users
  * Mac
    * Bug 10138: Switch to 64bit builds for MacOS
 
-Tor Browser 4.0.1 -- Oct 30 2014
+JonDoBrowser 4.0.1 -- Oct 30 2014
  * All Platforms
    * Update Tor to 0.2.5.10
    * Update NoScript to 2.6.9.3
@@ -2152,9 +2566,9 @@ Tor Browser 4.0.1 -- Oct 30 2014
    * Bug 13460: Fix MSVC compilation issue
  * Windows
    * Bug 13443: Disable DirectShow to prevent crashes on many sites
-   * Bug 13091: Make app name "Tor Browser" instead of "Tor"
+   * Bug 13091: Make app name "JonDoBrowser" instead of "Tor"
 
-Tor Browser 4.0 -- Oct 15 2014
+JonDoBrowser 4.0 -- Oct 15 2014
  * All Platforms
    * Update Firefox to 31.2.0esr
    * Update Torbutton to 1.7.0.1
@@ -2182,16 +2596,16 @@ Tor Browser 4.0 -- Oct 15 2014
    * Bug 13186: Disable DOM Performance timers
    * Bug 13028: Defense-in-depth checks for OCSP/Cert validation proxy usage
 
-Tor Browser 4.0-alpha-3 -- Sep 24 2014
+JonDoBrowser 4.0-alpha-3 -- Sep 24 2014
  * All Platforms
    * Update Tor to 0.2.5.8-rc
    * Update Firefox to 24.8.1esr
    * Update meek to 0.11
    * Update NoScript to 2.6.8.42
    * Update Torbutton to 1.6.12.3
-     * Bug 13091: Use "Tor Browser" everywhere
+     * Bug 13091: Use "JonDoBrowser" everywhere
      * Bug 10804: Workaround fix for some cases of startup hang
-   * Bug 13091: Use "Tor Browser" everywhere
+   * Bug 13091: Use "JonDoBrowser" everywhere
    * Bug 13049: Browser update failure (self.update is undefined)
    * Bug 13047: Updater should not send Kernel and GTK version
    * Bug 12998: Prevent intermediate certs from being written to disk
@@ -2200,7 +2614,7 @@ Tor Browser 4.0-alpha-3 -- Sep 24 2014
    * Bug 9150: Make RPATH unavailable on Tor binary.
    * Bug 13031: Add full RELRO protection.
 
-Tor Browser Bundle 3.6.6 -- Sep 24 2014
+JonDoBrowser Bundle 3.6.6 -- Sep 24 2014
  * All Platforms
    * Update Tor to tor-0.2.4.24
    * Update Firefox to 24.8.1esr
@@ -2208,12 +2622,12 @@ Tor Browser Bundle 3.6.6 -- Sep 24 2014
    * Update HTTPS Everywhere to 4.0.1
    * Bug 12998: Prevent intermediate certs from being written to disk
    * Update Torbutton to 1.6.12.3
-     * Bug 13091: Use "Tor Browser" everywhere
+     * Bug 13091: Use "JonDoBrowser" everywhere
      * Bug 10804: Workaround fix for some cases of startup hang
  * Linux
    * Bug 9150: Make RPATH unavailable on Tor binary.
 
-Tor Browser Bundle 4.0-alpha-2 -- Sep 2 2014
+JonDoBrowser Bundle 4.0-alpha-2 -- Sep 2 2014
  * All Platforms
    * Update Firefox to 24.8.0esr
    * Update NoScript to 2.6.8.39
@@ -2239,7 +2653,7 @@ Tor Browser Bundle 4.0-alpha-2 -- Sep 2 2014
  * Linux:
    * Bug 12103: Adding RELRO hardening back to browser binaries.
 
-Tor Browser Bundle 3.6.5 -- Sep 2 2014
+JonDoBrowser Bundle 3.6.5 -- Sep 2 2014
  * All Platforms
    * Update Firefox to 24.8.0esr
    * Update NoScript to 2.6.8.39
@@ -2257,7 +2671,7 @@ Tor Browser Bundle 3.6.5 -- Sep 2 2014
  * Linux:
    * Bug 12103: Adding RELRO hardening back to browser binaries.
 
-Tor Browser Bundle 4.0-alpha-1 -- Aug 8 2014
+JonDoBrowser Bundle 4.0-alpha-1 -- Aug 8 2014
  * All Platforms
    * Ticket 10935: Include the Meek Pluggable Transport (version 0.10)
      * Two modes of Meek are provided: Meek over Google and Meek over Amazon
@@ -2277,7 +2691,7 @@ Tor Browser Bundle 4.0-alpha-1 -- Aug 8 2014
    * Update Tor Launcher to 0.2.6.2
      * Bug 11199: Improve behavior if tor exits
      * Bug 12451: Add option to hide TBB's logo
-     * Bug 11193: Change "Tor Browser Bundle" to "Tor Browser"
+     * Bug 11193: Change "JonDoBrowser Bundle" to "JonDoBrowser"
      * Bug 11471: Ensure text fits the initial configuration dialog
      * Bug 9516: Send Tor Launcher log messages to Browser Console
    * Bug 11641: Reorganize bundle directory structure to mimic Firefox
@@ -2287,14 +2701,14 @@ Tor Browser Bundle 4.0-alpha-1 -- Aug 8 2014
                   bug11200 patch.
  * Linux:
    * Bug 10178: Make it easier to set an alternate Tor control port and password
-   * Bug 11102: Set Window Class to "Tor Browser" to aid in Desktop navigation
+   * Bug 11102: Set Window Class to "JonDoBrowser" to aid in Desktop navigation
    * Bug 12249: Don't create PT debug files anymore
 
-Tor Browser Bundle 3.6.4 -- Aug 8 2014
+JonDoBrowser Bundle 3.6.4 -- Aug 8 2014
  * All Platforms
    * Update Tor to 0.2.4.23
    * Update Tor launcher to 0.2.5.6
-     * Bug 9516: Show Tor log in TorBrowser's Browser Console
+     * Bug 9516: Show Tor log in JonDoBrowser's Browser Console
    * Update OpenSSL to 1.0.1i
    * Backported Tor Patches:
      * Bug 11654: Properly apply the fix for malformed bug11156 log message
@@ -2305,7 +2719,7 @@ Tor Browser Bundle 3.6.4 -- Aug 8 2014
      * Bug 11472: Adjust about:tor font and logo positioning to avoid overlap
      * Bug 12680: Fix Torbutton about url.
 
-Tor Browser Bundle 3.6.3 -- Jul 24 2014
+JonDoBrowser Bundle 3.6.3 -- Jul 24 2014
  * All Platforms
    * Update Firefox to 24.7.0esr
    * Update obfsproxy to 0.2.12
@@ -2318,10 +2732,10 @@ Tor Browser Bundle 3.6.3 -- Jul 24 2014
      * Bug 10819: Bind new third party isolation pref to Torbutton security UI
      * Bug 9268: Fix some window resizing corner cases with DPI and taskbar size.
  * Linux:
-   * Bug 11102: Set Window Class to "Tor Browser" to aid in Desktop navigation
+   * Bug 11102: Set Window Class to "JonDoBrowser" to aid in Desktop navigation
    * Bug 12249: Don't create PT debug files anymore
 
-Tor Browser Bundle 3.6.2 -- Jun 9 2014
+JonDoBrowser Bundle 3.6.2 -- Jun 9 2014
  * All Platforms
    * Update Firefox to 24.6.0esr
    * Update OpenSSL to 1.0.1h
@@ -2350,7 +2764,7 @@ Tor Browser Bundle 3.6.2 -- Jun 9 2014
    * Bug 11253: Turn on TLS 1.1 and 1.2.
    * Bug 11817: Don't send startup time information to Mozilla.
 
-Tor Browser Bundle 3.6.1 -- May 6 2014
+JonDoBrowser Bundle 3.6.1 -- May 6 2014
  * All Platforms
    * Update HTTPS-Everywhere to 3.5.1
    * Update NoScript to 2.6.8.22
@@ -2360,7 +2774,7 @@ Tor Browser Bundle 3.6.1 -- May 6 2014
    * Note: The Pluggable Transports themselves have not been updated to
            support proxy configuration yet.
 
-Tor Browser Bundle 3.6 -- Apr 29 2014
+JonDoBrowser Bundle 3.6 -- Apr 29 2014
  * All Platforms
    * Update Firefox to 24.5.0esr
    * Update Tor Launcher to 0.2.5.4
@@ -2378,7 +2792,7 @@ Tor Browser Bundle 3.6 -- Apr 29 2014
    * Bug 9308: Prevent install path from leaking in some JS exceptions
                on Mac and Windows builds
 
-Tor Browser Bundle 3.6-beta-2 -- Apr 8 2014
+JonDoBrowser Bundle 3.6-beta-2 -- Apr 8 2014
  * All Platforms
    * Update OpenSSL to 1.0.1g
    * Bug 9010: Add Turkish language support.
@@ -2399,11 +2813,11 @@ Tor Browser Bundle 3.6-beta-2 -- Apr 8 2014
  * Windows:
    * Bug 11286: Fix fte transport launch error
 
-Tor Browser Bundle 3.5.4 -- Apr 7 2014
+JonDoBrowser Bundle 3.5.4 -- Apr 7 2014
  * All Platforms
    * Update OpenSSL to 1.0.1g
 
-Tor Browser Bundle 3.5.3 -- Mar 19 2014
+JonDoBrowser Bundle 3.5.3 -- Mar 19 2014
  * All Platforms
    * Update Firefox to 24.4.0esr
    * Update Torbutton to 1.6.7.0:
@@ -2416,10 +2830,10 @@ Tor Browser Bundle 3.5.3 -- Mar 19 2014
    * Bug 10104: Update gitian to fix LXC build issues (for non-KVM/VT builders)
  * Linux:
    * Bug 9353: Fix keyboard input on Ubuntu 13.10
-   * Bug 9896: Provide debug symbols for Tor Browser binary
+   * Bug 9896: Provide debug symbols for JonDoBrowser binary
    * Bug 10472: Pass arguments to the browser from Linux startup script
 
-Tor Browser Bundle 3.6-beta-1 -- Mar 17 2014
+JonDoBrowser Bundle 3.6-beta-1 -- Mar 17 2014
  * All Platforms
    * Update Firefox to 24.4.0esr
    * Include Pluggable Transports by default:
@@ -2449,18 +2863,18 @@ Tor Browser Bundle 3.6-beta-1 -- Mar 17 2014
    * Bug 4261: Use DMG instead of ZIP for Mac packages
  * Linux:
    * Bug 9353: Fix keyboard input on Ubuntu 13.10
-   * Bug 9896: Provide debug symbols for Tor Browser binary
+   * Bug 9896: Provide debug symbols for JonDoBrowser binary
    * Bug 10472: Pass arguments to the browser from Linux startup script
 
-Tor Browser Bundle 3.5.2.1 -- Feb 14 2014
+JonDoBrowser Bundle 3.5.2.1 -- Feb 14 2014
  * All Platforms
    * Bug 10895: Fix broken localized bundles
  * Windows:
    * Bug 10323: Remove unneeded gcc/libstdc++ libraries from dist
 
-Tor Browser Bundle 3.5.2 -- Feb 8 2014
+JonDoBrowser Bundle 3.5.2 -- Feb 8 2014
  * All Platforms
-   * Rebase Tor Browser to Firefox 24.3.0ESR
+   * Rebase JonDoBrowser to Firefox 24.3.0ESR
    * Bug 10419: Block content window connections to localhost
    * Update Torbutton to 1.6.6.0
      * Bug 10800: Prevent findbox exception and popup in New Identity
@@ -2476,7 +2890,7 @@ Tor Browser Bundle 3.5.2 -- Feb 8 2014
      * Bug 10682: Workaround to really disable updates for Tor Launcher
    * Update NoScript to 2.6.8.13
 
-Tor Browser Bundle 3.5.1 -- Jan 22 2014
+JonDoBrowser Bundle 3.5.1 -- Jan 22 2014
  * All Platforms
    * Bug 10447: Remove SocksListenAddress to allow multiple socks ports.
    * Bug 10464: Remove addons.mozilla.org from NoScript whitelist
@@ -2495,7 +2909,7 @@ Tor Browser Bundle 3.5.1 -- Jan 22 2014
  * Mac
    * misc: Update bundle version field in Info.plist (for MacUpdates service)
 
-Tor Browser Bundle 3.5 -- Dec 17 2013
+JonDoBrowser Bundle 3.5 -- Dec 17 2013
  * All Platforms
    * Update Tor to 0.2.4.19
    * Update Tor Launcher to 0.2.4.2
@@ -2503,7 +2917,7 @@ Tor Browser Bundle 3.5 -- Dec 17 2013
    * Update Torbutton to 1.6.5.2
      * Misc: Switch update download URL back to download-easy
 
-Tor Browser Bundle 3.5rc1 -- Dec 12 2013
+JonDoBrowser Bundle 3.5rc1 -- Dec 12 2013
  * All Platforms
    * Update Firefox to 24.2.0esr
    * Update NoScript to 2.6.8.7
@@ -2528,7 +2942,7 @@ Tor Browser Bundle 3.5rc1 -- Dec 12 2013
  * Linux
    * Bug 10213; Use LD_LIBRARY_PATH (fixes launch issues on old Linux distros)
 
-Tor Browser Bundle 3.0rc1 -- Nov 21 2013
+JonDoBrowser Bundle 3.0rc1 -- Nov 21 2013
  * All Platforms:
    * Update Firefox to 17.0.11esr
    * Update Tor to 0.2.4.18-rc
@@ -2543,16 +2957,16 @@ Tor Browser Bundle 3.0rc1 -- Nov 21 2013
    * Bug #10126: Remove libz and firefox-bin, and strip unstripped binaries
    * Misc: Disable Firefox updater during compile time (in addition to pref)
 
-Tor Browser Bundle 3.0beta1 -- Oct 31 2013
+JonDoBrowser Bundle 3.0beta1 -- Oct 31 2013
  * All Platforms:
    * Update Firefox to 17.0.10esr
    * Update NoScript to 2.6.8.2
    * Update HTTPS-Everywhere to 3.4.2
    * Bug #9114: Reorganize the bundle directory structure to ease future
                 autoupdates
-   * Bug #9173: Patch Tor Browser to auto-detect profile directory if
+   * Bug #9173: Patch JonDoBrowser to auto-detect profile directory if
                 launched without the wrapper script.
-   * Bug #9012: Hide Tor Browser infobar for missing plugins.
+   * Bug #9012: Hide JonDoBrowser infobar for missing plugins.
    * Bug #8364: Change the default entry page for the addons tab to the
                 installed addons page.
    * Bug #9867: Make flash objects really be click-to-play if flash is enabled.
@@ -2574,7 +2988,7 @@ Tor Browser Bundle 3.0beta1 -- Oct 31 2013
    * Bug #9487: Create detached debuginfo files for Linux Tor and Tor
                 Browser binaries.
 
-Tor Browser Bundle 3.0alpha4 -- Sep 24 2013
+JonDoBrowser Bundle 3.0alpha4 -- Sep 24 2013
  * All Platforms:
    * Bug #8751: Randomize TLS HELLO timestamp in HTTPS connections
    * Bug #9790 (workaround): Temporarily re-enable JS-Ctypes for cache
@@ -2594,7 +3008,7 @@ Tor Browser Bundle 3.0alpha4 -- Sep 24 2013
      * Bug 8839: Disable Google/Startpage search filters using Tor-specific urls
 
 
-Tor Browser Bundle 3.0alpha3 -- Aug 01 2013
+JonDoBrowser Bundle 3.0alpha3 -- Aug 01 2013
  * All Platforms:
    * Update Firefox to 17.0.8esr
    * Update Tor to 0.2.4.15-rc
@@ -2613,11 +3027,11 @@ Tor Browser Bundle 3.0alpha3 -- Aug 01 2013
    * Bug #9195: Disable download manager AV scanning (to prevent cloud
      reporting+scanning of downloaded files)
  * Mac:
-   * Bug #9173 (partial): Launch firefox-bin on MacOS instead of TorBrowser.app
+   * Bug #9173 (partial): Launch firefox-bin on MacOS instead of JonDoBrowser.app
      (improves dock behavior).
 
 
-Tor Browser Bundle 3.0alpha2 -- June 27 2013
+JonDoBrowser Bundle 3.0alpha2 -- June 27 2013
  * All Platforms:
    * Update Firefox to 17.0.7esr
    * Update Tor to 0.2.4.14-alpha
@@ -2633,7 +3047,7 @@ Tor Browser Bundle 3.0alpha2 -- June 27 2013
  * Mac:
    * Bug 8987: Disable TBB's 'Saved Application State' disk records on OSX 10.7+
 
-Tor Browser Bundle 3.0alpha1 -- June 17 2013
+JonDoBrowser Bundle 3.0alpha1 -- June 17 2013
  * All Platforms:
    * Remove Vidalia; Use the new Tor Launcher Firefox Addon instead
    * Update Torbutton to 1.6.0
