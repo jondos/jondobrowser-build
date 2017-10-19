@@ -1,3 +1,14 @@
+JonDoBrowser 7.5.5.54 -- October 20 2017
+ * All Platforms
+   * Update JonDoSwitcher to 0.2.3
+     * Feature 1793 - Survey notification box
+     * Feature 1798 - Recognize the reason for not connecting to JonDo - clearer error message
+     * Feature #1793 - Survey info box
+     * Bug 1670 - HTTP session stateless
+     * Multiple instances of jondoswitcher.js replaced with singletons
+   * Feature 1794 - Update build documentation
+   * Update JonDoButton to 1.9.8.1jondo2
+
 JonDoBrowser 7.5a5.5.4 -- October 20 2017
  * All Platforms
    * Update JonDoSwitcher to 0.2.3
