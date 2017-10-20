@@ -74,7 +74,42 @@ channel you want to build:
   $ make product
   $ make alpha
   $ make beta
+
+Please keep in mind that before running make, you should checkout the specific version you want to build.
+This project is still under development and new features and bug fixes are constantly added.
+In order for you to quickly build the latest successful versions, we created multiple tags.
   
+  $ git tag
+
+This will list all the available version you can build.
+e.g. 
+  jondobrowser-7.5.1.5
+  jondobrowser-7.5.5.51
+  jondobrowser-7.5.5.54
+  jondobrowser-7.5a1
+  jondobrowser-7.5a1.1
+  jondobrowser-7.5a1.2
+  jondobrowser-7.5a1.3
+  jondobrowser-7.5a1.4
+  jondobrowser-7.5a1.5
+  jondobrowser-7.5a1.6
+  jondobrowser-7.5a1.7
+  jondobrowser-7.5a5.5.1
+  jondobrowser-7.5a5.5.2
+  jondobrowser-7.5a5.5.3
+  jondobrowser-7.5a5.5.4
+
+Here versions with 'a' are alpha builds and versions without it are product builds.
+If you want to build the latest product version, then you can do it with the following commands.
+
+  $ git checkout jondobrowser-7.5a5.5.4
+  $ make alpha
+
+If you want to build the latest product version, then you can do it with the following commands.
+
+  $ git checkout jondobrowser-7.5.5.54
+  $ make product
+
 You can find the build result in the directory product/unsigned/$version
 or alpha/unsigned/$version for product or alpha builds.
 

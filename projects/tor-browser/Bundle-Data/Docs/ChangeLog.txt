@@ -1,3 +1,6 @@
+JonDoBrowser 7.5a5.5.5 --
+ * All Platforms
+
 JonDoBrowser 7.5.5.54 -- October 20 2017
  * All Platforms
    * Update JonDoSwitcher to 0.2.3
