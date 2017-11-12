@@ -1,5 +1,10 @@
-JonDoBrowser 7.5a5.5.5 --
+JonDoBrowser 7.5a5.5.5 -- November 12 2017
  * All Platforms
+   * Update JonDoSwitcher to 0.2.4
+     * Feature 1807 - Make sure that info boxes (like #1793) are always exactly 100 px high
+     * Feature 1670 - HTTP Session stateless
+   * Update JonDo to 00.20.006
+     * Bug 1806 - JonDo causes very high processor load when started with JonDoBrowser
 
 JonDoBrowser 7.5.5.54 -- October 20 2017
  * All Platforms
