@@ -57,6 +57,17 @@ Please keep in mind that this project depends on latest runc.
 sudo apt-get install runc currently installs runc 1.0.0-rc2-dev.(As of October 2017)
 You need runc 1.0.0-rc4-dev or later version to build jondobrowser.
 
+If you have already installed go 1.9.2, then you can use it to compile latest runc.
+(Don't forget to use go1.9 by typing 'gvm use go1.9' into the shell.)
+
+https://github.com/opencontainers/runc/wiki/Ubuntu-14.04---Mint17-and-runc
+
+[https://avatars3.githubusercontent.com/u/12563465?s=400&v=4]<https://github.com/opencontainers/runc/wiki/Ubuntu-14.04---Mint17-and-runc>
+
+Ubuntu 14.04 Mint17 and runc · opencontainers/runc Wiki ...<https://github.com/opencontainers/runc/wiki/Ubuntu-14.04---Mint17-and-runc>
+github.com
+runc - CLI tool for spawning and running containers according to the OCI specification
+
 How to install latest runc from source.
 ---------------------------------------
 Install go1.9.
@@ -100,7 +111,7 @@ e.g.
   jondobrowser-7.5a5.5.4
 
 Here versions with 'a' are alpha builds and versions without it are product builds.
-If you want to build the latest product version, then you can do it with the following commands.
+If you want to build the latest alpha version, then you can do it with the following commands.
 
   $ git checkout jondobrowser-7.5a5.5.4
   $ make alpha
