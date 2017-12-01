@@ -1,8 +1,8 @@
-Hacking on Tor Browser Build
+Hacking on JonDoBrowser Build
 ============================
 
 This file tries to list the main things to know when making changes to
-the Tor Browser build.
+the JonDoBrowser build.
 
 
 rbm documentation
@@ -218,8 +218,29 @@ build with the patch.
 As an alternative, if you have your patch in a git repository, you can
 edit projects/firefox/config to change the git_url option to point to
 your git repository, and change the git_hash option to point to the
-commit you want to build. You will also need to comment the
-'tag_gpg_id: 1' line (unless git_hash is pointing to a signed git tag).
+commit you want to build. If the new git_hash option is not pointing to
+a signed tag, you will also need to comment the 'tag_gpg_id: 1' line.
+The git_hash option can point to a tag, a commit, a branch or anything
+that is understood by git.
+
+If you specify a branch in the git_hash option, you don't need to prefix
+it with a git remote name as all branches from the git repository
+selected in the git_url option are created as local branches.
+
+If you want to work on a local git repository, it is not a good idea to
+work on the git_clones/firefox repository directly. Instead you should
+create a separate git repository and update the git_url option with a
+file:// URL pointing to your repository.
+
+After changing the git_url option or when new commits have been added
+to a branch, you should run "make fetch" before starting a build to get
+the new commits. If you want to fetch new commits automatically when
+starting a new build you can add a "fetch: 1" line to
+projects/firefox/config.
+
+Remember that the git_hash option has different definitions for alpha
+and nightly builds, so you should modify the right one depending on
+what type of build you are doing (see also the "Types of builds" section).
 
 
 The Firefox mozconfig files
@@ -275,4 +296,21 @@ with the path to your patched rbm.
 For example, if you want to try a Linux x86_64 alpha build, you can run:
   $ /path_to_rbm/rbm build release --target alpha --target \
                                                 torbrowser-linux-x86_64
+
+
+Types of builds: nightly, alpha, release and testbuild
+------------------------------------------------------
+
+The testbuild makefile target allows you to do a build quickly in the
+testbuild directory, skipping the generation of all the locales and the
+mar files. This is useful during development.
+
+By default the testbuild is based on the alpha build. All the options
+can have a different definition for the alpha, release and nightly builds.
+Usually the git_hash option has a different definition for the nightly
+builds in order to point to the master branch.
+
+If you want your testbuild target to create builds based on nightly
+rather than alpha, you can edit your rbm.local.conf file and uncomment
+the targets/torbrowser-testbuild definition.
 

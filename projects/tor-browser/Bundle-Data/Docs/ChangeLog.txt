@@ -1,3 +1,56 @@
+JonDoBrowser 7.5a9.1.1 -- December 2 2017
+ * All Platforms
+   * Update Firefox to 52.5.1esr
+     * Bug 24040: JonDoBrowser crashes at riot.im/app
+   * Update JonDoSwitcher to 0.2.7
+     * Bug 1849 - Manual reinstall does not update addons on Mac
+     * Feature 1798 - Recognize the reason for not connecting to JonDo - clearer error message
+     * Feature 1821 - Add about:config option to keep JonDo running after browser stops
+     * Feature 1807 - Make sure that info boxes (like #1793) are always exactly 100 px high
+     * Feature 1670 - HTTP Session stateless
+     * Feature 1793 - Survey notification box
+     * Feature 1798 - Recognize the reason for not connecting to JonDo - clearer error message
+     * Feature #1793 - Survey info box
+     * Bug 1670 - HTTP session stateless
+     * Multiple instances of jondoswitcher.js replaced with singletons
+     * Feature 1793 - Survey notification box
+     * Feature 1798 - Recognize the reason for not connecting to JonDo - clearer error message
+     * Bug 1670 - HTTP session stateless
+     * Multiple instances of jondoswitcher.js replaced with singletons
+   * Update Tor to 0.3.2.5-alpha
+   * Update HTTPS-Everywhere to 2017.11.21
+   * Update NoScript to 5.1.7
+   * Update sandboxed-tor-browser to 0.0.16
+   * Update Torbutton to 1.9.8.3
+     * Bug 23997: Add link to JonDoBrowser manual for de, nl, tr, vi
+     * Bug 23949: Fix donation banner display
+     * Update locales with translated banner
+     * Translations update
+     * Bug 23887: Update banner locales and Mozilla text
+     * Translations update
+   * Update Tor Launcher to 0.2.14.1
+     * Bug 23262: Implement integrated progress bar
+     * Bug 23261: implement configuration portion of new Tor Launcher UI
+     * Translations update
+   * Update HTTPS-Everywhere to 2017.10.30
+   * Update NoScript to 5.1.5
+     * Bug 23968: NoScript icon jumps to the right after update
+     * Bug 23723: Loading entities from NoScript .dtd files is blocked
+     * Bug 23724: NoScript update breaks Security Slider and its icon disappears
+   * Update sandboxed-tor-browser to 0.0.15
+   * Bug 23745: Tab crashes when using JonDoBrowser to access Google Drive
+   * Bug 23694: Update the detailsURL in update responses
+   * Bug 22501: Requests via javascript: violate FPI
+ * Windows
+   * Bug 20636+10026: Create 64bit JonDoBrowser for Windows
+   * Bug 24052: Block file:// redirects early
+ * OS X
+   * Bug 24052: Streamline handling of file:// resources
+   * Bug 23807: Tab crashes when playing video on High Sierra
+   * Bug 23025: Add some hardening flags to macOS build
+ * Linux
+   * Bug 24052: Streamline handling of file:// resources
+
 JonDoBrowser 7.5a5.5.7 -- December 1 2017
  * All Platforms
    * Update JonDoSwitcher to 0.2.7
@@ -307,7 +360,6 @@ JonDoBrowser 7.5a1.1 -- July 31 2017
    * Bug 1637 : Ubtuntu 32 bit: JonDo does not start with the browser
    * Bug 1647 : OSX 10.12.5: JonDo does not start automatically, and update has to be applied twice
    * Bug 1654 : tor, jondo extensions update issue
-
 JonDoBrowser 7.5a1 -- June 14 2017
  * All Platforms
    * Update Firefox to 52.2.0esr

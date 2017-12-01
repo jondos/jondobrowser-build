@@ -35,10 +35,10 @@ use File::Find;
 use Parallel::ForkManager;
 use Cwd;
 
-# If the application is not TorBrowser (for instance, TorMessenger)
+# If the application is not JonDoBrowser (for instance, TorMessenger)
 # set the application name in the TOR_APPNAME_BUNDLE_OSX and in
 # the TOR_APPNAME_MARFILE environment variables
-my $appname = $ENV{TOR_APPNAME_BUNDLE_OSX} // 'TorBrowser';
+my $appname = $ENV{TOR_APPNAME_BUNDLE_OSX} // 'JonDoBrowser';
 my $appname_mar = $ENV{TOR_APPNAME_MARFILE} // 'tor-browser';
 
 sub exit_error {

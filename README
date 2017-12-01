@@ -29,7 +29,7 @@ You also need a few perl modules installed:
 - IO::Handle
 - IO::CaptureOutput
 - File::Temp
-- File::Slurp
+- Path::Tiny
 - File::Path
 - File::Copy::Recursive
 - String::ShellQuote
@@ -42,7 +42,7 @@ If you are running Debian or Ubuntu, you can install them with:
 
 # apt-get install libyaml-libyaml-perl libtemplate-perl \
                   libio-handle-util-perl libio-all-perl \
-                  libio-captureoutput-perl libfile-slurp-perl \
+                  libio-captureoutput-perl libpath-tiny-perl \
                   libstring-shellquote-perl libsort-versions-perl \
                   libdigest-sha-perl libdata-uuid-perl libdata-dump-perl \
                   libfile-copy-recursive-perl git libgtk2.0-dev curl runc
@@ -133,12 +133,13 @@ name to the makefile target:
   $ make alpha-osx-x86_64
 
 
+
 Updating git sources
 --------------------
 
 You can run "make fetch" to fetch the latest sources from git for all
 components included in JonDoBrowser. You should run this if you want to
-make a build with the latest commits.
+make a nightly build with the latest commits.
 
 
 Number of make processes
@@ -151,6 +152,78 @@ set the RBM_NUM_PROCS environment variable:
   $ export RBM_NUM_PROCS=8
 
 You can also set the buildconf/num_procs option in rbm.local.conf.
+
+
+Automated builds
+----------------
+
+If the build fails, a shell will automatically open in the build
+container to help you debug the problem. You probably want to disable
+this if you want to do automated builds. To disable this, set
+the RBM_NO_DEBUG environment variable to 1:
+
+   export RBM_NO_DEBUG=1
+
+Or set the debug option to 0 in the rbm.local.conf file.
+
+If you want to select the output directory, you can use rbm's --output-dir
+option. You can look at the Makefile to find the rbm command for what
+you want to build, and add the --output-dir option. For example, if you
+want to build JonDoBrowser nightly for linux-x86_64:
+
+   ./rbm/rbm build release --output-dir=/var/builds/nightly/2017-01-23 \
+                        --target nightly --target torbrowser-linux-x86_64
+
+The files will be put in the directory selected by --output-dir in a
+subdirectory named as the version number (or current date for nightly).
+To remove this version subdirectory, add the noversiondir target:
+
+   ./rbm/rbm build release --output-dir=/var/builds/nightly/2017-01-23 \
+                        --target nightly --target torbrowser-linux-x86_64 \
+                        --target noversiondir
+
+
+Automated builds using tbb-testsuite
+------------------------------------
+
+The JonDoBrowser testsuite scripts can also be used to do nightly builds
+and publish the build logs.
+
+If you want to do that, start by cloning the git repository:
+
+   $ git clone https://git.torproject.org/boklm/tor-browser-bundle-testsuite.git
+
+Install some dependencies:
+
+   # apt-get install -y libdata-dump-perl libfile-slurp-perl \
+               libio-captureoutput-perl perlmagick libjson-perl \
+               libwww-perl liblwp-protocol-https-perl libtemplate-perl \
+               libyaml-syck-perl libdatetime-perl \
+               libemail-sender-perl libemail-simple-perl libfile-type-perl \
+               libipc-run-perl libxml-libxml-perl
+
+Copy the config/tor-browser_build-boklm file and edit it:
+
+   $ cd tor-browser-bundle-testsuite
+   $ cp config/tor-browser_build-boklm config/tor-browser_build-$user
+   $ vim config/tor-browser_build-$user
+
+Change the publish_dir and publish_url options. The publish_dir option is
+the local directory where the builds will be stored. The publish_url
+option is the public URL where the builds will be available.
+
+Copy the tools/tor-browser-builds-boklm file and edit it to change the
+--config= option:
+
+   $ cp tools/tor-browser-builds-boklm tools/tor-browser-builds-$user
+   $ vim tools/tor-browser-builds-$user
+
+You can now run ./tools/tor-browser-builds-$user to start the build, and
+add it to your crontab.
+
+The html build reports will be available in the reports/ directory, and
+the build files in the tor-browser-builds/ directory (unless you changed
+the publish_dir option).
 
 
 Signing builds

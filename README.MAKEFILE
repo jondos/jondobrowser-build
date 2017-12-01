@@ -4,7 +4,7 @@ Description of makefile rules
 
 release
 -------
-Build Tor Browser for the release channel, for all supported platforms.
+Build JonDoBrowser for the release channel, for all supported platforms.
 The resulting build can be found in directory release/$version.
 
 release-{linux-x86_64,linux-i686,windows-i686,osx-x86_64}
@@ -13,7 +13,7 @@ Same as release, for the selected platform only.
 
 alpha
 -----
-Build Tor Browser for the alpha channel, for all supported platforms.
+Build JonDoBrowser for the alpha channel, for all supported platforms.
 The resulting build can be found in directory alpha/$version.
 
 alpha-{linux-x86_64,linux-i686,windows-i686,osx-x86_64}
@@ -22,7 +22,7 @@ Same as alpha, for the selected platform only.
 
 nightly
 -------
-Build Tor Browser for the nightly channel, for all supported platforms.
+Build JonDoBrowser for the nightly channel, for all supported platforms.
 Many of the components will be based on the master branch. You might
 want to run "make fetch" before, to fetch the latest commits from all
 components.
@@ -35,7 +35,7 @@ Same as nightly, for the selected platform only.
 
 alpha_nightly
 -------------
-Build Tor Browser for the alpha channel, for all supported platforms.
+Build JonDoBrowser for the alpha channel, for all supported platforms.
 This is the same as 'make alpha', but the output directory is different.
 The resulting build can be found in directory alpha_nightly/$date
 
@@ -45,7 +45,7 @@ The same as alpha_nightly, for the selected platform only.
 
 testbuild
 ---------
-Build a Tor Browser test build. To make the build faster, only the en-US
+Build a JonDoBrowser test build. To make the build faster, only the en-US
 locale is created, without mar files. By default it is based on the
 alpha channel, but you can change that by editing rbm.conf.local.
 The resulting build can be found in directory testbuild.

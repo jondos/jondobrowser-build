@@ -1,7 +1,7 @@
-Tor Browser Update Responses script
+JonDoBrowser Update Responses script
 ===================================
 
-This repository contains a script to generate responses for Tor Browser
+This repository contains a script to generate responses for JonDoBrowser
 updater.
 
 See ticket [#12622](https://trac.torproject.org/projects/tor/ticket/12622)
@@ -44,7 +44,7 @@ The URL format is:
 ndance between the build target and the OS name that we use in archive
 files is defined in the config.yml file.
 
-'tb_version' is the Tor Browser version.
+'tb_version' is the JonDoBrowser version.
 
 'lang' is the locale.
 

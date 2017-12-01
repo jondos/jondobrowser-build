@@ -9,7 +9,7 @@ OUTDIR='[% dest_dir _ "/" _ c("filename") %]'
 mkdir -p $OUTDIR
 
 # When we build with MULTI_LINGUAL=1, the browser will be packaged inside a
-# directory named tor-browser (instead of jondobrowser_en-US). Therefore we
+# directory named jondobrowser (instead of jondobrowser_en-US). Therefore we
 # stage everything under tor-browser-stage to avoid a conflict.
 TB_STAGE_DIR=$distdir/tor-browser-stage
 
@@ -144,7 +144,10 @@ cat Bundle-Data/PTConfigs/[% bundledata_osname %]/torrc-defaults-appendix >> $TB
 [% END -%]
 [% IF c("var/windows") -%]
   # We don't have snowflake available on Windows yet
-  grep -v 'default_bridge\.snowflake' Bundle-Data/PTConfigs/bridge_prefs.js >> $TBDIR/$EXTOVERRIDESPATH
+  # We don't have fte available on Windows x86_64 yet
+  grep -v 'default_bridge\.snowflake' Bundle-Data/PTConfigs/bridge_prefs.js \
+  [% IF c("var/windows-x86_64") %]| grep -v 'default_bridge\.fte' [% END %] \
+      >> $TBDIR/$EXTOVERRIDESPATH
 [% END -%]
 [% IF c("var/osx") -%]
   # FTE is temporarily removed due to bug 18495.
@@ -315,7 +318,7 @@ cd $distdir
   python $rootdir/pe_checksum_fix.py
   mv torbrowser-install-tmp2.exe torbrowser-install.exe
   rm torbrowser-install-tmp.exe
-  mv torbrowser-install.exe $OUTDIR/jondobrowser-install-[% c("var/torbrowser_version") %]_${PKG_LOCALE}.exe
+  mv torbrowser-install.exe $OUTDIR/jondobrowser-install[% IF c("var/windows-x86_64") %]-win64[% END %]-[% c("var/torbrowser_version") %]_${PKG_LOCALE}.exe
   popd
 [% END %]
 rm -rf $distdir/${PKG_DIR}
@@ -399,7 +402,7 @@ cp $rootdir/[% c('input_files_by_name/firefox') %]/mar-tools-*.zip "$OUTDIR"/
         python $rootdir/pe_checksum_fix.py
         mv torbrowser-install-tmp2.exe torbrowser-install.exe
         rm torbrowser-install-tmp.exe
-        mv torbrowser-install.exe $OUTDIR/jondobrowser-install-[% c("var/torbrowser_version") %]_[% lang %].exe
+        mv torbrowser-install.exe $OUTDIR/jondobrowser-install[% IF c("var/windows-x86_64") %]-win64[% END %]-[% c("var/torbrowser_version") %]_[% lang %].exe
         popd
       [% END %]
       rm -rf [% tbdir %]

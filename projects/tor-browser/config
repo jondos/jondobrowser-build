@@ -24,11 +24,20 @@ targets:
         - python
         - bzip2
         - faketime
+  windows:
+    var:
+      arch_deps:
+        - python-pefile
   windows-i686:
     var:
       mar_osname: win32
-      arch_deps:
-        - python-pefile
+  windows-x86_64:
+    var:
+      mar_osname: win64
+      # We use a 32bit container to be able to use a 32bit nsis and
+      # pe_checksum_fix.py
+      container:
+        arch: i386
 
 input_files:
   - project: container-image
@@ -64,9 +73,9 @@ input_files:
     enable: '[% c("var/snowflake") %]'
   - filename: Bundle-Data
   - filename: JonDo
-  - URL: https://addons.cdn.mozilla.net/user-media/addons/722/noscript_security_suite-5.0.10-fx+sm.xpi
+  - URL: https://addons.cdn.mozilla.net/user-media/addons/722/noscript_security_suite-5.1.7-fx+sm.xpi
     name: noscript
-    sha256sum: cfc8018a5ddd2a699581932a9911e28b1060667c7849cf5283b548b5b29a65a2
+    sha256sum: 617f73683acdca7df2a7d08843443d38929afbf40075e113ab3ccab0eef7cd6b
   - filename: RelativeLink
     enable: '[% c("var/linux") %]'
   - project: libdmg-hfsplus
@@ -74,6 +83,9 @@ input_files:
     enable: '[% c("var/osx") %]'
   - project: nsis
     name: nsis
+    target:
+      - '[% c("var/channel") %]'
+      - torbrowser-windows-i686
     enable: '[% c("var/windows") %]'
   - name: tbb-windows-installer
     project: tbb-windows-installer
