@@ -9,19 +9,12 @@ JonDoBrowser 7.5a9.1.1 -- December 2 2017
      * Feature 1807 - Make sure that info boxes (like #1793) are always exactly 100 px high
      * Feature 1670 - HTTP Session stateless
      * Feature 1793 - Survey notification box
-     * Feature 1798 - Recognize the reason for not connecting to JonDo - clearer error message
-     * Feature #1793 - Survey info box
-     * Bug 1670 - HTTP session stateless
-     * Multiple instances of jondoswitcher.js replaced with singletons
-     * Feature 1793 - Survey notification box
-     * Feature 1798 - Recognize the reason for not connecting to JonDo - clearer error message
-     * Bug 1670 - HTTP session stateless
      * Multiple instances of jondoswitcher.js replaced with singletons
    * Update Tor to 0.3.2.5-alpha
    * Update HTTPS-Everywhere to 2017.11.21
    * Update NoScript to 5.1.7
    * Update sandboxed-tor-browser to 0.0.16
-   * Update Torbutton to 1.9.8.3
+   * Update Torbutton to 1.9.8.3jondo1
      * Bug 23997: Add link to JonDoBrowser manual for de, nl, tr, vi
      * Bug 23949: Fix donation banner display
      * Update locales with translated banner
