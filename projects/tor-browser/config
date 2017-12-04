@@ -94,7 +94,4 @@ input_files:
     enable: '[% c("var/windows") %]'
   # Workaround for bug 24477
   - URL: https://archive.torproject.org/tor-package-archive/torbrowser/7.5a7/mar-tools-linux32.zip
-    sig_ext: asc
-    file_gpg_id: 1
-    gpg_keyring: torbrowser.gpg
     enable: '[% c("var/windows-x86_64") %]'
