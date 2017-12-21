@@ -1,3 +1,15 @@
+JonDoBrowser 7.5.9a1.3 -- December 21 2017
+ * All Platforms
+   * Bug 1870 - Product update fails
+   * Update JonDoSwitcher to 0.2.8
+     * Feature 1878 - Hide the current survey
+   * Update JonDoButton to 1.9.8.3jondo2
+     * Feature 1860 - Control TorBrowser Banner System
+   * Update TorButton to 1.9.8.3jondo2
+     * Feature 1860 - Control TorBrowser Banner System
+   * Windows  
+     * Feature 1872 - Windows: Install JonDoBrowser without admin rights
+
 JonDoBrowser 7.5.9.12 -- December 8 2017
  * All Platforms
    * Bug 1870 - Product update fails
