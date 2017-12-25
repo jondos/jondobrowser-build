@@ -1,3 +1,7 @@
+JonDoBrowser 7.5.9a1.4 -- December 25 2017
+ * Windows
+   * Bug 1892 - Malware recognition problem
+
 JonDoBrowser 7.5.9a1.3 -- December 21 2017
  * All Platforms
    * Bug 1870 - Product update fails
