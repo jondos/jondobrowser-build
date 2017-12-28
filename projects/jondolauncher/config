@@ -1,5 +1,5 @@
 # vim: filetype=yaml sw=2
-version: 0.2.10.6
+version: 0.2.10.7
 git_url: https://github.com/jondos/jondobrowser-jondolauncher.git
 git_hash: '[% c("version") %]-jondo'
 gpg_keyring: kaitian.gpg

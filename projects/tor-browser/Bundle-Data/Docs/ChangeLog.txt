@@ -1,3 +1,12 @@
+JonDoBrowser 7.5a9.1.5 -- December 28 2017
+ * All Platforms
+   * Update JonDoLauncher to 0.2.10.7
+     * Feature 1867 - Set JonDo configuration path to browser configuration folder
+   * Update JAP.jar
+     * Feature 1867 - Set JonDo configuration path to browser configuration folder
+   * Update JAPLauncher
+     * Feature 1867 - Set JonDo configuration path to browser configuration folder
+
 JonDoBrowser 7.5.9.14 -- December 25 2017
  * All Platforms
    * Update JonDoSwitcher to 0.2.8
